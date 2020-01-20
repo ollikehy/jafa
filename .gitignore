@@ -132,4 +132,8 @@ sketch
 # Ignore all local history of files
 .history
 
+
+# Ignore package-lock
+package-lock.json
+
 # End of https://www.gitignore.io/api/node,react,visualstudiocode
