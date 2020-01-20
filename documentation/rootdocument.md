@@ -1,6 +1,10 @@
 ## Documentation
 
-This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use.
+### Requirements
+
+This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use. 
+
+[User stories](https://github.com/ollikehy/jafa/blob/master/documentation/userstories.md)
 
 ### ToDo
 
@@ -29,6 +33,6 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 
 ### Architecture
 
-The architecture for this project is a typical multitier-architecure with presentation- , logic- and datalayers.
+The architecture for this project is a typical multitier-architecure with presentation- , logic- and data layers.
 
 ![Architectural schema](https://github.com/ollikehy/jafa/blob/master/documentation/architecture.png)
