@@ -16,13 +16,13 @@ const server = http.createServer(app)
 
 const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0-st9gc.gcp.mongodb.net/test?retryWrites=true&w=majority`
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
   .then(() => {
     console.log('connected to mongodb')
   })
   .catch((error) => {
     console.log('mongodb error ' + error)
-})
+  })
 
 server.listen(PORT, () => {
   console.log(`Server running on port http://${HOST}:${PORT}`)
