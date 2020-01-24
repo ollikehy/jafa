@@ -10,6 +10,7 @@ const config = (env, arg) => {
     devServer: {
       contentBase: path.resolve(__dirname, 'public'),
       compress: true,
+      host: '0.0.0.0',
       port: 3000,
     },
     devtool: 'source-map',
