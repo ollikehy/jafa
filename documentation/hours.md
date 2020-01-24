@@ -8,4 +8,5 @@
 |           | 2h   | Dockerizing frontend and figuring out to add --host flag to make it available outside container |
 | 24.1.2020 | 1h   | Docker-compose for the project |
 |           | 2h   | Improving frotend walking skeleton |
-| Sum       | 11,5h | Cumulative sum of hours |
+|           | 1h   | Registration form and styling stuff |
+| Sum       | 12,5h | Cumulative sum of hours |

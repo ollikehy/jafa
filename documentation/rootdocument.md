@@ -10,9 +10,7 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 
 #### In the near future
 
-* Frontend walking skeleton
-* Docker-compose
-* Database schemas
+* Database schemas with attributes
 * Registration
 * Adding exercises
 * Adding workouts
