@@ -14,6 +14,7 @@ const config = (env, arg) => {
       port: 3000,
       publicPath: '/',
       historyApiFallback: true,
+      disableHostCheck: true,
     },
     devtool: 'source-map',
     module: {

@@ -9,4 +9,5 @@
 | 24.1.2020 | 1h   | Docker-compose for the project |
 |           | 2h   | Improving frotend walking skeleton |
 |           | 1h   | Registration form and styling stuff |
+|           | 1h   | Configuring nginx |
 | Sum       | 12,5h | Cumulative sum of hours |
