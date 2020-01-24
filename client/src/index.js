@@ -5,6 +5,6 @@ import Routes from './components/Routes'
 import './assets/styles/app.css'
 
 ReactDOM.render(
-  <Routes className='container'/>,
+  <Routes />,
   document.getElementById('root')
 )

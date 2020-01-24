@@ -9,7 +9,7 @@ class Routes extends Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className='container'>
           <Header />
           <Switch>
             <Route exact path='/' render={() =>
