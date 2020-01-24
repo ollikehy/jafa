@@ -7,6 +7,8 @@ services:
     command: npm start
     ports: 
       - "8000:8000"
+    volumes:
+      - ./server/:/app
     env_file:
       - ./server/.env
 
@@ -17,5 +19,7 @@ services:
     command: npm start
     ports:
       - "3000:3000"
+    volumes:
+      - ./client/:/app
     depends_on:
       - backend

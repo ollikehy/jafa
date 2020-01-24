@@ -1,6 +1,6 @@
 FROM node:latest AS development
 
-WORKDIR /frontend
+WORKDIR /app
 
 COPY package*.json ./
 

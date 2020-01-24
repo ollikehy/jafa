@@ -4,6 +4,8 @@
 |  | 1h | Setting up backend and mongodb |
 |  | 1h | Learning some bacon.js, improving documentation (user stories and requirements) |
 | 21.1.2020 | 1h | Literally fighting with formatting for an hour |
-| 22.2.2020 | 1,5h | Configuring webpack |
+| 22.1.2020 | 1,5h | Configuring webpack |
 |  | 2h | Dockerizing frontend and figuring out to add --host flag to make it available outside container |
+| 24.1.2020 | 1h | Docker-compose for the project |
+
 | Sum | 8,5h | Cumulative sum of hours |

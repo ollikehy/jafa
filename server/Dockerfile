@@ -1,6 +1,6 @@
 FROM node:latest AS development
 
-WORKDIR /backend
+WORKDIR /app
 
 COPY . .
 
