@@ -1,5 +1,10 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import App from './App'
+import Routes from './components/Routes'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+import './assets/styles/app.css'
+
+ReactDOM.render(
+  <Routes className='container'/>,
+  document.getElementById('root')
+)

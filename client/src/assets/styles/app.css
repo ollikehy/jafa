@@ -1,0 +1,17 @@
+.header {
+  display: flex;
+  align-items: center
+}
+
+#root {
+  padding: 20px
+}
+
+.header-title {
+  margin-right: 75%;
+}
+
+.header-link {
+  align-items: flex-end;
+  padding: 10px
+}
