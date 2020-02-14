@@ -11,4 +11,5 @@
 |           | 1h   | Registration form and styling stuff |
 |           | 1h   | Configuring nginx |
 | 14.2.2020 | 4h   | Configuring redux, redux-saga and sending data to api |
-| Sum       | 17,5h | Cumulative sum of hours |
+|           | 3h   | Fighting with express etc. and trying to remember how to backend |
+| Sum       | 20,5h | Cumulative sum of hours |

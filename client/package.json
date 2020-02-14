@@ -34,6 +34,7 @@
       "@babel/plugin-proposal-class-properties"
     ]
   },
+  "proxy": "http://server:8000",
   "scripts": {
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development"

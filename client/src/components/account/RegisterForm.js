@@ -10,7 +10,8 @@ export class RegisterForm extends Component {
     this.state = {
       username: '',
       password: '',
-      confirmPass: ''
+      confirmPass: '',
+      registrationError: ''
     }
   }
 
@@ -20,10 +21,18 @@ export class RegisterForm extends Component {
     })
   }
 
+  setErrorMessage = () => {
+    this.setState({registrationError: "Your passwords didn't match"})
+    setTimeout(() => {this.setState({registrationError: ''})}, 10000)
+  }
+
   handleSubmit = (e) => {
     e.preventDefault()
-    const {username, password} = this.state
-    this.props.register(username, password)
+    const {username, password, confirmPass} = this.state
+
+    password !== confirmPass ?
+      this.setErrorMessage() :
+      this.props.register(username, password)
 
     this.setState({
       username: '',
@@ -33,15 +42,21 @@ export class RegisterForm extends Component {
   }
 
   render() {
-    const {username, password, confirmPass} = this.state
+    const {username, password, confirmPass, registrationError} = this.state
 
     return (
       <div className="register-form" >
+        <div className="error-message">
+          {registrationError &&
+            <p>{registrationError}</p>
+          }
+        </div>
         <form>
           <div>
             <input
               id="username"
               name="username"
+              minLength='4'
               className="input-field"
               required value={username}
               onChange={this.handleChange}
@@ -52,6 +67,7 @@ export class RegisterForm extends Component {
             <input
               id="password"
               name="password"
+              minLength='8'
               className="input-field"
               required value={password}
               onChange={this.handleChange}

@@ -8,7 +8,7 @@ function* requestRegister({payload}) {
       username: payload.username,
       password: payload.password
     }
-    
+
     const response = yield call(registerApi.add, user)
 
     if (response.status === 200) {
@@ -17,6 +17,7 @@ function* requestRegister({payload}) {
         username: response.data.username
       }
 
+      window.localStorage.setItem('loggedUser', JSON.stringify(user))
       yield put(actions.registerSuccess(user))
     }
   } catch (e) {

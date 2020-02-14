@@ -8,6 +8,10 @@
   padding: 0px 10px;
 }
 
+.error-message {
+  background-color: lightcoral;
+}
+
 .header-title {
   padding:10px;
   margin-right: 75%;

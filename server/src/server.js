@@ -1,16 +1,21 @@
 const express = require('express')
 const http = require('http')
+const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
 
-require('dotenv').config()
+const registerRouter = require('./controllers/registerRouter')
 
 const PORT = process.env.port || 8000
 const HOST = '0.0.0.0'
 
+require('dotenv').config()
+
 const app = express()
 
 app.use(morgan('dev'))
+app.use(bodyParser.json())
+app.use('/register', registerRouter)
 
 const server = http.createServer(app)
 
