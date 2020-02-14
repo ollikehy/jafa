@@ -4,7 +4,7 @@ import FrontPage from './FrontPage'
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className='container'>
         <FrontPage />
       </div>
     )

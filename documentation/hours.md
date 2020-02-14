@@ -10,4 +10,5 @@
 |           | 2h   | Improving frotend walking skeleton |
 |           | 1h   | Registration form and styling stuff |
 |           | 1h   | Configuring nginx |
-| Sum       | 12,5h | Cumulative sum of hours |
+| 14.2.2020 | 4h   | Configuring redux, redux-saga and sending data to api |
+| Sum       | 17,5h | Cumulative sum of hours |

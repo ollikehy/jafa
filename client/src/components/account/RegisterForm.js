@@ -1,50 +1,89 @@
-import React, {Component, useState} from 'react'
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 
-const RegisterForm = () => {
+import * as actions from '../../redux/actions/actions'
 
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+export class RegisterForm extends Component {
+  constructor(props) {
+    super(props)
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value)
+    this.state = {
+      username: '',
+      password: '',
+      confirmPass: ''
+    }
   }
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value)
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
   }
 
-  const handleSubmit = (event) => {
+  handleSubmit = (e) => {
+    e.preventDefault()
+    const {username, password} = this.state
+    this.props.register(username, password)
 
+    this.setState({
+      username: '',
+      password: '',
+      confirmPass: ''
+    })
   }
 
-  return (
-    <div className="register-form">
-      <form>
-        <div>
-          <input
-            name="username"
-            className="input-field"
-            required value={username}
-            onChange={handleUsernameChange}
-            placeholder="Username">
-          </input>
-        </div>
-        <div>
-          <input
-            name="password"
-            className="input-field"
-            required value={password}
-            onChange={handlePasswordChange}
-            placeholder="Password"
-            type="password">
-          </input>
-        </div>
-        <div className='registerform-button'>
-          <button onClick={handleSubmit} className='button'>Register</button>
-        </div>
-      </form>
-    </div>
-  )
+  render() {
+    const {username, password, confirmPass} = this.state
+
+    return (
+      <div className="register-form" >
+        <form>
+          <div>
+            <input
+              id="username"
+              name="username"
+              className="input-field"
+              required value={username}
+              onChange={this.handleChange}
+              placeholder="Username">
+            </input>
+          </div>
+          <div>
+            <input
+              id="password"
+              name="password"
+              className="input-field"
+              required value={password}
+              onChange={this.handleChange}
+              placeholder="Password"
+              type="password">
+            </input>
+          </div>
+          <div>
+            <input
+              id="confirmPass"
+              name="confirmpass"
+              className="input-field"
+              required value={confirmPass}
+              onChange={this.handleChange}
+              placeholder="Confirm password"
+              type="password">
+            </input>
+          </div>
+          <div className='registerform-button'>
+            <button onClick={this.handleSubmit} className='button'>Register</button>
+          </div>
+        </form>
+      </div>
+    )
+  }
 }
 
-export default RegisterForm
+const mapDispatchToProps = {
+  ...actions
+}
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(RegisterForm)

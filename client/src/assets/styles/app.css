@@ -4,6 +4,10 @@
   background-color: lightgray;
 }
 
+.container {
+  padding: 0px 10px;
+}
+
 .header-title {
   padding:10px;
   margin-right: 75%;
@@ -29,6 +33,7 @@
 body {
   margin: 0px;
   background-color: lightyellow;
+  padding: 0px;
 }
 
 .registerform-button {

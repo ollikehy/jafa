@@ -10,19 +10,19 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 
 #### In the near future
 
-* Database schemas with attributes
-* Registration
-* Adding exercises
-* Adding workouts
-* Adding exerciseSets to workouts
-* Adding values for the user
+[checkbox:unchecked] Database schemas with attributes
+[checkbox:unchecked] Registration
+[checkbox:unchecked] Adding exercises
+[checkbox:unchecked] Adding workouts
+[checkbox:unchecked] Adding exerciseSets to workouts
+[checkbox:unchecked] Adding values for the user
 
 #### In the distant future
 
-* Styles
-* Heroku
-* Graphs for progress (BMI, weight training?)
-* Testing
+[checkbox:unchecked] Styles
+[checkbox:unchecked] Heroku
+[checkbox:unchecked] Graphs for progress (BMI, bodyweight, weight training?)
+[checkbox:unchecked] Testing
 * Whatever comes to mind
 
 ### Database schema
