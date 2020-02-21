@@ -10,6 +10,9 @@ const schema = new mongoose.Schema({
     type: String,
     required: true
   },
+  admin: {
+    type: Boolean
+  },
   weight: {
     type: String
   },

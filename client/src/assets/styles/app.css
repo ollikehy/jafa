@@ -23,6 +23,7 @@
 }
 
 .register-form {
+  background-color: lightsalmon;
   display: flex;
   flex-direction: column;
   align-items: center;
