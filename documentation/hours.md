@@ -13,4 +13,5 @@
 | 14.2.2020 | 4h   | Configuring redux, redux-saga and sending data to api |
 |           | 3h   | Fighting with express etc. and trying to remember how to backend |
 | 21.2.2020 | 3h   | Thinking on how to do admin privilidges and configuring issue with mongodb |
-| Sum       | 20,5h | Cumulative sum of hours |
+|           | 3h   | Implementing logging in |
+| Sum       | 26,5h | Cumulative sum of hours |

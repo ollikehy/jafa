@@ -1,15 +1,36 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {connect} from 'react-redux'
 
-const Header = () => {
+export class Header extends Component {
+  constructor(props) {
+    super(props)
 
-  return (
-    <div className='header'>
-      <p className='header-title'>Just Another Fitness App</p>
-      <Link className='header-link' to='/login'>Login</Link>
-      <Link className='header-link' to='/register'>Register</Link>
-    </div>
-  )
+    this.state = {
+      loggedIn: null
+    }
+  }
+
+  render() {
+    const loggedIn = this.props.loggedIn
+
+    return (
+      <div className='header'>
+        <Link className='header-title' to='/'>Just Another Fitness App</Link>
+        {!loggedIn && <div>
+          <Link className='header-link' to='/login'>Login</Link>
+          <Link className='header-link' to='/register'>Register</Link>
+        </div>}
+      </div>
+    )
+  }
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+  loggedIn: state.loginReducer.loggedIn
+})
+
+export default connect(
+  mapStateToProps,
+  null
+)(Header)

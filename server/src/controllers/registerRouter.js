@@ -19,7 +19,7 @@ registerRouter.post('/', async (req, res) => {
 
   const hashedPassword = await bcrypt.hash(body.password, 10)
 
-  const user = new User({username: body.username, password: hashedPassword}).save()
+  const user = await new User({username: body.username, password: hashedPassword}).save()
 
   const userForToken = {
     username: user.username,
