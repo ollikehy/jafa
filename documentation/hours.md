@@ -14,4 +14,5 @@
 |           | 3h   | Fighting with express etc. and trying to remember how to backend |
 | 21.2.2020 | 3h   | Thinking on how to do admin privilidges and configuring issue with mongodb |
 |           | 3h   | Implementing logging in |
-| Sum       | 26,5h | Cumulative sum of hours |
+| 10.3.2020 | 2,5h | Fixing issues with login functionality and adding logout |
+| Sum       | 29h | Cumulative sum of hours |

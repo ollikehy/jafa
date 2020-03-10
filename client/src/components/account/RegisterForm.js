@@ -45,7 +45,7 @@ export class RegisterForm extends Component {
     const {username, password, confirmPass, registrationError} = this.state
 
     return (
-      <div className="register-form" >
+      <div className="login-form" >
         <div className="error-message">
           {registrationError &&
             <p>{registrationError}</p>
@@ -86,7 +86,7 @@ export class RegisterForm extends Component {
               type="password">
             </input>
           </div>
-          <div className='registerform-button'>
+          <div className='submit-button'>
             <button onClick={this.handleSubmit} className='button'>Register</button>
           </div>
         </form>

@@ -5,6 +5,7 @@ const morgan = require('morgan')
 const mongoose = require('mongoose')
 
 const registerRouter = require('./controllers/registerRouter')
+const loginRouter = require('./controllers/loginRouter')
 
 const PORT = process.env.port || 8000
 const HOST = '0.0.0.0'
@@ -16,6 +17,7 @@ const app = express()
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use('/register', registerRouter)
+app.use('/login', loginRouter)
 
 const server = http.createServer(app)
 

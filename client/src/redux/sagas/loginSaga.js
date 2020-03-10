@@ -25,7 +25,7 @@ function* requestLogin({payload}) {
   }
 }
 
-function requestLogout({payload}) {
+function* requestLogout({payload}) {
   try {
     window.localStorage.clear()
 
@@ -35,5 +35,5 @@ function requestLogout({payload}) {
   }
 }
 
-export const watchRequestLogin = takeLatest(actons.login().type, requestLogin)
+export const watchRequestLogin = takeLatest(actions.login().type, requestLogin)
 export const watchRequestLogout = takeLatest(actions.logout().type, requestLogout)

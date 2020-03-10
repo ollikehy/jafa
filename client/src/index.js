@@ -14,9 +14,11 @@ import './assets/styles/app.css'
 
 const sagaMiddleware = createSagaMiddleware()
 
+const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 const store = createStore(
   combineReducers({registerReducer, loginReducer}),
-  applyMiddleware(sagaMiddleware)
+  composeEnhancer(applyMiddleware(sagaMiddleware))
 )
 
 sagaMiddleware.run(rootSaga)

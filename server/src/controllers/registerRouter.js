@@ -13,7 +13,7 @@ registerRouter.post('/', async (req, res) => {
 
   const existingUser = await User.find({username: body.username})
 
-  if (existingUser.username) {
+  if (existingUser[0]) {
     return res.status(401).send({error: 'Username is already taken'})
   }
 

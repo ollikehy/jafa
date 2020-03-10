@@ -15,14 +15,20 @@
 .header-title {
   padding:10px;
   margin-right: 75%;
+  text-decoration: none;
+  color: black;
 }
 
 .header-link {
   align-items: flex-end;
-  padding: 10px
+  padding: 10px;
+  text-decoration: none;
+  margin: 0px 5px;
+  background-color: palegoldenrod;
+  color: black;
 }
 
-.register-form {
+.login-form {
   background-color: lightsalmon;
   display: flex;
   flex-direction: column;
@@ -41,10 +47,15 @@ body {
   padding: 0px;
 }
 
-.registerform-button {
+.submit-button {
   text-align: center;
 }
 
 .button {
   padding: 10px;
+}
+
+.logout-button {
+  padding: 5px 10px;
+  align-items: flex-end;
 }

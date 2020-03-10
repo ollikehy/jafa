@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
+import * as actions from '../redux/actions/actions'
 
 export class Header extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ export class Header extends Component {
   }
 
   render() {
-    const loggedIn = this.props.loggedIn
+    const {loggedIn} = this.props
 
     return (
       <div className='header'>
@@ -21,9 +22,16 @@ export class Header extends Component {
           <Link className='header-link' to='/login'>Login</Link>
           <Link className='header-link' to='/register'>Register</Link>
         </div>}
+        {loggedIn && <div>
+          <button className='logout-button' onClick={this.props.logout}>Logout</button>
+        </div>}
       </div>
     )
   }
+}
+
+const mapDispatchToProps = {
+  ...actions
 }
 
 const mapStateToProps = (state) => ({
@@ -32,5 +40,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(Header)
