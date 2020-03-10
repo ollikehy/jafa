@@ -10,7 +10,6 @@ export class LoginForm extends Component {
     this.state = {
       username: '',
       password: '',
-      loginError: ''
     }
   }
 
@@ -32,7 +31,8 @@ export class LoginForm extends Component {
   }
 
   render() {
-    const {username, password, loginError} = this.state
+    const {username, password} = this.state
+    const {loginError} = this.props
 
     return (
       <div className="login-form">
@@ -75,7 +75,11 @@ const mapDispatchToProps = {
   ...actions
 }
 
+const mapStateToProps = (state) => ({
+  loginError: state.loginReducer.loginError
+})
+
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(LoginForm)

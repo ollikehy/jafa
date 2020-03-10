@@ -1,4 +1,4 @@
-import {call, put, takeLatest, select} from 'redux-saga/effects'
+import {call, put, takeLatest, delay} from 'redux-saga/effects'
 import * as actions from '../actions/actions'
 import registerApi from '../apis/registerApi'
 
@@ -22,7 +22,10 @@ function* requestRegister({payload}) {
       yield put(actions.loginSuccess(user))
     }
   } catch (e) {
-    yield put(actions.registerFailure('Could not register.'))
+    const errorMessage = (e.response.data.error)
+    yield put(actions.registerFailure(errorMessage))
+    yield delay(5000)
+    yield put(actions.registerErrorReset())
   }
 }
 

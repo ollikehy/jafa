@@ -16,6 +16,10 @@ const reducer = handleActions(
       ...state,
       loggedIn: null,
       registerError: action.payload
+    }),
+    [actions.registerErrorReset]: (state, action) => ({
+      ...state,
+      registerError: null
     })
   },
   initialState

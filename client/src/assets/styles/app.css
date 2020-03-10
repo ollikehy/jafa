@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   background-color: lightgray;
+  padding: 5px;
 }
 
 .container {
@@ -13,6 +14,7 @@
 }
 
 .header-title {
+  font-size: 16px;
   padding:10px;
   margin-right: 75%;
   text-decoration: none;
@@ -56,6 +58,9 @@ body {
 }
 
 .logout-button {
-  padding: 5px 10px;
+  padding: 10px;
   align-items: flex-end;
+  background-color: palegoldenrod;
+  border-style: none;
+  font: 16px "Times New Roman";
 }

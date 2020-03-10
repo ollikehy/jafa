@@ -12,9 +12,10 @@ loginRouter.post('/', async (req, res) => {
   if (!user) {
     return res.status(401).send({error: 'Username not found'})
   }
+  console.log(body)
 
   if (body) {
-    const passwordCheck = bcrypt.compare(body.password, user.password)
+    const passwordCheck = await bcrypt.compare(body.password, user.password)
     if (!passwordCheck) return res.status(401).send({error: 'Wrong username or password'})
   }
 

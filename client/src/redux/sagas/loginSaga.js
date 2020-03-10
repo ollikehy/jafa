@@ -1,4 +1,4 @@
-import {call, put, takeLatest, select} from 'redux-saga/effects'
+import {call, put, takeLatest, delay} from 'redux-saga/effects'
 import * as actions from '../actions/actions'
 import loginApi from '../apis/loginApi'
 
@@ -21,7 +21,11 @@ function* requestLogin({payload}) {
       yield put(actions.loginSuccess(user))
     }
   } catch (e) {
-    yield put(actions.loginFailure('Could not login.'))
+    const errorMessage = e.response.data.error
+
+    yield put(actions.loginFailure(errorMessage))
+    yield delay(5000)
+    yield put(actions.loginErrorReset())
   }
 }
 
@@ -31,7 +35,7 @@ function* requestLogout({payload}) {
 
     yield put(actions.logoutSuccess(payload === true))
   } catch (e) {
-    yield put(actions.loginFailure('There was an error logging out'))
+    yield put(actions.logoutFailure('There was an error logging out, try again'))
   }
 }
 

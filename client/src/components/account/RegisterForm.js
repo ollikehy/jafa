@@ -10,8 +10,7 @@ export class RegisterForm extends Component {
     this.state = {
       username: '',
       password: '',
-      confirmPass: '',
-      registrationError: ''
+      confirmPass: ''
     }
   }
 
@@ -22,8 +21,8 @@ export class RegisterForm extends Component {
   }
 
   setErrorMessage = () => {
-    this.setState({registrationError: "Your passwords didn't match"})
-    setTimeout(() => {this.setState({registrationError: ''})}, 10000)
+    this.props.registerFailure("Your passwords didn't match")
+    setTimeout(() => {this.props.registerErrorReset()}, 5000)
   }
 
   handleSubmit = (e) => {
@@ -42,13 +41,14 @@ export class RegisterForm extends Component {
   }
 
   render() {
-    const {username, password, confirmPass, registrationError} = this.state
+    const {username, password, confirmPass} = this.state
+    const {registerError} = this.props
 
     return (
       <div className="login-form" >
         <div className="error-message">
-          {registrationError &&
-            <p>{registrationError}</p>
+          {registerError &&
+            <p>{registerError}</p>
           }
         </div>
         <form>
@@ -95,11 +95,15 @@ export class RegisterForm extends Component {
   }
 }
 
+const mapStateToProps = (state) => ({
+  registerError: state.registerReducer.registerError
+})
+
 const mapDispatchToProps = {
   ...actions
 }
 
 export default connect(
-  null,
+  mapStateToProps,
   mapDispatchToProps
 )(RegisterForm)

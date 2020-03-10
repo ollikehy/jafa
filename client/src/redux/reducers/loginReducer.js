@@ -18,6 +18,11 @@ const reducer = handleActions(
       ...state,
       loginError: action.payload
     }),
+    [actions.loginErrorReset]: (state, action) => ({
+      ...state,
+      loginError: null,
+      logoutError: null
+    }),
     [actions.logoutSuccess]: (state, action) => ({
       ...state,
       loggedIn: null,
@@ -25,7 +30,7 @@ const reducer = handleActions(
     }),
     [actions.logoutFailure]: (state, action) => ({
       ...state,
-      logoutFailure: action.payload
+      logoutError: action.payload
     })
   },
   initialState

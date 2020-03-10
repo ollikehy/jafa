@@ -15,4 +15,5 @@
 | 21.2.2020 | 3h   | Thinking on how to do admin privilidges and configuring issue with mongodb |
 |           | 3h   | Implementing logging in |
 | 10.3.2020 | 2,5h | Fixing issues with login functionality and adding logout |
-| Sum       | 29h | Cumulative sum of hours |
+|           | 2h   | Preliminary work for user profile, making error messages actually do something |
+| Sum       | 31h | Cumulative sum of hours |

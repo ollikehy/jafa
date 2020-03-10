@@ -4,6 +4,7 @@ import Header from './Header'
 import App from './App'
 import Login from './account/Login'
 import Register from './account/Register'
+import UserProfile from './user/UserProfile'
 import {connect} from 'react-redux'
 
 export class Routes extends Component {
@@ -30,6 +31,9 @@ export class Routes extends Component {
             </Route>
             <Route path='/register' render={() =>
               <Register />} />
+            <Route path='/profile'>
+              {loggedIn ? <UserProfile /> : <Redirect to='/login' />}
+            </Route>
           </Switch>
         </div>
       </Router>
