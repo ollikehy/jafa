@@ -1,24 +1,41 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import * as actions from '../../redux/actions/actions'
 
 export class UserProfile extends Component {
+  constructor(props) {
+    super(props)
+
+    const username = this.props.loggedIn.username
+    this.props.fetchUser(username)
+
+    this.state = {
+      user: null
+    }
+  }
 
   render() {
-    const {loggedIn} = this.props
+    const {user} = this.props
 
     return (
       <div className='container'>
-        <p>Hello {loggedIn.username}</p>
+        {user &&
+        <p>Hello {user.username}</p>}
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
+  user: state.userReducer.user,
   loggedIn: state.loginReducer.loggedIn
 })
 
+const mapDispatchToProps = {
+  ...actions
+}
+
 export default connect(
   mapStateToProps,
-  null
+  mapDispatchToProps
 )(UserProfile)

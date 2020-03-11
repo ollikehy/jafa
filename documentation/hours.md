@@ -17,5 +17,6 @@
 | 10.3.2020 | 2,5h | Fixing issues with login functionality and adding logout |
 |           | 2h   | Preliminary work for user profile, making error messages actually do something |
 | 11.3.2020 | 1h   | Added validators to backend and fixed issue with JSON parsing |
-|           | 1,5h   | Debugging/fixing issue with localStorage and props and learning flexbox stuff |
-| Sum       | 33,5h | Cumulative sum of hours |
+|           | 1,5h | Debugging/fixing issue with localStorage and props and learning flexbox stuff |
+|           | 1,5h | Added user data fetching for userprofile and did redux stuff for user handling |
+| Sum       | 35h | Cumulative sum of hours |

@@ -7,6 +7,7 @@ const {celebrateMiddleware} = require('./utils/middleware')
 
 const registerRouter = require('./controllers/registerRouter')
 const loginRouter = require('./controllers/loginRouter')
+const userRouter = require('./controllers/userRouter')
 
 const PORT = process.env.port || 8000
 const HOST = '0.0.0.0'
@@ -19,6 +20,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+app.use('/user', userRouter)
 
 app.use(celebrateMiddleware)
 
