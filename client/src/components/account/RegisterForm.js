@@ -48,8 +48,7 @@ export class RegisterForm extends Component {
       <div className="login-form" >
         <div className="error-message">
           {registerError &&
-            <p>{registerError}</p>
-          }
+            <p>{registerError}</p>}
         </div>
         <form>
           <div>

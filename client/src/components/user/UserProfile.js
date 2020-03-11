@@ -4,10 +4,11 @@ import {connect} from 'react-redux'
 export class UserProfile extends Component {
 
   render() {
-    const user = JSON.parse(this.props.loggedIn)
+    const loggedIn = JSON.parse(JSON.stringify(this.props.loggedIn))
+
     return (
       <div className='container'>
-        <p>Hello {user.username}</p>
+        <p>Hello {loggedIn.username}</p>
       </div>
     )
   }
