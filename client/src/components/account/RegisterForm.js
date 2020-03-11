@@ -22,7 +22,7 @@ export class RegisterForm extends Component {
 
   setErrorMessage = () => {
     this.props.registerFailure("Your passwords didn't match")
-    setTimeout(() => {this.props.registerErrorReset()}, 5000)
+    setTimeout(() => {this.props.registerErrorReset()}, 10000)
   }
 
   handleSubmit = (e) => {

@@ -16,4 +16,5 @@
 |           | 3h   | Implementing logging in |
 | 10.3.2020 | 2,5h | Fixing issues with login functionality and adding logout |
 |           | 2h   | Preliminary work for user profile, making error messages actually do something |
-| Sum       | 31h | Cumulative sum of hours |
+| 11.3.2020 | 1h   | Added validators to backend and fixed issue with JSON parsing |
+| Sum       | 32h | Cumulative sum of hours |

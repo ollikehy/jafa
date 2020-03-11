@@ -3,6 +3,7 @@ const http = require('http')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const mongoose = require('mongoose')
+const {celebrateMiddleware} = require('./utils/middleware')
 
 const registerRouter = require('./controllers/registerRouter')
 const loginRouter = require('./controllers/loginRouter')
@@ -18,6 +19,8 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 app.use('/register', registerRouter)
 app.use('/login', loginRouter)
+
+app.use(celebrateMiddleware)
 
 const server = http.createServer(app)
 

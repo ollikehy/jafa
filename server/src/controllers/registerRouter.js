@@ -2,13 +2,13 @@ const jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs')
 const registerRouter = require('express-promise-router')()
 const User = require('../models/User')
-const registerValidator = null //ToDo
+const {registrationValidator} = require('../utils/validators')
 
 registerRouter.get('/', async (req, res) => {
   res.status(204).send()
 })
 
-registerRouter.post('/', async (req, res) => {
+registerRouter.post('/', registrationValidator, async (req, res) => {
   const body = req.body
 
   const existingUser = await User.find({username: body.username})
