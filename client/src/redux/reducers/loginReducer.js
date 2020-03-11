@@ -2,7 +2,7 @@ import {handleActions} from 'redux-actions'
 import * as actions from '../actions/actions'
 
 const initialState = {
-  loggedIn: localStorage.loggedUser,
+  loggedIn: JSON.parse(localStorage.loggedUser),
   loginError: null,
   logoutError: null
 }

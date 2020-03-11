@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 export class UserProfile extends Component {
 
   render() {
-    const loggedIn = JSON.parse(JSON.stringify(this.props.loggedIn))
+    const {loggedIn} = this.props
 
     return (
       <div className='container'>

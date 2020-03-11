@@ -10,13 +10,15 @@ export class Header extends Component {
 
     return (
       <div className='header'>
-        <Link className='header-title' to='/'>Just Another Fitness App</Link>
+        <div className='header-title'>
+          <Link className='header-title-text' to='/'>Just Another Fitness App</Link>
+        </div>
         {logoutError && window.alert(logoutError)}
-        {!loggedIn && <div>
+        {!loggedIn && <div className='header-menu'>
           <Link className='header-link' to='/login'>Login</Link>
           <Link className='header-link' to='/register'>Register</Link>
         </div>}
-        {loggedIn && <div>
+        {loggedIn && <div className='header-menu'>
           <Link className='header-link' to='/profile'>Profile</Link>
           <button className='logout-button' onClick={this.props.logout}>Logout</button>
         </div>}

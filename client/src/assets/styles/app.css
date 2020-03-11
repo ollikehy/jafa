@@ -1,8 +1,12 @@
 .header {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   background-color: lightgray;
   padding: 5px;
+}
+
+.header-menu {
+  display: flex;
 }
 
 .container {
@@ -14,9 +18,12 @@
 }
 
 .header-title {
+  display: flex;
+}
+
+.header-title-text {
   font-size: 16px;
   padding:10px;
-  margin-right: 75%;
   text-decoration: none;
   color: black;
 }
@@ -58,9 +65,10 @@ body {
 }
 
 .logout-button {
-  padding: 10px;
+  padding: 9px 10px;
   align-items: flex-end;
   background-color: palegoldenrod;
   border-style: none;
   font: 16px "Times New Roman";
+  cursor: pointer;
 }
