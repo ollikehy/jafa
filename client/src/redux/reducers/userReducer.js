@@ -4,7 +4,9 @@ import * as actions from '../actions/actions'
 const initialState = {
   users: null,
   user: null,
-  userFetchError: null
+  userFetchError: null,
+  updateSuccess: null,
+  updateFailure: null
 }
 
 const reducer = handleActions(
@@ -13,14 +15,25 @@ const reducer = handleActions(
       ...state,
       user: action.payload
     }),
-    [actions.fetchUserError]: (state, action) => ({
+    [actions.fetchUserFailure]: (state, action) => ({
       ...state,
       userFetchError: action.payload
     }),
-    [actions.fetchUserErrorReset]: (state, action) => ({
+    [actions.userErrorReset]: (state, action) => ({
       ...state,
-      userFetchError: null
-    })
+      userFetchError: null,
+      updateSuccess: null,
+      updateFailure: null
+    }),
+    [actions.updateUserSuccess]: (state, action) => ({
+      ...state,
+      user: action.payload.user,
+      updateSuccess: action.payload.message
+    }),
+    [actions.updateUserFailure]: (state, action) => ({
+      ...state,
+      updateFailure: action.payload
+    }),
   },
   initialState
 )

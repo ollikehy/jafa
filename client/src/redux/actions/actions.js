@@ -16,5 +16,9 @@ export const logoutFailure = createAction('LOGOUT_FAILURE')
 
 export const fetchUser = createAction('FETCH_USER', (username) => ({username}))
 export const fetchUserSuccess = createAction('FETCH_USER_SUCCESS')
-export const fetchUserError = createAction('FETCH_USER_ERROR')
-export const fetchUserErrorReset = createAction('FETCH_USER_ERROR_RESET')
+export const fetchUserFailure = createAction('FETCH_USER_ERROR')
+export const userErrorReset = createAction('USER_ERROR_RESET')
+
+export const updateUser = createAction('UPDATE_USER', (username, height, weight) => ({username, height, weight}))
+export const updateUserSuccess = createAction('UPDATE_USER_SUCCESS')
+export const updateUserFailure = createAction('UPDATE_USER_FAILURE')

@@ -8,6 +8,7 @@ export default function* rootSaga() {
     registerSaga.watchRequestRegister,
     loginSaga.watchRequestLogin,
     loginSaga.watchRequestLogout,
-    userSaga.watchFetchUser
+    userSaga.watchFetchUser,
+    userSaga.watchUpdateUser
   ])
 }

@@ -20,4 +20,28 @@ userRouter.get('/', async (req, res) => {
   res.status(200).send({user})
 })
 
+userRouter.post('/', async (req, res) => {
+  const body = req.body
+
+  const update = {
+    height: body.height ? body.height : user.height,
+    weight: body.weight ? body.weight : user.weight
+  }
+
+  const updatedUser = await User.findOneAndUpdate({username: body.username}, update, {new: true})
+
+  if (!updatedUser) {
+    return res.status(500).send({error: 'User not found'})
+  }
+
+  const user = {
+    username: updatedUser.username,
+    weight: updatedUser.weight,
+    height: updatedUser.height,
+    admin: updatedUser.admin
+  }
+
+  res.status(200).send({user: user, message: 'User updated succesfully'})
+})
+
 module.exports = userRouter
