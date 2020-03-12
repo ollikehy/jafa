@@ -10,7 +10,9 @@
 }
 
 .container {
-  padding: 0px 10px;
+  padding: 20px;
+  margin: 5% 10%;
+  background-color: aliceblue;
 }
 
 .error-message {
@@ -71,4 +73,20 @@ body {
   border-style: none;
   font: 16px "Times New Roman";
   cursor: pointer;
+}
+
+.userprofile-title {
+  font-size: 25px;
+  text-align: center;
+}
+
+.userprofile-row {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.userprofile-text {
+  font-size: 20px;
+  padding: 10px;
 }

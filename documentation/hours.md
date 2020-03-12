@@ -19,4 +19,5 @@
 | 11.3.2020 | 1h   | Added validators to backend and fixed issue with JSON parsing |
 |           | 1,5h | Debugging/fixing issue with localStorage and props and learning flexbox stuff |
 |           | 1,5h | Added user data fetching for userprofile and did redux stuff for user handling |
+| 12.3.2020 | 1,5h | Added icons and styling for profile-page and configed webpack |
 | Sum       | 35h | Cumulative sum of hours |

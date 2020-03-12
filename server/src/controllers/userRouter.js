@@ -13,7 +13,8 @@ userRouter.get('/', async (req, res) => {
   const user = {
     username: userData[0].username,
     weight: userData[0].weight,
-    height: userData[0].height
+    height: userData[0].height,
+    admin: userData[0].admin
   }
 
   res.status(200).send({user})
