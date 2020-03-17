@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import FrontPage from './FrontPage'
+import FrontPage from './frontpage/FrontPage'
 
 class App extends Component {
   render() {

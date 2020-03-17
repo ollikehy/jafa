@@ -1,0 +1,24 @@
+.dropdown {
+
+  &-wrapper {
+    background-color: darkorange;
+    z-index: 10;
+  }
+
+  &-header {
+    padding: 11px 22px;
+    position: relative;
+  }
+
+  &-content {
+    background-color: darkorange;
+    position: absolute;
+  }
+
+  &-item {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 10px;
+  }
+
+}

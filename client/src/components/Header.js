@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import * as actions from '../redux/actions/actions'
 
+import ExerciseMenu from './ExerciseMenu'
+
 export class Header extends Component {
 
   render() {
@@ -19,6 +21,7 @@ export class Header extends Component {
           <Link className='header-link' to='/register'>Register</Link>
         </div>}
         {loggedIn && <div className='header-menu'>
+          <ExerciseMenu />
           <Link className='header-link' to='/profile'>Profile</Link>
           <button className='header-logout' onClick={this.props.logout}>Logout</button>
         </div>}

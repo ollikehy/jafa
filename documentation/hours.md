@@ -23,4 +23,5 @@
 |           | 3h   | Added ability to update user information, still WIP |
 | 17.3.2020 | 2h   | Converted all css to scss and changed node version to 8 in docker |
 |           | 0,5h | BMI calculation and validator for user information updating |
-| Sum       | 40,5h | Cumulative sum of hours |
+|           | 2h   | Added dropdown menu for exercises, did some desinging and created model for exercises |
+| Sum       | 42,5h | Cumulative sum of hours |

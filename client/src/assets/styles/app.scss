@@ -1,6 +1,7 @@
 @import 'components/header';
 @import 'components/userprofile';
 @import 'components/accountform';
+@import 'components/dropdownmenu';
 
 body {
   margin: 0px;
@@ -24,4 +25,9 @@ body {
 
 .error-message {
   background-color: lightcoral;
+}
+
+.frontpage-title {
+  text-align: center;
+  font-size: 25px;
 }

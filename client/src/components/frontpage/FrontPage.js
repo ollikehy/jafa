@@ -1,10 +1,11 @@
 import React, {Component} from 'react'
 
 class FrontPage extends Component {
+
   render() {
     return (
       <div>
-        <p>Front page</p>
+        <p className='frontpage-title'>Welcome to JAFA</p>
       </div>
     )
   }
