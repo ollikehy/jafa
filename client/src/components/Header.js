@@ -20,7 +20,7 @@ export class Header extends Component {
         </div>}
         {loggedIn && <div className='header-menu'>
           <Link className='header-link' to='/profile'>Profile</Link>
-          <button className='logout-button' onClick={this.props.logout}>Logout</button>
+          <button className='header-logout' onClick={this.props.logout}>Logout</button>
         </div>}
       </div>
     )

@@ -35,7 +35,7 @@ export class LoginForm extends Component {
     const {loginError} = this.props
 
     return (
-      <div className="login-form">
+      <div className="accountform">
         <div className="error-message">
           {loginError &&
             <p>{loginError}</p>}
@@ -45,7 +45,7 @@ export class LoginForm extends Component {
             <input
               id="username"
               name="username"
-              className="input-field"
+              className="accountform-input"
               required value={username}
               onChange={this.handleChange}
               placeholder="Username">
@@ -55,7 +55,7 @@ export class LoginForm extends Component {
             <input
               id="password"
               name="password"
-              className="input-field"
+              className="accountform-input"
               required value={password}
               onChange={this.handleChange}
               type="password"

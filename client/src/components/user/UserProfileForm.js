@@ -48,7 +48,7 @@ export class UserProfileForm extends Component {
             <input
               id="height"
               name="height"
-              className="input-field"
+              className="userprofile-form-input"
               value={height}
               onChange={this.handleChange}
               type="number"
@@ -59,7 +59,7 @@ export class UserProfileForm extends Component {
             <input
               id="weight"
               name="weight"
-              className="input-field"
+              className="userprofile-form-input"
               value={weight}
               onChange={this.handleChange}
               type="number"

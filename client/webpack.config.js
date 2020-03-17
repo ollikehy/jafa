@@ -27,8 +27,8 @@ const config = (env, arg) => {
           },
         },
         {
-          test: /\.css$/,
-          loaders: ['style-loader', 'css-loader'],
+          test: /\.s[ac]ss$/i,
+          loaders: ['style-loader', 'css-loader', 'sass-loader'],
         },
         {
           test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,

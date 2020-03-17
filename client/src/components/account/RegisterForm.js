@@ -45,7 +45,7 @@ export class RegisterForm extends Component {
     const {registerError} = this.props
 
     return (
-      <div className="login-form" >
+      <div className="accountform" >
         <div className="error-message">
           {registerError &&
             <p>{registerError}</p>}
@@ -55,8 +55,7 @@ export class RegisterForm extends Component {
             <input
               id="username"
               name="username"
-              minLength='4'
-              className="input-field"
+              className="accountform-input"
               required value={username}
               onChange={this.handleChange}
               placeholder="Username">
@@ -66,8 +65,7 @@ export class RegisterForm extends Component {
             <input
               id="password"
               name="password"
-              minLength='8'
-              className="input-field"
+              className="accountform-input"
               required value={password}
               onChange={this.handleChange}
               placeholder="Password"
@@ -78,7 +76,7 @@ export class RegisterForm extends Component {
             <input
               id="confirmPass"
               name="confirmpass"
-              className="input-field"
+              className="accountform-input"
               required value={confirmPass}
               onChange={this.handleChange}
               placeholder="Confirm password"

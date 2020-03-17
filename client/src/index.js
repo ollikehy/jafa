@@ -11,7 +11,7 @@ import loginReducer from './redux/reducers/loginReducer'
 import userReducer from './redux/reducers/userReducer'
 import rootSaga from './redux/sagas/sagas'
 
-import './assets/styles/app.css'
+import './assets/styles/app.scss'
 
 const sagaMiddleware = createSagaMiddleware()
 

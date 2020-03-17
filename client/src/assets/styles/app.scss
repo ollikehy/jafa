@@ -1,0 +1,27 @@
+@import 'components/header';
+@import 'components/userprofile';
+@import 'components/accountform';
+
+body {
+  margin: 0px;
+  background-color: lightyellow;
+  padding: 0px;
+}
+
+.container {
+  padding: 20px;
+  margin: 5% 10%;
+  background-color: aliceblue;
+}
+
+.button {
+  padding: 10px;
+}
+
+.submit-button {
+  text-align: center;
+}
+
+.error-message {
+  background-color: lightcoral;
+}

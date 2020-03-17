@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: lightgray;
+  padding: 5px;
+
+  &-menu {
+    display: flex;
+  }
+
+  &-title {
+    display: flex;
+
+    &-text {
+      font-size: 16px;
+      padding: 10px;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
+  &-link {
+    align-items: flex-end;
+    padding: 10px;
+    text-decoration: none;
+    margin: 0px 5px;
+    background-color: palegoldenrod;
+    color: black;
+  }
+
+  &-logout {
+    padding: 9px 10px;
+    align-items: flex-end;
+    background-color: palegoldenrod;
+    border-style: none;
+    font: 16px "Times New Roman";
+    cursor: pointer;
+  }
+}

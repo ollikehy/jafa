@@ -1,4 +1,4 @@
-FROM node:latest AS development
+FROM node:8.17 AS development
 
 WORKDIR /app
 

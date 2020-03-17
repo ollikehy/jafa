@@ -21,4 +21,5 @@
 |           | 1,5h | Added user data fetching for userprofile and did redux stuff for user handling |
 | 12.3.2020 | 1,5h | Added icons and styling for profile-page and configed webpack |
 |           | 3h   | Added ability to update user information, still WIP |
+| 17.3.2020 | 2h   | Converted all css to scss and changed node version to 8 in docker |
 | Sum       | 38h | Cumulative sum of hours |
