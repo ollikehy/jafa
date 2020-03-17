@@ -1,5 +1,6 @@
 const userRouter = require('express-promise-router')()
 const User = require('../models/User')
+const {userValidator} = require('../utils/validators')
 
 userRouter.get('/', async (req, res) => {
   const query = req.query
@@ -20,7 +21,7 @@ userRouter.get('/', async (req, res) => {
   res.status(200).send({user})
 })
 
-userRouter.post('/', async (req, res) => {
+userRouter.post('/', userValidator, async (req, res) => {
   const body = req.body
 
   const update = {

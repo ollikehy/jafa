@@ -61,6 +61,12 @@ export class UserProfile extends Component {
                 {user.weight ? user.weight : 'not defined'}
               </span>
             </div>
+            {user.weight && user.height &&
+              <div className='userprofile-row'>
+                <span className='userprofile-text'>
+                  {(user.weight / Math.pow(user.height / 100, 2)).toFixed(2)}
+                </span>
+              </div>}
           </div>}
         <div>
           <button className='userprofile-button' onClick={this.toggleEditForm}>Edit your information</button>

@@ -14,9 +14,18 @@ const loginValidator = celebrate({
   })
 })
 
+const userValidator = celebrate({
+  body: Joi.object().keys({
+    username: Joi.string().required(),
+    weight: Joi.number(),
+    height: Joi.number()
+  })
+})
+
 const validators = {
   registrationValidator,
-  loginValidator
+  loginValidator,
+  userValidator
 }
 
 module.exports = validators
