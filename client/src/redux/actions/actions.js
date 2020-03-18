@@ -23,3 +23,7 @@ export const userErrorReset = createAction('USER_ERROR_RESET')
 export const updateUser = createAction('UPDATE_USER', (username, height, weight) => ({username, height, weight}))
 export const updateUserSuccess = createAction('UPDATE_USER_SUCCESS')
 export const updateUserFailure = createAction('UPDATE_USER_FAILURE')
+
+export const createExercise = createAction('CREATE_EXERCISE', (name, username, weight, distance, timed) => ({name, username, weight, distance, timed}))
+export const createExerciseSuccess = createAction('CREATE_EXERCISE_SUCCESS')
+export const createExerciseFailure = createAction('CREATE_EXERCISE_FAILURE')

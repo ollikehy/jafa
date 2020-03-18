@@ -20,7 +20,7 @@ export class UserProfile extends Component {
 
   componentDidMount = () => {
     const username = this.props.loggedIn.username
-    this.props.fetchUser(username)
+    if (!this.props.user) this.props.fetchUser(username)
   }
 
   toggleEditForm = (e) => {

@@ -28,8 +28,12 @@ export class ExerciseForm extends Component {
     })
   }
 
-  onSubmit = () => {
-    //Do stuff
+  handleSubmit = (e) => {
+    e.preventDefault()
+
+    const {name, weight, distance, timed} = this.state
+    const {username} = this.props.user
+    this.props.createExercise(name, username, weight, distance, timed)
   }
 
   render() {
@@ -46,6 +50,7 @@ export class ExerciseForm extends Component {
             <div>
               <input
                 id='name'
+                required
                 placeholder='Name of the exercise'
                 onChange={this.handleChange}>
               </input>
@@ -74,7 +79,7 @@ export class ExerciseForm extends Component {
               </input>
               <label htmlFor='timed'>Timed exercise</label>
             </div>
-            <button onClick={this.onSubmit}>
+            <button onClick={this.handleSubmit}>
               {user && user.admin ? `Add ` : `Suggest `} exercise
             </button>
           </form>
