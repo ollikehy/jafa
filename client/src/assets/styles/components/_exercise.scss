@@ -1,5 +1,8 @@
 .exercise {
   &-form {
+    display: flex;
+    justify-content: center;
+
     &-title {
       font-size: 20px;
       text-align: center;

@@ -14,7 +14,8 @@ function* requestLogin({payload}) {
     if (response.status === 200) {
       const user = {
         token: response.data.token,
-        username: response.data.username
+        username: response.data.username,
+        admin: response.data.admin
       }
 
       window.localStorage.setItem('loggedUser', JSON.stringify(user))

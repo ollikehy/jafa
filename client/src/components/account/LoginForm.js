@@ -30,6 +30,12 @@ export class LoginForm extends Component {
     })
   }
 
+  componentDidMount = () => {
+    if (this.props.loginError) {
+      this.props.loginErrorReset()
+    }
+  }
+
   render() {
     const {username, password} = this.state
     const {loginError} = this.props
