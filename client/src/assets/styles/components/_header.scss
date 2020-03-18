@@ -22,8 +22,7 @@
   }
 
   &-link {
-    align-items: flex-end;
-    padding: 10px;
+    padding: 11px 10px;
     text-decoration: none;
     margin: 0px 5px;
     background-color: palegoldenrod;
@@ -32,7 +31,7 @@
 
   &-logout {
     padding: 9px 10px;
-    align-items: flex-end;
+    margin: 0px 5px;
     background-color: palegoldenrod;
     border-style: none;
     font: 16px "Times New Roman";

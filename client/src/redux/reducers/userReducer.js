@@ -15,6 +15,10 @@ const reducer = handleActions(
       ...state,
       user: action.payload
     }),
+    [actions.removeUser]: (state, action) => ({
+      ...state,
+      user: null
+    }),
     [actions.fetchUserFailure]: (state, action) => ({
       ...state,
       userFetchError: action.payload

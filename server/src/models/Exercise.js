@@ -6,6 +6,15 @@ const schema = new mongoose.Schema({
     required: true,
     unique: true
   },
+  weightExercise: {
+    type: Boolean
+  },
+  distanceExercise: {
+    type: Boolean
+  },
+  timedExercise: {
+    type: Boolean
+  },
   accepted: {
     type: Boolean,
   }

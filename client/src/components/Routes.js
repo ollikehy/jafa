@@ -1,11 +1,14 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
-import Header from './Header'
+import {connect} from 'react-redux'
+
 import App from './App'
+import Header from './app/Header'
 import Login from './account/Login'
 import Register from './account/Register'
+import Exercises from './exercise/Exercises'
+import ExerciseForm from './exercise/ExerciseForm'
 import UserProfile from './user/UserProfile'
-import {connect} from 'react-redux'
 
 export class Routes extends Component {
   constructor(props) {
@@ -33,6 +36,12 @@ export class Routes extends Component {
               <Register />} />
             <Route path='/profile'>
               {loggedIn ? <UserProfile /> : <Redirect to='/login' />}
+            </Route>
+            <Route exact path='/exercise'>
+              <Exercises />
+            </Route>
+            <Route path='/exercise/new'>
+              <ExerciseForm />
             </Route>
           </Switch>
         </div>

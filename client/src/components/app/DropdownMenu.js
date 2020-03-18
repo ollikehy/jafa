@@ -1,12 +1,17 @@
 import React, {Component} from 'react'
+import enhanceWithClickOutside from 'react-click-outside'
 
-export class ExerciseMenu extends Component {
+export class DropdownMenu extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
       listOpen: false
     }
+  }
+
+  handleClickOutside = () => {
+    this.toggleList()
   }
 
   toggleList = () => {
@@ -24,12 +29,11 @@ export class ExerciseMenu extends Component {
           Exercises
         </div>
         {listOpen && <div className='dropdown-content'>
-          <p className='dropdown-item'>All exercises</p>
-          <p className='dropdown-item'>Add exercise</p>
+          <p className='dropdown-item'>Dropdown item</p>
         </div>}
       </div>
     )
   }
 }
 
-export default ExerciseMenu
+export default enhanceWithClickOutside(DropdownMenu)

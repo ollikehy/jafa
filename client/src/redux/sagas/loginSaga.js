@@ -19,6 +19,7 @@ function* requestLogin({payload}) {
 
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
       yield put(actions.loginSuccess(user))
+      yield put(actions.fetchUser(user.username))
     }
   } catch (e) {
     const errorMessage = e.response.data.error
@@ -34,6 +35,7 @@ function* requestLogout({payload}) {
     window.localStorage.clear()
 
     yield put(actions.logoutSuccess(payload === true))
+    yield put(actions.removeUser())
   } catch (e) {
     yield put(actions.logoutFailure('There was an error logging out, try again'))
   }

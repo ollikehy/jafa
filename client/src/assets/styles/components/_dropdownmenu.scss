@@ -1,24 +1,23 @@
 .dropdown {
 
   &-wrapper {
-    background-color: darkorange;
-    z-index: 10;
+    background-color: palegoldenrod;
   }
 
   &-header {
     padding: 11px 22px;
     position: relative;
+    cursor: pointer;
   }
 
   &-content {
-    background-color: darkorange;
+    background-color: palegoldenrod;
     position: absolute;
   }
 
   &-item {
-    white-space: nowrap;
-    text-overflow: ellipsis;
     padding: 10px;
+    cursor: pointer;
   }
 
 }

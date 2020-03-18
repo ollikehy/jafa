@@ -15,6 +15,7 @@ export const logoutSuccess = createAction('LOGOUT_SUCCESS')
 export const logoutFailure = createAction('LOGOUT_FAILURE')
 
 export const fetchUser = createAction('FETCH_USER', (username) => ({username}))
+export const removeUser = createAction('REMOVE_USER')
 export const fetchUserSuccess = createAction('FETCH_USER_SUCCESS')
 export const fetchUserFailure = createAction('FETCH_USER_ERROR')
 export const userErrorReset = createAction('USER_ERROR_RESET')

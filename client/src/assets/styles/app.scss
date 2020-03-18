@@ -2,6 +2,7 @@
 @import 'components/userprofile';
 @import 'components/accountform';
 @import 'components/dropdownmenu';
+@import 'components/exercise';
 
 body {
   margin: 0px;
@@ -21,6 +22,15 @@ body {
 
 .submit-button {
   text-align: center;
+}
+
+.linkbutton {
+  align-items: flex-end;
+  padding: 10px;
+  text-decoration: none;
+  background-color: palegoldenrod;
+  color: black;
+  text-decoration: none;
 }
 
 .error-message {
