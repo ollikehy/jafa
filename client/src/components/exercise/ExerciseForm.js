@@ -15,6 +15,12 @@ export class ExerciseForm extends Component {
     }
   }
 
+  componentDidMount = () => {
+    if (!this.props.user) {
+      this.props.fetchUser()
+    }
+  }
+
   handleChange = (e) => {
     e.preventDefault()
     this.setState({
@@ -90,7 +96,7 @@ export class ExerciseForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.loginReducer.loggedIn
+  user: state.userReducer.user
 })
 
 const mapDispatchToProps = {

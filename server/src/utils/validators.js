@@ -22,10 +22,21 @@ const userValidator = celebrate({
   })
 })
 
+const exerciseValidator = celebrate({
+  body: Joi.object().keys({
+    name: Joi.string().required().min(4),
+    weightExercise: Joi.boolean(),
+    distanceExercise: Joi.boolean(),
+    timedExercise: Joi.boolean(),
+    accepted: Joi.boolean().required()
+  })
+})
+
 const validators = {
   registrationValidator,
   loginValidator,
-  userValidator
+  userValidator,
+  exerciseValidator
 }
 
 module.exports = validators

@@ -20,14 +20,14 @@ function* requestLogin({payload}) {
 
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
       yield put(actions.loginSuccess(user))
-      yield put(actions.fetchUser(user.username))
+      yield put(actions.fetchUser())
     }
   } catch (e) {
     const errorMessage = e.response.data.error
 
     yield put(actions.loginFailure(errorMessage))
     yield delay(5000)
-    yield put(actions.loginErrorReset())
+    yield put(actions.loginReducerReset())
   }
 }
 
@@ -44,3 +44,5 @@ function* requestLogout({payload}) {
 
 export const watchRequestLogin = takeLatest(actions.login().type, requestLogin)
 export const watchRequestLogout = takeLatest(actions.logout().type, requestLogout)
+
+export const getCurrentUser = state => state.loginReducer.loggedIn

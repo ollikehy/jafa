@@ -29,7 +29,7 @@ app.use(celebrateMiddleware)
 
 const server = http.createServer(app)
 
-const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0-st9gc.gcp.mongodb.net/test?retryWrites=true&w=majority`
+const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0-st9gc.gcp.mongodb.net/jafa?retryWrites=true&w=majority`
 
 mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
   .then(() => {

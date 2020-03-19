@@ -25,7 +25,7 @@ function* requestRegister({payload}) {
     const errorMessage = (e.response.data.error)
     yield put(actions.registerFailure(errorMessage))
     yield delay(5000)
-    yield put(actions.registerErrorReset())
+    yield put(actions.registerReducerReset())
   }
 }
 

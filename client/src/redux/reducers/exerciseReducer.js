@@ -2,8 +2,8 @@ import {handleActions} from 'redux-actions'
 import * as actions from '../actions/actions'
 
 const initialState = {
-  exerciseError: '',
-  exerciseSuccess: '',
+  exerciseError: null,
+  exerciseSuccess: null,
   exercises: null
 }
 
@@ -16,6 +16,15 @@ const reducer = handleActions(
     [actions.createExerciseFailure]: (state,action) => ({
       ...state,
       exerciseError: action.payload
+    }),
+    [actions.exerciseReducerReset]: (state, action) => ({
+      ...state,
+      exerciseError: null,
+      exerciseSuccess: null
+    }),
+    [actions.fetchExercises]: (state, action) => ({
+      ...state,
+      exercises: action.payload
     })
   }, initialState
 )

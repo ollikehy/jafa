@@ -26,4 +26,5 @@
 |           | 2h   | Added dropdown menu for exercises, did some desinging and created model for exercises |
 | 18.3.2020 | 5h   | Started work on exercises. Some refactoring and design decisions (not using dropdown for desktop). JwtMiddleware config.|
 | 19.3.2020 | 1,5h | Updating documentation and doing database-schema planning |
-| Sum       | 47,5h | Cumulative sum of hours |
+|           | 1,5h | Refactoring and work on adding exercises |
+| Sum       | 50,5h | Cumulative sum of hours |

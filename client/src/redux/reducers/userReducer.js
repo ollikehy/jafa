@@ -23,12 +23,6 @@ const reducer = handleActions(
       ...state,
       userFetchError: action.payload
     }),
-    [actions.userErrorReset]: (state, action) => ({
-      ...state,
-      userFetchError: null,
-      updateSuccess: null,
-      updateFailure: null
-    }),
     [actions.updateUserSuccess]: (state, action) => ({
       ...state,
       user: action.payload.user,
@@ -37,6 +31,12 @@ const reducer = handleActions(
     [actions.updateUserFailure]: (state, action) => ({
       ...state,
       updateFailure: action.payload
+    }),
+    [actions.userReducerReset]: (state, action) => ({
+      ...state,
+      userFetchError: null,
+      updateSuccess: null,
+      updateFailure: null
     }),
   },
   initialState

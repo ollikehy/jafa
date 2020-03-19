@@ -1,8 +1,9 @@
 const userRouter = require('express-promise-router')()
 const User = require('../models/User')
 const {userValidator} = require('../utils/validators')
+const {jwtMiddleware} = require('../utils/middleware')
 
-userRouter.get('/', async (req, res) => {
+userRouter.get('/', jwtMiddleware, async (req, res) => {
   const query = req.query
 
   const userData = await User.find({username: query.username})
@@ -21,7 +22,7 @@ userRouter.get('/', async (req, res) => {
   res.status(200).send({user})
 })
 
-userRouter.post('/', userValidator, async (req, res) => {
+userRouter.post('/', jwtMiddleware, userValidator, async (req, res) => {
   const body = req.body
 
   const update = {
