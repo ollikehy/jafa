@@ -2,28 +2,31 @@
 
 ### Requirements
 
-This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use. 
+This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use. Navigation should be easy so that the application can be used efficiently without having to do any additional navigation than is necessary.
 
 [User stories](https://github.com/ollikehy/jafa/blob/master/documentation/userstories.md)
 
-### ToDo
+### To do:
 
 #### In the near future
 
-- [ ] Database schemas with attributes
+- [x] Database schemas with attributes
 - [x] Registration
+- [x] Adding values for the user
 - [ ] Adding exercises
 - [ ] Adding workouts
 - [ ] Adding exerciseSets to workouts
-- [ ] Adding values for the user
 
 #### In the distant future
 
-- [ ] Styles
 - [ ] Heroku
-- [ ] Graphs for progress (BMI, bodyweight, weight training?)
 - [ ] Testing
-* Whatever comes to mind
+- [ ] Styles
+- [ ] Graphs for progress (BMI, bodyweight, weight training?)
+
+### Different types of exercises
+
+My reasoning behind exercises is that there are essentially three different types of exercises: weight exercises (squat), timed exercises (planking), timed + distance exercises (jogging). I decided not to include purely distance based exercises since they're mostly track and field related instead of personal exercising.
 
 ### Database schema
 
