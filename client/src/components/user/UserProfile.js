@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import * as actions from '../../redux/actions/actions'
 
 import UserProfileForm from './UserProfileForm'
+import Message from '../app/Message'
 
 import Weight from '../../assets/images/weight-50.png'
 import Height from '../../assets/images/length-50.png'
@@ -35,10 +36,7 @@ export class UserProfile extends Component {
 
     return (
       <div className='container'>
-        {userFetchError &&
-          <p>{userFetchError}</p>}
-        {updateSuccess &&
-          <p>{updateSuccess}</p>}
+        {(updateSuccess || userFetchError) && <Message error={userFetchError} message={updateSuccess} />}
         <p className='userprofile-title'>Your profile</p>
         {user &&
           <div className='userprofile-profile'>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
 
@@ -42,10 +43,7 @@ export class LoginForm extends Component {
 
     return (
       <div className="accountform">
-        <div className="error-message">
-          {loginError &&
-            <p>{loginError}</p>}
-        </div>
+        {loginError && <Message error={loginError} />}
         <form>
           <div>
             <input

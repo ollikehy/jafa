@@ -33,8 +33,23 @@ body {
   text-decoration: none;
 }
 
-.error-message {
-  background-color: lightcoral;
+.message {
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+
+  &-success {
+    background-color: lightgreen;
+  }
+
+  &-error {
+    background-color: lightcoral;
+  }
+}
+
+.message-container {
+  display: flex;
+  justify-content: center;
 }
 
 .frontpage-title {

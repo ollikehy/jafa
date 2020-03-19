@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
 
@@ -46,10 +47,7 @@ export class RegisterForm extends Component {
 
     return (
       <div className="accountform" >
-        <div className="error-message">
-          {registerError &&
-            <p>{registerError}</p>}
-        </div>
+        {registerError && <Message error={registerError} />}
         <form>
           <div>
             <input

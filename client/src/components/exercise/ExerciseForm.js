@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-
+import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 export class ExerciseForm extends Component {
@@ -40,13 +40,22 @@ export class ExerciseForm extends Component {
     const {name, weight, distance, timed} = this.state
     const {username} = this.props.user
     this.props.createExercise(name, username, weight, distance, timed)
+
+    this.setState({
+      name: '',
+      weight: false,
+      distance: false,
+      timed: false
+    })
   }
 
   render() {
-    const {user} = this.props
+    const {user, exerciseError, exerciseSuccess} = this.props
+    const {name, weight, distance, timed} = this.state
 
     return (
       <div className='container'>
+        {(exerciseError || exerciseSuccess) && <Message error={exerciseError} success={exerciseSuccess} />}
         <p className='exercise-form-title'>
           {user && user.admin ? `Add ` : `Suggest `}
           a new exercise type
@@ -57,6 +66,7 @@ export class ExerciseForm extends Component {
               <input
                 id='name'
                 required
+                value={name}
                 placeholder='Name of the exercise'
                 onChange={this.handleChange}>
               </input>
@@ -64,6 +74,7 @@ export class ExerciseForm extends Component {
             <div>
               <input
                 id='weight'
+                checked={weight}
                 onChange={this.handleToggle}
                 type='checkbox'>
               </input>
@@ -72,6 +83,7 @@ export class ExerciseForm extends Component {
             <div>
               <input
                 id='distance'
+                checked={distance}
                 onChange={this.handleToggle}
                 type='checkbox'>
               </input>
@@ -80,6 +92,7 @@ export class ExerciseForm extends Component {
             <div>
               <input
                 id='timed'
+                checked={timed}
                 onChange={this.handleToggle}
                 type='checkbox'>
               </input>
@@ -96,7 +109,9 @@ export class ExerciseForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.userReducer.user
+  user: state.userReducer.user,
+  exerciseError: state.exerciseReducer.exerciseError,
+  exerciseSuccess: state.exerciseReducer.exerciseSuccess
 })
 
 const mapDispatchToProps = {

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
 
@@ -39,10 +40,7 @@ export class UserProfileForm extends Component {
 
     return (
       <div className="userprofile-form" >
-        <div className="error-message">
-          {updateFailure &&
-            <p>{updateFailure}</p>}
-        </div>
+        {updateFailure && <Message error={updateFailure} />}
         <form>
           <div>
             <input
