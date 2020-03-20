@@ -18,7 +18,7 @@ const reducer = handleActions(
       ...state,
       loginError: action.payload
     }),
-    [actions.logoutSuccess]: (state, action) => ({
+    [actions.logoutSuccess]: (state) => ({
       ...state,
       loggedIn: null,
       logoutError: null
@@ -27,7 +27,7 @@ const reducer = handleActions(
       ...state,
       logoutError: action.payload
     }),
-    [actions.loginReducerReset]: (state, action) => ({
+    [actions.loginReducerReset]: (state) => ({
       ...state,
       loginError: null,
       logoutError: null

@@ -4,7 +4,7 @@ import * as actions from '../actions/actions'
 const initialState = {
   exerciseError: null,
   exerciseSuccess: null,
-  exercises: null
+  exercises: []
 }
 
 const reducer = handleActions(
@@ -17,12 +17,12 @@ const reducer = handleActions(
       ...state,
       exerciseError: action.payload
     }),
-    [actions.exerciseReducerReset]: (state, action) => ({
+    [actions.exerciseReducerReset]: (state) => ({
       ...state,
       exerciseError: null,
       exerciseSuccess: null
     }),
-    [actions.fetchExercises]: (state, action) => ({
+    [actions.fetchExercisesSuccess]: (state, action) => ({
       ...state,
       exercises: action.payload
     })

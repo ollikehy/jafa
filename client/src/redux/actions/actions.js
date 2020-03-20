@@ -36,5 +36,6 @@ export const createExerciseSuccess = createAction('CREATE_EXERCISE_SUCCESS')
 export const createExerciseFailure = createAction('CREATE_EXERCISE_FAILURE')
 
 export const fetchExercises = createAction('FETCH_EXERCISES')
+export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
 
 export const exerciseReducerReset = createAction('EXERCISE_REDUCER_RESET')

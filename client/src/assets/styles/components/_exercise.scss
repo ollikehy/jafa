@@ -1,4 +1,20 @@
 .exercise {
+
+  &-header {
+    display:flex;
+    justify-content: space-between;
+  }
+
+  &-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-title {
+      font-size: 20px;
+    }
+  }
+
   &-form {
     display: flex;
     justify-content: center;

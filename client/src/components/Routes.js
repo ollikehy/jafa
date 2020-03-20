@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 
 import App from './App'
 import Header from './app/Header'
@@ -48,6 +49,10 @@ export class Routes extends Component {
       </Router>
     )
   }
+}
+
+Routes.propTypes = {
+  loggedIn: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({

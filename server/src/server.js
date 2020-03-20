@@ -10,6 +10,7 @@ const loginRouter = require('./controllers/loginRouter')
 const userRouter = require('./controllers/userRouter')
 const exerciseRouter = require('./controllers/exerciseRouter')
 
+// eslint-disable-next-line no-undef
 const PORT = process.env.port || 8000
 const HOST = '0.0.0.0'
 
@@ -29,9 +30,15 @@ app.use(celebrateMiddleware)
 
 const server = http.createServer(app)
 
+// eslint-disable-next-line no-undef
 const MONGODB_URI = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASS}@cluster0-st9gc.gcp.mongodb.net/jafa?retryWrites=true&w=majority`
 
-mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false})
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+})
   .then(() => {
     console.log('connected to mongodb')
   })

@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Message from '../app/Message'
+import PropTypes from 'prop-types'
 
+import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 
@@ -72,6 +73,12 @@ export class UserProfileForm extends Component {
       </div>
     )
   }
+}
+
+UserProfileForm.propTypes = {
+  user: PropTypes.object,
+  updateUser: PropTypes.func,
+  updateFailure: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({

@@ -26,6 +26,7 @@ registerRouter.post('/', registrationValidator, async (req, res) => {
     id: user.id
   }
 
+  // eslint-disable-next-line no-undef
   const token = jwt.sign(userForToken, process.env.JWT_SECRET)
   res.status(200).send({token, username: user.username})
 })
@@ -33,11 +34,12 @@ registerRouter.post('/', registrationValidator, async (req, res) => {
 registerRouter.post('/admin', async (req, res) => {
   const body = req.body
 
+  // eslint-disable-next-line no-undef
   if (body.pass !== process.env.ADMIN_PASS) {
     res.status(403).send()
   }
 
-  User.findOneAndUpdate({username : body.username}, {admin: true}).then(res.status(200).send())
+  User.findOneAndUpdate({username: body.username}, {admin: true}).then(res.status(200).send())
 })
 
 module.exports = registerRouter

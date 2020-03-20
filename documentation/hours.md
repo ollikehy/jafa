@@ -28,4 +28,5 @@
 | 19.3.2020 | 1,5h | Updating documentation and doing database-schema planning |
 |           | 1,5h | Refactoring and work on adding exercises |
 |           | 1h   | Refactored error messages into a single component |
+| 20.3.2020 | 3h   | Exercise listing, linter and proptypes |
 | Sum       | 51,5h | Cumulative sum of hours |

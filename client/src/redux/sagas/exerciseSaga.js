@@ -32,4 +32,17 @@ function* createExercise({payload}) {
   }
 }
 
+function* fetchExercises() {
+  try {
+    const response = yield call(exerciseApi.get)
+
+    if (response.status === 200) {
+      yield put(actions.fetchExercisesSuccess(response.data))
+    }
+  } catch (e) {
+    console.log(e.message)
+  }
+}
+
 export const watchCreateExercise = takeLatest(actions.createExercise().type, createExercise)
+export const watchFetchExercises = takeLatest(actions.fetchExercises().type, fetchExercises)

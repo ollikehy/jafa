@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const Message = (props) => {
 
@@ -10,6 +11,11 @@ const Message = (props) => {
       <p className={`message ${className}`}>{content}</p>
     </div>
   )
+}
+
+Message.propTypes = {
+  error: PropTypes.string,
+  message: PropTypes.string
 }
 
 export default Message

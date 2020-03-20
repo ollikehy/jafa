@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Message from '../app/Message'
+import PropTypes from 'prop-types'
 
+import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 export class RegisterForm extends Component {
@@ -22,7 +23,7 @@ export class RegisterForm extends Component {
   }
 
   setErrorMessage = () => {
-    this.props.registerFailure("Your passwords didn't match")
+    this.props.registerFailure('Your passwords did not match')
     setTimeout(() => {this.props.registerErrorReset()}, 10000)
   }
 
@@ -88,6 +89,13 @@ export class RegisterForm extends Component {
       </div>
     )
   }
+}
+
+RegisterForm.propTypes = {
+  registerFailure: PropTypes.func,
+  registerErrorReset: PropTypes.func,
+  register: PropTypes.func,
+  registerError: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({

@@ -15,7 +15,7 @@ const reducer = handleActions(
       ...state,
       user: action.payload
     }),
-    [actions.removeUser]: (state, action) => ({
+    [actions.removeUser]: (state) => ({
       ...state,
       user: null
     }),
@@ -32,7 +32,7 @@ const reducer = handleActions(
       ...state,
       updateFailure: action.payload
     }),
-    [actions.userReducerReset]: (state, action) => ({
+    [actions.userReducerReset]: (state) => ({
       ...state,
       userFetchError: null,
       updateSuccess: null,

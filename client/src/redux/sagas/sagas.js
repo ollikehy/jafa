@@ -11,6 +11,7 @@ export default function* rootSaga() {
     loginSaga.watchRequestLogout,
     userSaga.watchFetchUser,
     userSaga.watchUpdateUser,
-    exerciseSaga.watchCreateExercise
+    exerciseSaga.watchCreateExercise,
+    exerciseSaga.watchFetchExercises
   ])
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import {render} from 'react-dom'
-import {applyMiddleware, createStore, combineReducers} from 'redux'
+import {applyMiddleware, createStore, combineReducers, compose} from 'redux'
 import {Provider} from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
 

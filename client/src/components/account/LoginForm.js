@@ -1,7 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-import Message from '../app/Message'
+import PropTypes from 'prop-types'
 
+import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 export class LoginForm extends Component {
@@ -73,6 +74,12 @@ export class LoginForm extends Component {
       </div>
     )
   }
+}
+
+LoginForm.propTypes = {
+  login: PropTypes.func,
+  loginError: PropTypes.string,
+  loginErrorReset: PropTypes.func
 }
 
 const mapDispatchToProps = {

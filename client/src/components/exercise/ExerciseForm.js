@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
+
 import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
@@ -57,7 +59,7 @@ export class ExerciseForm extends Component {
       <div className='container'>
         {(exerciseError || exerciseSuccess) && <Message error={exerciseError} success={exerciseSuccess} />}
         <p className='exercise-form-title'>
-          {user && user.admin ? `Add ` : `Suggest `}
+          {user && user.admin ? 'Add ' : 'Suggest '}
           a new exercise type
         </p>
         <div className='exercise-form'>
@@ -99,13 +101,21 @@ export class ExerciseForm extends Component {
               <label htmlFor='timed'>Timed exercise</label>
             </div>
             <button onClick={this.handleSubmit}>
-              {user && user.admin ? `Add ` : `Suggest `} exercise
+              {user && user.admin ? 'Add ' : 'Suggest '} exercise
             </button>
           </form>
         </div>
       </div>
     )
   }
+}
+
+ExerciseForm.propTypes = {
+  user: PropTypes.object,
+  fetchUser: PropTypes.func,
+  createExercise: PropTypes.func,
+  exerciseError: PropTypes.string,
+  exerciseSuccess: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({

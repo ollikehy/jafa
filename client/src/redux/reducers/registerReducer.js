@@ -8,7 +8,7 @@ const initialState = {
 
 const reducer = handleActions(
   {
-    [actions.registerSuccess]: (state, action) => ({
+    [actions.registerSuccess]: (state) => ({
       ...state,
       registerError: null
     }),
@@ -17,7 +17,7 @@ const reducer = handleActions(
       loggedIn: null,
       registerError: action.payload
     }),
-    [actions.registerReducerReset]: (state, action) => ({
+    [actions.registerReducerReset]: (state) => ({
       ...state,
       registerError: null
     })
