@@ -16,12 +16,14 @@ jobs:
     - uses: actions/checkout@v2
     - name: Hack .env file
       run: touch ./server/.env
+    - name: build server
+      run: cd server && npm install
+    - name: build client
+      run: cd ../client && npm install
     - name: Build the Docker compose stack
       run: docker-compose up -d
     - name: Check running containers
       run: docker ps -a
-    - name: Ls docker-container
-      run: docker exec jafa_backend_1 ls
     - name: Check logs
       run: docker logs jafa_backend_1 || docker logs jafa_frontend_1
     - name: Run lint for backend
