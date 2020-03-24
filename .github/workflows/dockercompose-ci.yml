@@ -16,10 +16,12 @@ jobs:
     - uses: actions/checkout@v2
     - name: Hack .env file
       run: touch ./server/.env
-    - name: build server
+    - name: build server and client for node_modules
       run: cd server && npm install && cd ../client && npm install && cd ..
     - name: Build the Docker compose stack
       run: docker-compose up -d
+      env:
+        JWT_SECRET: $ {{ secrets.JWT_SECRET }}
     - name: Check running containers
       run: docker ps -a
     - name: Check logs
