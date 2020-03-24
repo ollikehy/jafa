@@ -29,4 +29,6 @@
 |           | 1,5h | Refactoring and work on adding exercises |
 |           | 1h   | Refactored error messages into a single component |
 | 20.3.2020 | 3h   | Exercise listing, linter and proptypes |
+| 24.3.2020 | 3h   | Configuring github actions and splitting docker-compose |
+|           | 1,5h   | Learning cypress |
 | Sum       | 51,5h | Cumulative sum of hours |

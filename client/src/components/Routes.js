@@ -42,7 +42,7 @@ export class Routes extends Component {
               <Exercises />
             </Route>
             <Route path='/exercise/new'>
-              <ExerciseForm />
+              {loggedIn ? <ExerciseForm /> : <Redirect to='/login' />}
             </Route>
           </Switch>
         </div>
