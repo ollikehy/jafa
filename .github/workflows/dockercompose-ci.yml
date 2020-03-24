@@ -20,8 +20,8 @@ jobs:
       run: docker-compose up -d
     - name: Check running containers
       run: docker ps -a
-    - name: ls directory contents
-      run: ls ./server
+    - name: Ls docker-container
+      run: docker exec jafa_backend_1 ls
     - name: Check logs
       run: docker logs jafa_backend_1 || docker logs jafa_frontend_1
     - name: Run lint for backend
