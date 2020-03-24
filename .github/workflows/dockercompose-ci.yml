@@ -17,9 +17,7 @@ jobs:
     - name: Hack .env file
       run: touch ./server/.env
     - name: build server
-      run: cd server && npm install
-    - name: build client
-      run: cd ../client && npm install
+      run: cd server && npm install && cd ../client && npm install && cd ..
     - name: Build the Docker compose stack
       run: docker-compose up -d
     - name: Check running containers
