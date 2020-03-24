@@ -21,7 +21,7 @@ jobs:
     - name: Build the Docker compose stack
       run: docker-compose up -d
       env:
-        JWT_SECRET: $ {{ secrets.JWT_SECRET }}
+        JWT_SECRET: ${{ secrets.JWT_SECRET }}
     - name: Check running containers
       run: docker ps -a
     - name: Check logs
