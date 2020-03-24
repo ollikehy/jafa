@@ -21,7 +21,7 @@ jobs:
     - name: Check running containers
       run: docker ps -a
     - name: Check logs
-      run: docker logs backend
+      run: docker logs jafa_backend_1 || docker logs jafa_frontend_1
     - name: Run lint for backend
       run: docker exec jafa_backend_1 npm run lint
     - name: Run lint for frontend
