@@ -20,6 +20,8 @@ jobs:
       run: docker-compose up -d
     - name: Check running containers
       run: docker ps -a
+    - name: Check logs
+      run: docker logs backend
     - name: Run lint for backend
       run: docker exec jafa_backend_1 npm run lint
     - name: Run lint for frontend
