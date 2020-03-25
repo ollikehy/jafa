@@ -36,7 +36,7 @@ registerRouter.post('/admin', async (req, res) => {
 
   // eslint-disable-next-line no-undef
   if (body.pass !== process.env.ADMIN_PASS) {
-    res.status(403).send()
+    res.status(403).send({error: 'Password required'})
   }
 
   User.findOneAndUpdate({username: body.username}, {admin: true}).then(res.status(200).send())
