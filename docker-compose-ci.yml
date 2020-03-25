@@ -3,3 +3,6 @@ services:
   backend:
     environment:
       - JWT_SECRET
+      - MONGO_PASS
+      - MONGO_USER
+      - NOT_A_REAL_SECRET

@@ -7,6 +7,7 @@ const api = supertest(app)
 
 beforeAll(async () => {
   await User.deleteMany()
+  console.log(process.env.NOT_A_REAL_SECRET)
 })
 
 const users = [
