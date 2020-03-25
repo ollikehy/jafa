@@ -21,7 +21,6 @@ jobs:
         JWT_SECRET: ${{ secrets.JWT_SECRET }}
         MONGO_USER: ${{ secrets.MONGO_USER }}
         MONGO_PASS: ${{ secrets.MONGO_PASS }}
-        NOT_A_REAL_SECRET: ${{ secrets.NOT_A_REAL_SECRET }}
       run: docker-compose -f docker-compose.yml -f docker-compose-ci.yml up -d
     - name: Check running containers
       run: docker ps -a
