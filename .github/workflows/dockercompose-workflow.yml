@@ -28,3 +28,5 @@ jobs:
       run: docker exec jafa_backend_1 npm run lint
     - name: Run lint for frontend
       run: docker exec jafa_frontend_1 npm run lint
+    - name: Run unit tests for backend
+      run: docker exec jafa_backend_1 npm test

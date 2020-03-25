@@ -2,10 +2,13 @@ const expressJwt = require('express-jwt')
 const celebrate = require('celebrate')
 
 /* eslint-disable */
-const jwtMiddleware = expressJwt({secret: process.env.JWT_SECRET})
+
+const secret = process.env.NODE_ENV === 'test' ? 'test' : process.env.JWT_SECRET
+
+const jwtMiddleware = expressJwt({secret: secret})
 
 const jwtNotRequired = expressJwt({
-  secret: process.env.JWT_SECRET,
+  secret: secret,
   credentialsRequired: false
 })
 
