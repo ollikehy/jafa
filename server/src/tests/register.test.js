@@ -20,7 +20,7 @@ test('User registration works with proper values', async () => {
     .send(users[0])
     .expect(200)
     .expect('Content-type', /application\/json/)
-}, 10000)
+}, 20000)
 
 test('If user already exists response is 401', async () => {
   await api
@@ -29,9 +29,9 @@ test('If user already exists response is 401', async () => {
     .expect(401)
     .expect('Content-type', /application\/json/)
 
-}, 10000)
+}, 20000)
 
-test('User registration does not work with invalid values', async () => {
+test('User registration does not work with invalid values', async (done) => {
   const response = await api
     .post('/register')
     .send(users[1])
@@ -40,18 +40,19 @@ test('User registration does not work with invalid values', async () => {
 
 
   expect(JSON.parse(response.error.text).error).toBe('"username" length must be at least 4 characters long')
+  done()
 }, 10000)
 
-test('User cannot be promoted to admin without password', async () => {
+test('User cannot be promoted to admin without password', async (done) => {
   const response = await api
     .post('/register/admin')
     .send(users[0])
     .expect(403)
 
   expect(response.body.error).toBe('Password required')
+  done()
 }, 10000)
 
 afterAll(async () => {
   mongoose.connection.close()
-  await new Promise(resolve => setTimeout(() => resolve(), 500))
 })
