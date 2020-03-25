@@ -7,6 +7,8 @@ const api = supertest(app)
 
 beforeAll(async () => {
   await User.deleteMany()
+
+  // eslint-disable-next-line no-undef
   console.log(process.env.NOT_A_REAL_SECRET)
 })
 
