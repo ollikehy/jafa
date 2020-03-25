@@ -40,9 +40,9 @@ test('User registration does not work with invalid values', async () => {
 
 test('User cannot be promoted to admin without password', async () => {
   await api
-  .post('/register/admin')
-  .send(users[0])
-  .expect(403)
+    .post('/register/admin')
+    .send(users[0])
+    .expect(403)
 })
 
 afterAll(() => {
