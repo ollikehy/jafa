@@ -32,4 +32,5 @@
 | 24.3.2020 | 3h   | Configuring github actions and splitting docker-compose |
 |           | 1,5h | Learning cypress |
 | 25.3.2020 | 5h   | Decided to do unit tests first and spent a lot of time configuring github actions for tests |
+| 26.3.2020 | 4h   | Adding unit tests for the rest of the existing apis and some minor refactoring |
 | Sum       | 65,5h | Cumulative sum of hours |
