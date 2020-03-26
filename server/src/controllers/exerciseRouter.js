@@ -1,9 +1,9 @@
 const exerciseRouter = require('express-promise-router')()
 const Exercise = require('../models/Exercise')
 const {exerciseValidator} = require('../utils/validators')
-const {jwtMiddleware} = require('../utils/middleware')
+const {jwtMiddleware, jwtNotRequired} = require('../utils/middleware')
 
-exerciseRouter.get('/', async (req, res) => {
+exerciseRouter.get('/', jwtNotRequired, async (req, res) => {
   const exercises = await Exercise.find()
   if (exercises.length < 1) {
     return res.status(204).send({error: 'No exercises found'})
@@ -11,7 +11,6 @@ exerciseRouter.get('/', async (req, res) => {
   const returnedExercises = exercises.map(exercise => exercise.toJSON())
   res.status(200).send(returnedExercises)
 })
-
 
 exerciseRouter.post('/', jwtMiddleware, exerciseValidator, async (req, res) => {
   const body = req.body

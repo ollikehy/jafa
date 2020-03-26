@@ -3,7 +3,7 @@ const supertest = require('supertest')
 
 const app = require('../app')
 const User = require('../models/User')
-const {users, cryptPassword} = require('./testutils')
+const {users, cryptPassword} = require('../utils/testutils')
 
 const api = supertest(app)
 
@@ -36,7 +36,7 @@ test('Cannot login with invalid credentials', async () => {
 test('Cannot login with nonexisting user', async () => {
   const response = await api
     .post('/login')
-    .send(users[2])
+    .send(users[1])
     .expect(401)
 
   expect(JSON.parse(response.error.text).error).toBe('Username not found')

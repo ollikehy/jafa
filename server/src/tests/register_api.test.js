@@ -3,7 +3,7 @@ const supertest = require('supertest')
 const app = require('../app')
 const User = require('../models/User')
 
-const {users} = require('./testutils')
+const {users} = require('../utils/testutils')
 
 const api = supertest(app)
 
