@@ -54,7 +54,7 @@ test('User can update a single value', async (done) => {
     .expect('Content-type', /application\/json/)
 
   expect(response.body.user.weight).toBe('100')
-  expect(response.body.user.height).toBe('180')
+  expect(response.body.user.height).toBe(180)
   done()
 })
 
