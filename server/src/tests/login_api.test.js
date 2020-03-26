@@ -1,19 +1,17 @@
 const mongoose = require('mongoose')
 const supertest = require('supertest')
-const bcrypt = require('bcryptjs')
 
 const app = require('../app')
 const User = require('../models/User')
-const {users} = require('./testutils')
+const {users, cryptPassword} = require('./testutils')
 
 const api = supertest(app)
 
 beforeAll(async () => {
   await User.deleteMany()
 
-  const username = users[0].username
-  const password = await bcrypt.hash(users[0].password, 10)
-  await new User({username, password}).save()
+  const user = await cryptPassword(users[0])
+  await new User(user).save()
 })
 
 test('Logging in works with existing user credentials', async () => {

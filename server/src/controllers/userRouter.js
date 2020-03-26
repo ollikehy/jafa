@@ -25,6 +25,12 @@ userRouter.get('/', jwtMiddleware, async (req, res) => {
 userRouter.post('/', jwtMiddleware, userValidator, async (req, res) => {
   const body = req.body
 
+  const user = await User.findOne({username: body.username})
+
+  if (!user) {
+    return res.status(500).send({error: 'User not found'})
+  }
+
   const update = {
     height: body.height ? body.height : user.height,
     weight: body.weight ? body.weight : user.weight
@@ -32,18 +38,14 @@ userRouter.post('/', jwtMiddleware, userValidator, async (req, res) => {
 
   const updatedUser = await User.findOneAndUpdate({username: body.username}, update, {new: true})
 
-  if (!updatedUser) {
-    return res.status(500).send({error: 'User not found'})
-  }
-
-  const user = {
+  const returnedUser = {
     username: updatedUser.username,
     weight: updatedUser.weight,
     height: updatedUser.height,
     admin: updatedUser.admin
   }
 
-  res.status(200).send({user: user, message: 'User updated succesfully'})
+  res.status(200).send({user: returnedUser, message: 'User updated succesfully'})
 })
 
 module.exports = userRouter
