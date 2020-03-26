@@ -3,17 +3,13 @@ const supertest = require('supertest')
 const app = require('../app')
 const User = require('../models/User')
 
+const {users} = require('./testutils')
+
 const api = supertest(app)
 
 beforeAll(async () => {
   await User.deleteMany()
 })
-
-const users = [
-  {username: 'kayttaja', password: 'salasana'},
-  {username: 'usr', password: 'lyhyt'},
-  {username: 'admintest', pass: 'salasana'}
-]
 
 test('User registration works with proper values', async () => {
   await api
@@ -47,7 +43,7 @@ test('User registration does not work with invalid values', async (done) => {
 test('User cannot be promoted to admin without password', async (done) => {
   const response = await api
     .post('/register/admin')
-    .send(users[2])
+    .send(users[3])
     .expect(403)
 
   expect(response.body.error).toBe('Password required')

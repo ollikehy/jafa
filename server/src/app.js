@@ -33,7 +33,8 @@ mongoose.connect(MONGODB_URI, {
   useCreateIndex: true
 })
   .then(() => {
-    console.log('connected to mongodb')
+    // eslint-disable-next-line no-undef
+    process.env.NODE_ENV !== 'test' && console.log('connected to mongodb')
   })
   .catch((error) => {
     console.log('mongodb error ' + error)
