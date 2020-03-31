@@ -6,7 +6,8 @@ module.exports = {
 	},
 	'extends': [
 		'eslint:recommended',
-		'plugin:react/recommended'
+		'plugin:react/recommended',
+		'plugin:cypress/recommended'
 	],
 	'globals': {
 		'Atomics': 'readonly',
@@ -21,7 +22,7 @@ module.exports = {
 		'sourceType': 'module'
 	},
 	'plugins': [
-		'react, cypress'
+		'react','cypress'
 	],
 	'rules': {
 		'indent': [
@@ -41,8 +42,8 @@ module.exports = {
 			'never'
 		],
 		'no-trailing-spaces': 'error',
-    'arrow-spacing': [
-        'error', { 'before': true, 'after': true }
-    ]
+		'arrow-spacing': [
+			'error', {'before': true, 'after': true}
+		]
 	}
 }

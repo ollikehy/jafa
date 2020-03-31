@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import Message from '../app/Message'
+import PropTypes from 'prop-types'
 
 class FrontPage extends Component {
 
@@ -15,6 +16,10 @@ class FrontPage extends Component {
       </div>
     )
   }
+}
+
+FrontPage.propTypes = {
+  registerSuccess: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
