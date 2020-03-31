@@ -11,3 +11,19 @@ COPY . .
 EXPOSE 3000
 
 CMD ["npm", "start"]
+
+# CI environment
+
+FROM cypress/base AS CI
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
