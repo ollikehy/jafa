@@ -14,7 +14,7 @@ CMD ["npm", "start"]
 
 # CI environment
 
-FROM cypress/base AS CI
+FROM cypress/base AS ci
 
 WORKDIR /app
 

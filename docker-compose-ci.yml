@@ -2,7 +2,7 @@ version: '3.5'
 services:
   backend:
     build:
-      target: CI
+      target: ci
     environment:
       - JWT_SECRET
       - MONGO_PASS
