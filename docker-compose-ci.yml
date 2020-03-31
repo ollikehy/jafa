@@ -1,10 +1,14 @@
 version: '3.5'
 services:
   backend:
-    build:
-      target: ci
     environment:
       - JWT_SECRET
       - MONGO_PASS
       - MONGO_USER
     command: npm run start:test
+  frontend:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile-ci
+      target: ci
+    command: npm start
