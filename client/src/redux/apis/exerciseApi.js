@@ -3,8 +3,8 @@ import axios from 'axios'
 export const root = '/api/exercise'
 
 export default class loginApi {
-  static get() {
-    return axios.get(root)
+  static get(payload) {
+    return axios.get(root, {params: {username: payload.username}})
   }
   static add(payload) {
     let config = null

@@ -34,7 +34,8 @@ function* createExercise({payload}) {
 
 function* fetchExercises() {
   try {
-    const response = yield call(exerciseApi.get)
+    const user = yield select(getCurrentUser)
+    const response = yield call(exerciseApi.get, user)
 
     if (response.status === 200) {
       yield put(actions.fetchExercisesSuccess(response.data))

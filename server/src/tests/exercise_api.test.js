@@ -4,7 +4,7 @@ const app = require('../app')
 const User = require('../models/User')
 const Exercise = require('../models/Exercise')
 
-const {users, cryptPassword, initialExercises} = require('../utils/testutils')
+const {users, cryptPassword, initialExercises, exercisesInDb} = require('../utils/testutils')
 
 const api = supertest(app)
 
@@ -42,24 +42,33 @@ test('Fetching exercises returns them all', async (done) => {
 })
 
 test('Exercises can be suggested by non-admin user', async (done) => {
+  const newExercise = {name: 'Swimming', distanceExercise: true, accepted: false}
   await api
     .post('/exercise')
     .set('Authorization', 'bearer ' + token)
-    .send({name: 'Swimming', distanceExercise: true, accepted: false})
+    .send(newExercise)
     .expect(200)
 
+  const currentExercises = await exercisesInDb()
+  expect(currentExercises.length).toBeGreaterThan(initialExercises.length)
+  done()
+})
 
-  const response = await api.get('/exercise')
+test('Non admin users can only fetch accepted exercises', async (done) => {
+  const response = await api
+    .get('/exercise')
+    .expect(200)
 
-  expect(response.body.length).toBeGreaterThan(initialExercises.length)
+  expect(response.body.length).toBe(initialExercises.length)
   done()
 })
 
 test('Exercise names need to be unique', async (done) => {
+  const oldExercise = {name: 'Running', distanceExercise: true, accepted: false}
   await api
     .post('/exercise')
     .set('Authorization', 'bearer ' + token)
-    .send({name: 'Running', distanceExercise: true, accepted: false})
+    .send(oldExercise)
     .expect(401)
 
   done()
