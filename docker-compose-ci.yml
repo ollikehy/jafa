@@ -10,5 +10,4 @@ services:
     build:
       context: ./client/
       dockerfile: Dockerfile-ci
-      target: ci
     command: npm start
