@@ -49,7 +49,8 @@
     "build": "webpack --mode=production",
     "start": "webpack-dev-server --mode=development",
     "lint": "./node_modules/.bin/eslint .",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "cy:test": "./node_modules/.bin/cypress run"
   },
   "author": "Ollikehy",
   "license": "ISC"
