@@ -18,7 +18,7 @@ function* requestRegister({payload}) {
       }
 
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
-      yield put(actions.registerSuccess(user))
+      yield put(actions.registerSuccess('Registration succesful!'))
       yield put(actions.loginSuccess(user))
     }
   } catch (e) {

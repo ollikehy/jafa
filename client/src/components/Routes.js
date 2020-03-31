@@ -33,8 +33,9 @@ export class Routes extends Component {
             <Route path='/login'>
               {loggedIn ? <Redirect to='/' /> : <Login />}
             </Route>
-            <Route path='/register' render={() =>
-              <Register />} />
+            <Route path='/register'>
+              {loggedIn ? <Redirect to='/' /> : <Register />}
+            </Route>
             <Route path='/profile'>
               {loggedIn ? <UserProfile /> : <Redirect to='/login' />}
             </Route>

@@ -2,24 +2,25 @@ import {handleActions} from 'redux-actions'
 import * as actions from '../actions/actions'
 
 const initialState = {
-  loggedIn: null,
-  registerError: null
+  registerError: null,
+  registerSuccess: null
 }
 
 const reducer = handleActions(
   {
-    [actions.registerSuccess]: (state) => ({
+    [actions.registerSuccess]: (state, action) => ({
       ...state,
-      registerError: null
+      registerError: null,
+      registerSuccess: action.payload
     }),
     [actions.registerFailure]: (state, action) => ({
       ...state,
-      loggedIn: null,
       registerError: action.payload
     }),
     [actions.registerReducerReset]: (state) => ({
       ...state,
-      registerError: null
+      registerError: null,
+      registerSuccess: null
     })
   },
   initialState

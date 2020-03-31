@@ -21,6 +21,12 @@ app.use('/login', loginRouter)
 app.use('/user', userRouter)
 app.use('/exercise', exerciseRouter)
 
+// eslint-disable-next-line no-undef
+if (process.env.NODE_ENV === 'test') {
+  const testingRouter = require('./utils/testingRouter')
+  app.use('/testing', testingRouter)
+}
+
 app.use(celebrateMiddleware)
 
 // eslint-disable-next-line no-undef

@@ -32,3 +32,5 @@ jobs:
       run: docker exec jafa_frontend_1 npm run lint
     - name: Run unit tests for backend
       run: docker exec jafa_backend_1 npm test
+    - name: Run cypress tests
+      uses: cypress-io/github-action@v1

@@ -5,3 +5,4 @@ services:
       - JWT_SECRET
       - MONGO_PASS
       - MONGO_USER
+    command: npm run start:test
