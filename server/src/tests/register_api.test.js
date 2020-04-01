@@ -35,7 +35,6 @@ test('User registration does not work with invalid values', async (done) => {
     .expect(400)
     .expect('Content-type', /application\/json/)
 
-
   expect(JSON.parse(response.error.text).error).toBe('"username" length must be at least 4 characters long')
   done()
 })

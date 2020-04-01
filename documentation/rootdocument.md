@@ -8,19 +8,22 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 
 ### To do:
 
-#### In the near future
+#### Done:
 
 - [x] Database schemas with attributes
 - [x] Registration
 - [x] Adding values for the user
-- [ ] Adding exercises
+- [x] Adding exercises
+- [x] Testing
+
+#### Up next:
+
 - [ ] Adding workouts
 - [ ] Adding exerciseSets to workouts
 
-#### In the distant future
+#### In the distant future:
 
-- [ ] Heroku
-- [ ] Testing
+- [ ] AWS
 - [ ] Styles
 - [ ] Graphs for progress (BMI, bodyweight, weight training?)
 

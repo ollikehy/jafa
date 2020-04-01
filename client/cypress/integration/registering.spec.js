@@ -12,7 +12,6 @@ describe('Registration ', function () {
     cy.get('#username').type('testuser')
     cy.get('#password').type('testpassword')
     cy.get('#confirmPass').type('testpassword')
-
     cy.get('#registerButton').click()
     cy.contains('Welcome to JAFA')
     cy.contains('Registration succesful!')

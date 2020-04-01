@@ -15,6 +15,7 @@ describe('Logging in ', function () {
   it('User can logout from the site', function () {
     cy.login({username: 'testuser', password: 'testpassword'})
     cy.contains('Logout').click()
+    cy.contains('Register')
   })
   it('User is notified if username or password is wrong', function() {
     cy.visit('localhost/login')

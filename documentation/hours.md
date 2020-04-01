@@ -36,4 +36,5 @@
 | 31.3.2020 | 5h   | Cypress tests and a lot of configuring for github actions |
 | 1.4.2020  | 1,5h | More cypress tests and some refactoring |
 |           | 1,5h | Cypress tests for user profile and exercises |
+|           | 1h   | Changed node version for client to reflect test environment |
 | Sum       | 72h  | Cumulative sum of hours |
