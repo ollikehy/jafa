@@ -1,3 +1,10 @@
 #bundled files
 
 /build
+
+#cypress files 
+
+cypress/screenshots
+cypress/videos
+cypress/plugins
+cypress/support

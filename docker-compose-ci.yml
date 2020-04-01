@@ -6,3 +6,8 @@ services:
       - MONGO_PASS
       - MONGO_USER
     command: npm run start:test
+  frontend:
+    build:
+      context: ./client/
+      dockerfile: Dockerfile-ci
+    command: npm start

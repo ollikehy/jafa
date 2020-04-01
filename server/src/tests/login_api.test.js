@@ -33,13 +33,14 @@ test('Cannot login with invalid credentials', async () => {
   expect(JSON.parse(response.error.text).error).toBe('Wrong username or password')
 })
 
-test('Cannot login with nonexisting user', async () => {
+test('Cannot login with nonexisting user', async (done) => {
   const response = await api
     .post('/login')
     .send(users[1])
     .expect(401)
 
   expect(JSON.parse(response.error.text).error).toBe('Username not found')
+  done()
 })
 
 afterAll(async () => {

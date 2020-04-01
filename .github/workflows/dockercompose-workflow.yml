@@ -3,8 +3,8 @@ name: Docker Image CI
 on:
   push:
     branches:
-      - master
-      - '*'
+    - master
+    - '*'
   pull_request:
     branches: [ master ]
 
@@ -14,8 +14,16 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [8.x]
+
     steps:
     - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '8.x'
     - name: build server and client for node_modules
       run: cd server && npm install && cd ../client && npm install && cd ..
     - name: Build the Docker compose stack
@@ -35,4 +43,4 @@ jobs:
     - name: Run unit tests for backend
       run: docker exec jafa_backend_1 npm test
     - name: Run cypress tests
-      uses: cypress-io/github-action@v1
+      run: cd client && npm rebuild node-sass && npm run cy:test
