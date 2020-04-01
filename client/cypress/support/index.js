@@ -1,1 +1,1 @@
-// Thanks cypress
+import './commands'
