@@ -57,7 +57,7 @@ export class ExerciseForm extends Component {
 
     return (
       <div className='container'>
-        {(exerciseError || exerciseSuccess) && <Message error={exerciseError} success={exerciseSuccess} />}
+        {(exerciseError || exerciseSuccess) && <Message error={exerciseError} message={exerciseSuccess} />}
         <p className='exercise-form-title'>
           {user && user.admin ? 'Add ' : 'Suggest '}
           a new exercise type
@@ -100,7 +100,7 @@ export class ExerciseForm extends Component {
               </input>
               <label htmlFor='timed'>Timed exercise</label>
             </div>
-            <button onClick={this.handleSubmit}>
+            <button id='submitExercise' onClick={this.handleSubmit}>
               {user && user.admin ? 'Add ' : 'Suggest '} exercise
             </button>
           </form>

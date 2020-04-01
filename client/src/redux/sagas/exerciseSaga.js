@@ -12,13 +12,16 @@ function* createExercise({payload}) {
       weightExercise: payload.weight,
       distanceExercise: payload.distance,
       timedExercise: payload.timed,
-      accepted: user.admin
+      accepted: user.admin ? true : false
     }
 
     const response = yield call(exerciseApi.add, {exercise, user})
 
     if (response.status === 200) {
-      yield put(actions.createExerciseSuccess(`Exercise ${response.data.name} created succesfully`))
+      const msg = user.admin ? 'added' : 'suggested'
+      yield put(actions.createExerciseSuccess(
+        `Exercise ${response.data.name} ${msg} succesfully`
+      ))
       yield delay(5000)
       yield put(actions.exerciseReducerReset())
     }

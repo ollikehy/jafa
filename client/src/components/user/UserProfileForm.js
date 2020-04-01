@@ -67,7 +67,7 @@ export class UserProfileForm extends Component {
           </div>
 
           <div className='submit-button'>
-            <button onClick={this.handleSubmit} className='button'>Update information</button>
+            <button id='profileSubmit' onClick={this.handleSubmit} className='button'>Update information</button>
           </div>
         </form>
       </div>

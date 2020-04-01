@@ -43,9 +43,9 @@ export class Exercises extends Component {
         </div>
         {exercises &&
           <div className='exercise-list'>
-            <p className='exercise-list-title'>Exercises</p>
+            <p className='exercise-list-title'>List of exercises</p>
             {exercises.map(exercise =>
-              exercise.accepted && exercise.name.indexOf(search) > -1 &&
+              exercise.accepted && exercise.name.toLowerCase().indexOf(search.toLowerCase()) > -1 &&
               <Exercise key={exercise.id} exercise={exercise} />)}
           </div>}
       </div >
