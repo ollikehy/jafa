@@ -6,7 +6,7 @@ testingRouter.post('/reset', async (req, res) => {
   await User.deleteMany()
   await Exercise.deleteMany()
 
-  res.status(204).end()
+  res.status(204).send('All data deleted succesfully')
 })
 
 module.exports = testingRouter

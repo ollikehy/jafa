@@ -20,6 +20,8 @@ function* requestRegister({payload}) {
       window.localStorage.setItem('loggedUser', JSON.stringify(user))
       yield put(actions.registerSuccess('Registration succesful!'))
       yield put(actions.loginSuccess(user))
+      yield delay(5000)
+      yield put(actions.registerReducerReset())
     }
   } catch (e) {
     const errorMessage = (e.response.data.error)

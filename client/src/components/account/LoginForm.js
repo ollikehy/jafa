@@ -68,7 +68,7 @@ export class LoginForm extends Component {
             </input>
           </div>
           <div className="submit-button">
-            <button onClick={this.handleSubmit} className="button">Login</button>
+            <button id='loginButton' onClick={this.handleSubmit} className="button">Login</button>
           </div>
         </form>
       </div>

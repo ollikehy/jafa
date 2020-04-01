@@ -3,12 +3,12 @@ const celebrate = require('celebrate')
 
 /* eslint-disable */
 
-const secret = process.env.NODE_ENV === 'test' ? 'test' : process.env.JWT_SECRET
+const jwtSecret = process.env.NODE_ENV === 'test' ? 'test' : process.env.JWT_SECRET
 
-const jwtMiddleware = expressJwt({secret: secret})
+const jwtMiddleware = expressJwt({secret: jwtSecret})
 
 const jwtNotRequired = expressJwt({
-  secret: secret,
+  secret: jwtSecret,
   credentialsRequired: false
 })
 
@@ -28,4 +28,4 @@ const celebrateMiddleware = (error, req, res, next) => {
   }
 }
 
-module.exports = {jwtMiddleware, jwtNotRequired, celebrateMiddleware}
+module.exports = {jwtMiddleware, jwtNotRequired, celebrateMiddleware, jwtSecret}

@@ -3,6 +3,7 @@ const bcrypt = require('bcryptjs')
 const registerRouter = require('express-promise-router')()
 const User = require('../models/User')
 const {registrationValidator} = require('../utils/validators')
+const {jwtSecret} = require('../utils/middleware')
 
 registerRouter.get('/', async (req, res) => {
   res.status(204).send()
@@ -27,7 +28,7 @@ registerRouter.post('/', registrationValidator, async (req, res) => {
   }
 
   // eslint-disable-next-line no-undef
-  const token = jwt.sign(userForToken, process.env.JWT_SECRET)
+  const token = jwt.sign(userForToken, jwtSecret)
   res.status(200).send({token, username: user.username})
 })
 

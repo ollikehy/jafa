@@ -4,7 +4,7 @@
 
 #cypress files 
 
+cypress/fixtures
 cypress/screenshots
 cypress/videos
 cypress/plugins
-cypress/support
