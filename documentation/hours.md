@@ -35,4 +35,5 @@
 | 26.3.2020 | 4h   | Adding unit tests for the rest of the existing apis and some minor refactoring |
 | 31.3.2020 | 5h   | Cypress tests and a lot of configuring for github actions |
 | 1.4.2020  | 1,5h | More cypress tests and some refactoring |
-| Sum       | 65,5h | Cumulative sum of hours |
+|           | 1,5h | Cypress tests for user profile and exercises |
+| Sum       | 72h  | Cumulative sum of hours |
