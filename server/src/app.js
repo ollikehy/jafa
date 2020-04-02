@@ -8,6 +8,7 @@ const registerRouter = require('./controllers/registerRouter')
 const loginRouter = require('./controllers/loginRouter')
 const userRouter = require('./controllers/userRouter')
 const exerciseRouter = require('./controllers/exerciseRouter')
+const workoutRouter = require('./controllers/workoutRouter')
 
 require('dotenv').config()
 
@@ -20,6 +21,7 @@ app.use('/register', registerRouter)
 app.use('/login', loginRouter)
 app.use('/user', userRouter)
 app.use('/exercise', exerciseRouter)
+app.use('/workout', workoutRouter)
 
 // eslint-disable-next-line no-undef
 if (process.env.NODE_ENV === 'test') {
