@@ -19,7 +19,6 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 #### Up next:
 
 - [ ] Adding workouts
-- [ ] Adding exerciseSets to workouts
 
 #### In the distant future:
 
