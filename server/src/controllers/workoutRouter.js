@@ -2,9 +2,9 @@ const workoutRouter = require('express-promise-router')()
 const Workout = require('../models/Workout')
 
 workoutRouter.get('/', async (req, res) => {
-  const body = req.body
+  const query = req.query
 
-  const workouts = await Workout.find({ username: body.username }).populate('exercises.exercise')
+  const workouts = await Workout.find({ username: query.username }).populate('exercises.exercise')
 
   res.status(200).send(workouts)
 })

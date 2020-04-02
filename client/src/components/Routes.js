@@ -10,6 +10,7 @@ import Register from './account/Register'
 import Exercises from './exercise/Exercises'
 import ExerciseForm from './exercise/ExerciseForm'
 import UserProfile from './user/UserProfile'
+import Workout from './workout/Workout'
 
 export class Routes extends Component {
   constructor(props) {
@@ -44,6 +45,9 @@ export class Routes extends Component {
             </Route>
             <Route path='/exercise/new'>
               {loggedIn ? <ExerciseForm /> : <Redirect to='/login' />}
+            </Route>
+            <Route path='/workout'>
+              {loggedIn ? <Workout /> : <Redirect to='/login' />}
             </Route>
           </Switch>
         </div>

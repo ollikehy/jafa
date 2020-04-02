@@ -22,6 +22,7 @@ export class Header extends Component {
           <Link className='header-link' to='/register'>Register</Link>
         </div>}
         {loggedIn && <div className='header-menu'>
+          <Link className='header-link' to='/workout'>Workouts</Link>
           <Link className='header-link' to='/exercise'>Exercises</Link>
           <Link className='header-link' to='/profile'>Profile</Link>
           <button className='header-logout' onClick={logout}>Logout</button>

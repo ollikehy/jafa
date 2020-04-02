@@ -14,7 +14,6 @@ export class Exercises extends Component {
     this.state = {
       search: ''
     }
-
   }
 
   componentDidMount = () => {

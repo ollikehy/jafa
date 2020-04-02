@@ -39,3 +39,7 @@ export const fetchExercises = createAction('FETCH_EXERCISES')
 export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
 
 export const exerciseReducerReset = createAction('EXERCISE_REDUCER_RESET')
+
+/* workoutReducer actions */
+export const fetchWorkouts = createAction('FETCH_WORKOUTS')
+export const fetchWorkoutsSuccess = createAction('FETCH_WORKOUTS_SUCCESS')

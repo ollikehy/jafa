@@ -3,6 +3,7 @@
 @import 'components/accountform';
 @import 'components/dropdownmenu';
 @import 'components/exercise';
+@import 'components/workout';
 
 body {
   margin: 0px;
@@ -30,7 +31,6 @@ body {
   text-decoration: none;
   background-color: palegoldenrod;
   color: black;
-  text-decoration: none;
 }
 
 .message {

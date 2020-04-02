@@ -2,7 +2,7 @@ import axios from 'axios'
 
 export const root = '/api/exercise'
 
-export default class loginApi {
+export default class exerciseApi {
   static get(payload) {
     return axios.get(root, {params: {username: payload.username}})
   }
