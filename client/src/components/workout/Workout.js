@@ -3,27 +3,43 @@ import {connect} from 'react-redux'
 import * as actions from '../../redux/actions/actions'
 
 import PropTypes from 'prop-types'
+import WorkoutList from './WorkoutList'
+import WorkoutForm from './WorkoutForm'
 
 export class Workout extends Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      listView: true
+    }
+  }
 
   componentDidMount = () => {
     this.props.fetchWorkouts()
   }
 
+  toggleChange = () => {
+    this.setState({
+      listView: !this.state.listView
+    })
+  }
+
   render() {
     const {workouts} = this.props
+    const {listView} = this.state
 
     return (
       <div className='container' >
         <div className='workout-header'>
-          <button className='workout-header-button'>Add a new workout</button>
+          <button className='workout-header-button' onClick={this.toggleChange}>
+            {listView ? 'Add a new workout' : 'View your workouts'}
+          </button>
         </div>
-        <div className='workout-list'>
-          <p className='workout-list-title'>Previous workouts</p>
-          {workouts.map(workout =>
-            <p key={workout.id}>Date: {workout.date}</p>
-          )}
-        </div>
+        {!listView ?
+          <WorkoutList workouts={workouts} /> :
+          <WorkoutForm />
+        }
       </div>
     )
   }
