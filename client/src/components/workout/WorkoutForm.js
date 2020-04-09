@@ -11,7 +11,12 @@ export class WorkoutForm extends Component {
 
     this.state = {
       date: dateString,
-      currentExercise: 'Choose exercise',
+      currentExercise: '',
+      sets: '',
+      reps: '',
+      weight: '',
+      time: '',
+      distance: '',
       stateExercises: []
     }
   }
@@ -27,7 +32,7 @@ export class WorkoutForm extends Component {
     })
   }
 
-  handleNameChange = (event) => {
+  handleExerciseChange = (event) => {
     event.preventDefault()
     const exercise = this.props.exercises.find(e => e.name === event.target.value)
     this.setState({
@@ -35,48 +40,89 @@ export class WorkoutForm extends Component {
     })
   }
 
-  addExerciseForm = (e) => {
+  handleChange = (e) => {
     e.preventDefault()
     this.setState({
-      stateExercises: [...this.state.stateExercises].concat({name: ''})
+      [e.target.id]: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.submitExercise(stateExercises)
+  }
+
+  addExerciseToState = (e) => {
+    e.preventDefault()
+    this.setState({
+      stateExercises: [...this.state.stateExercises].concat(
+        {
+          name: this.state.currentExercise.name,
+          id: this.state.currentExercise.id,
+          sets: this.state.sets,
+          repetitions: this.state.reps,
+          weight: this.state.weight,
+          distance: this.state.distance,
+          time: this.state.time
+        }
+      ),
+      sets: '',
+      reps: '',
+      weight: '',
+      distance: '',
+      time: ''
     })
   }
 
   removeExercise = (exercise) => {
-    e.preventDefault()
     this.setState({
-      stateExercises: this.state.stateExercises.filter((e) => e.name !== exercise.name)
+      stateExercises: this.state.stateExercises.filter(exr => exr.name !== exercise.name)
     })
   }
 
   render() {
     const {exercises} = this.props
-    const {date, currentExercise, stateExercises} = this.state
+    const {date, currentExercise, stateExercises, sets, reps, distance, time, weight} = this.state
     return (
       <div className='workout-form-container'>
-        <form>
+        <form className='workout-form'>
           <p className='workout-form-title'>Add a new workout</p>
           <div className='workout-form-date'>
             <label htmlFor='date'>Date: </label>
             <input id='date' type='date' value={date} onChange={this.handleDateChange} />
           </div>
-          <div>
             {stateExercises.map((stateEx, index) => (
-              <div key={index}>
-                <div className='workout-form-exercise'>
-                  <div>
-                    {stateEx.name}
-                  </div>
+              <div className='workout-form-exercise' key={index}>
+                <div>
+                  {stateEx.name}
                 </div>
-                <button onClick={() => this.removeExercise(stateEx)}>-</button>
+                <button type='button' onClick={() => this.removeExercise(stateEx)}>-</button>
               </div>
             ))}
-            <select value={currentExercise.name} onChange={this.handleNameChange}>
+          <button type='submit' onClick={this.handleSubmit}>Submit workout</button>
+          <div className='workout-form-exerciseform'>
+            <p>Add more exercises to workout</p>
+            <select defaultValue='Choose exercise' value={currentExercise.name} onChange={this.handleExerciseChange}>
+              <option defaultValue disabled hidden>Choose exercise</option>
               {exercises && exercises.map((exercise, idx) => (
                 <option key={idx}>{exercise.name}</option>
               ))}
             </select>
-            <button onClick={this.addExerciseForm}>Add an exercise to workout</button>
+            {currentExercise.weightExercise &&
+              <div className='workout-form-weightform'>
+                <input id='sets' name='sets' onChange={this.handleChange} value={sets} placeholder='sets' />
+                <input id='reps' name='reps' onChange={this.handleChange} value={reps} placeholder='reps' />
+                <input id='weight' name='weight' onChange={this.handleChange} value={weight} placeholder='weight' />
+              </div>}
+            {currentExercise.timedExercise &&
+              <div>
+                <input id='time' name='time' onChange={this.handleChange} value={time} placeholder='time' />
+              </div>}
+            {currentExercise.distanceExercise &&
+              <div>
+                <input id='distance' name='distance' onChange={this.handleChange} value={distance} placeholder='distance' />
+              </div>}
+            <button onClick={this.addExerciseToState}>Add exercise</button>
           </div>
         </form>
       </div>

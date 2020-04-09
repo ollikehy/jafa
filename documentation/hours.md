@@ -39,4 +39,5 @@
 |           | 1h   | Changed node version for client to reflect test environment |
 | 2.4.2020  | 2h   | Reading mongoose documentation and creating workout model |
 |           | 1,5h | Workout-page skeleton and redux/saga functionality for workouts |
+| 9.4.2020  | 4h   | A lot of work on Workout-form page |
 | Sum       | 78h  | Cumulative sum of hours |
