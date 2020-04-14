@@ -48,8 +48,9 @@ export class WorkoutForm extends Component {
   }
 
   handleSubmit = (e) => {
+    const {stateExercises, date} = this.state
     e.preventDefault()
-    this.props.createWorkout(this.state.stateExercises)
+    this.props.createWorkout(stateExercises, date)
     this.setState({
       stateExercises: []
     })
@@ -113,17 +114,17 @@ export class WorkoutForm extends Component {
             </select>
             {currentExercise.weightExercise &&
               <div className='workout-form-weightform'>
-                <input id='sets' name='sets' onChange={this.handleChange} value={sets} placeholder='sets' />
-                <input id='reps' name='reps' onChange={this.handleChange} value={reps} placeholder='reps' />
-                <input id='weight' name='weight' onChange={this.handleChange} value={weight} placeholder='weight' />
+                <input id='sets' type='number' name='sets' onChange={this.handleChange} value={sets} placeholder='sets' />
+                <input id='reps' type='number' name='reps' onChange={this.handleChange} value={reps} placeholder='reps' />
+                <input id='weight' type='number' name='weight' onChange={this.handleChange} value={weight} placeholder='weight (kg)' />
               </div>}
             {currentExercise.timedExercise &&
               <div>
-                <input id='time' name='time' onChange={this.handleChange} value={time} placeholder='time' />
+                <input id='time' type='number' name='time' onChange={this.handleChange} value={time} placeholder='time (min)' />
               </div>}
             {currentExercise.distanceExercise &&
               <div>
-                <input id='distance' name='distance' onChange={this.handleChange} value={distance} placeholder='distance' />
+                <input id='distance' type='number' name='distance' onChange={this.handleChange} value={distance} placeholder='distance (m)' />
               </div>}
             <button onClick={this.addExerciseToState}>Add exercise</button>
           </div>

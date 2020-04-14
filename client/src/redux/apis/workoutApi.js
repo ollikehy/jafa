@@ -13,6 +13,10 @@ export default class workoutApi {
         headers: {'Authorization': 'bearer ' + payload.user.token}
       }
     }
-    return axios.post(root, payload.exercises, config)
+    return axios.post(root, {
+      exercises: payload.exercises,
+      date: payload.date,
+      username: payload.user.username
+    }, config)
   }
 }

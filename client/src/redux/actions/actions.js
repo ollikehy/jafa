@@ -37,6 +37,7 @@ export const createExerciseFailure = createAction('CREATE_EXERCISE_FAILURE')
 
 export const fetchExercises = createAction('FETCH_EXERCISES')
 export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
+export const fetchExercisesFailure = createAction('FETCH_EXERCISES_FAILURE')
 
 export const exerciseReducerReset = createAction('EXERCISE_REDUCER_RESET')
 
@@ -44,4 +45,7 @@ export const exerciseReducerReset = createAction('EXERCISE_REDUCER_RESET')
 export const fetchWorkouts = createAction('FETCH_WORKOUTS')
 export const fetchWorkoutsSuccess = createAction('FETCH_WORKOUTS_SUCCESS')
 
-export const createWorkout = createAction('CREATE_WORKOUT', (exercises) => ({exercises}))
+export const createWorkout = createAction('CREATE_WORKOUT', (exercises, date) => ({exercises, date}))
+export const createWorkoutSuccess = createAction('CREATE_WORKOUT_SUCCESS')
+export const createWorkoutFailure = createAction('CREATE_WORKOUT_FAILURE')
+export const workoutReducerReset = createAction('WORKOUT_REDUCER_RESET')

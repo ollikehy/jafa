@@ -1,4 +1,4 @@
-import {call, put, takeLatest, select} from 'redux-saga/effects'
+import {call, put, takeLatest, select, delay} from 'redux-saga/effects'
 import * as actions from '../actions/actions'
 import workoutApi from '../apis/workoutApi'
 import {getCurrentUser} from './loginSaga'
@@ -19,8 +19,9 @@ function* fetchWorkouts() {
 function* createWorkout({payload}) {
   try {
     const user = yield select(getCurrentUser)
-    const exercises = payload.exercises
-    const response = yield call(workoutApi.add, {exercises, user})
+
+    const exercises = parseExercises(payload.exercises)
+    const response = yield call(workoutApi.add, {exercises, date: payload.date, user})
 
     if (response.status === 200) {
       yield put(actions.createWorkoutSuccess(
@@ -36,6 +37,20 @@ function* createWorkout({payload}) {
     yield delay(5000)
     yield put(actions.workoutReducerReset())
   }
+}
+
+const parseExercises = (exercises) => {
+  const parsedExercises = exercises.map(ex => {
+    return {
+      ...ex,
+      weight: ex.weight !== '' ? parseInt(ex.weight) : null,
+      distance: ex.distance !== '' ? parseInt(ex.distance) : null,
+      repetitions: ex.repetitions !== '' ? parseInt(ex.repetitions) : null,
+      sets: ex.sets !== '' ? parseInt(ex.sets) : null,
+      time: ex.time !== '' ? parseInt(ex.time) : null
+    }
+  })
+  return parsedExercises
 }
 
 export const watchCreateWorkout = takeLatest(actions.createWorkout().type, createWorkout)
