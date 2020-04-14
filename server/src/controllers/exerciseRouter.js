@@ -5,9 +5,13 @@ const {exerciseValidator} = require('../utils/validators')
 const {jwtMiddleware, jwtNotRequired} = require('../utils/middleware')
 
 exerciseRouter.get('/', jwtNotRequired, async (req, res) => {
-  const user = await User.find({username: req.query.username})
-
-  const exercises = user.admin ? await Exercise.find() : await Exercise.find({accepted: true})
+  let exercises
+  if (req.query.username) {
+    const user = await User.find({username: req.query.username})
+    exercises = user.admin ? await Exercise.find() : await Exercise.find({accepted: true})
+  } else {
+    exercises = await Exercise.find({accepted: true})
+  }
 
   if (exercises.length < 1) {
     return res.status(204).send({error: 'No exercises found'})

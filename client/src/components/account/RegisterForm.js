@@ -22,9 +22,9 @@ export class RegisterForm extends Component {
     })
   }
 
-  setErrorMessage = () => {
-    this.props.registerFailure('Your passwords did not match')
-    setTimeout(() => {this.props.registerErrorReset()}, 10000)
+  setPasswordError = () => {
+    this.props.setErrorMessage('Your passwords did not match')
+    setTimeout(() => {this.props.errorReducerReset()}, 5000)
   }
 
   handleSubmit = (e) => {
@@ -32,7 +32,7 @@ export class RegisterForm extends Component {
     const {username, password, confirmPass} = this.state
 
     password !== confirmPass ?
-      this.setErrorMessage() :
+      this.setPasswordError() :
       this.props.register(username, password)
 
     this.setState({
@@ -92,14 +92,14 @@ export class RegisterForm extends Component {
 }
 
 RegisterForm.propTypes = {
-  registerFailure: PropTypes.func,
-  registerErrorReset: PropTypes.func,
+  setErrorMessage: PropTypes.func,
+  errorReducerReset: PropTypes.func,
   register: PropTypes.func,
   registerError: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
-  registerError: state.registerReducer.registerError
+  registerError: state.errorReducer.errorMessage
 })
 
 const mapDispatchToProps = {

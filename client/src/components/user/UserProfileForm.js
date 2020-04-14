@@ -83,7 +83,7 @@ UserProfileForm.propTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.userReducer.user,
-  updateFailure: state.userReducer.updateFailure
+  updateFailure: state.errorReducer.errorMessage
 })
 
 const mapDispatchToProps = {

@@ -6,11 +6,11 @@ import createSagaMiddleware from 'redux-saga'
 
 import Routes from './components/Routes'
 
-import registerReducer from './redux/reducers/registerReducer'
 import loginReducer from './redux/reducers/loginReducer'
 import userReducer from './redux/reducers/userReducer'
 import exerciseReducer from './redux/reducers/exerciseReducer'
 import workoutReducer from './redux/reducers/workoutReducer'
+import errorReducer from './redux/reducers/errorReducer'
 
 import rootSaga from './redux/sagas/sagas'
 
@@ -21,7 +21,7 @@ const sagaMiddleware = createSagaMiddleware()
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
-  combineReducers({registerReducer, loginReducer, userReducer, exerciseReducer, workoutReducer}),
+  combineReducers({loginReducer, userReducer, exerciseReducer, workoutReducer, errorReducer}),
   composeEnhancer(applyMiddleware(sagaMiddleware))
 )
 

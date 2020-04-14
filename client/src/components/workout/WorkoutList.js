@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const WorkoutList = (props) => {
   const {workouts} = props
@@ -10,6 +11,10 @@ const WorkoutList = (props) => {
       )}
     </div>
   )
+}
+
+WorkoutList.propTypes = {
+  workouts: PropTypes.array
 }
 
 export default WorkoutList

@@ -23,7 +23,7 @@ FrontPage.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  registerSuccess: state.registerReducer.registerSuccess
+  registerSuccess: state.errorReducer.successMessage
 })
 
 export default connect(

@@ -12,7 +12,11 @@ function* fetchWorkouts() {
       yield put(actions.fetchWorkoutsSuccess(response.data))
     }
   } catch (e) {
-    console.log(e.message)
+    const errorMessage = e.response.data.error
+
+    yield put(actions.setErrorMessage(errorMessage))
+    yield delay(5000)
+    yield put(actions.errorReducerReset())
   }
 }
 
@@ -24,18 +28,18 @@ function* createWorkout({payload}) {
     const response = yield call(workoutApi.add, {exercises, date, user})
 
     if (response.status === 200) {
-      yield put(actions.createWorkoutSuccess(
+      yield put(actions.setSuccessMessage(
         'New workout created succesfully'
       ))
       yield delay(5000)
-      yield put(actions.workoutReducerReset())
+      yield put(actions.errorReducerReset())
     }
   } catch (e) {
     const errorMessage = e.response.data.error
 
-    yield put(actions.createWorkoutFailure(errorMessage))
+    yield put(actions.setErrorMessage(errorMessage))
     yield delay(5000)
-    yield put(actions.workoutReducerReset())
+    yield put(actions.errorReducerReset())
   }
 }
 

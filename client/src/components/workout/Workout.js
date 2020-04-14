@@ -36,7 +36,7 @@ export class Workout extends Component {
             {listView ? 'Add a new workout' : 'View your workouts'}
           </button>
         </div>
-        {!listView ?
+        {listView ?
           <WorkoutList workouts={workouts} /> :
           <WorkoutForm />
         }

@@ -15,9 +15,9 @@ function* fetchUser() {
   } catch (e) {
     const errorMessage = e.response.data.error
 
-    yield put(actions.fetchUserFailure(errorMessage))
+    yield put(actions.setErrorMessage(errorMessage))
     yield delay(5000)
-    yield put(actions.userReducerReset())
+    yield put(actions.errorReducerReset())
   }
 }
 
@@ -44,9 +44,9 @@ function* updateUser({payload}) {
 
   } catch (e) {
     const errorMessage = (e.response.data.error)
-    yield put(actions.updateUserFailure(errorMessage))
+    yield put(actions.setErrorMessage(errorMessage))
     yield delay(5000)
-    yield put(actions.userReducerReset())
+    yield put(actions.errorReducerReset())
   }
 }
 

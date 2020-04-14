@@ -2,15 +2,10 @@ import {createAction} from 'redux-actions'
 
 /* registerReducer actions */
 export const register = createAction('REGISTER', (username, password) => ({username, password}))
-export const registerSuccess = createAction('REGISTER_SUCCESS')
-export const registerFailure = createAction('REGISTER_FAILURE')
-
-export const registerReducerReset = createAction('REGISTER_REDUCER_RESET')
 
 /* loginReducer actions */
 export const login = createAction('LOGIN', (username, password) => ({username, password}))
 export const loginSuccess = createAction('LOGIN_SUCCESS')
-export const loginFailure = createAction('LOGIN_FAILURE')
 
 export const logout = createAction('LOGOUT')
 export const logoutSuccess = createAction('LOGOUT_SUCCESS')
@@ -22,30 +17,26 @@ export const loginReducerReset = createAction('LOGIN_REDUCER_RESET')
 export const fetchUser = createAction('FETCH_USER')
 export const removeUser = createAction('REMOVE_USER')
 export const fetchUserSuccess = createAction('FETCH_USER_SUCCESS')
-export const fetchUserFailure = createAction('FETCH_USER_ERROR')
 
 export const updateUser = createAction('UPDATE_USER', (username, height, weight) => ({username, height, weight}))
 export const updateUserSuccess = createAction('UPDATE_USER_SUCCESS')
-export const updateUserFailure = createAction('UPDATE_USER_FAILURE')
 
 export const userReducerReset = createAction('USER_REDUCER_RESET')
 
 /* exerciseReducer actions */
 export const createExercise = createAction('CREATE_EXERCISE', (name, username, weight, distance, timed) => ({name, username, weight, distance, timed}))
-export const createExerciseSuccess = createAction('CREATE_EXERCISE_SUCCESS')
-export const createExerciseFailure = createAction('CREATE_EXERCISE_FAILURE')
 
 export const fetchExercises = createAction('FETCH_EXERCISES')
 export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
-export const fetchExercisesFailure = createAction('FETCH_EXERCISES_FAILURE')
-
-export const exerciseReducerReset = createAction('EXERCISE_REDUCER_RESET')
 
 /* workoutReducer actions */
 export const fetchWorkouts = createAction('FETCH_WORKOUTS')
 export const fetchWorkoutsSuccess = createAction('FETCH_WORKOUTS_SUCCESS')
 
 export const createWorkout = createAction('CREATE_WORKOUT', (exercises, date) => ({exercises, date}))
-export const createWorkoutSuccess = createAction('CREATE_WORKOUT_SUCCESS')
-export const createWorkoutFailure = createAction('CREATE_WORKOUT_FAILURE')
-export const workoutReducerReset = createAction('WORKOUT_REDUCER_RESET')
+
+/* errorReducer actions */
+
+export const setErrorMessage = createAction('SET_ERROR_MESSAGE')
+export const setSuccessMessage = createAction('SET_SUCCESS_MESSAGE')
+export const errorReducerReset = createAction('ERROR_REDUCER_RESET')

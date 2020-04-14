@@ -19,18 +19,18 @@ function* createExercise({payload}) {
 
     if (response.status === 200) {
       const msg = user.admin ? 'added' : 'suggested'
-      yield put(actions.createExerciseSuccess(
+      yield put(actions.setSuccessMessage(
         `Exercise ${response.data.name} ${msg} succesfully`
       ))
       yield delay(5000)
-      yield put(actions.exerciseReducerReset())
+      yield put(actions.errorReducerReset())
     }
   } catch (e) {
     const errorMessage = e.response.data.error
 
-    yield put(actions.createExerciseFailure(errorMessage))
+    yield put(actions.setErrorMessage(errorMessage))
     yield delay(5000)
-    yield put(actions.exerciseReducerReset())
+    yield put(actions.errorReducerReset())
 
   }
 }
@@ -44,9 +44,9 @@ function* fetchExercises() {
       yield put(actions.fetchExercisesSuccess(response.data))
     }
   } catch (e) {
-    yield put(actions.fetchExercisesFailure(e.message))
+    yield put(actions.setErrorMessage(e.message))
     yield delay(5000)
-    yield put(actions.exerciseReducerReset())
+    yield put(actions.errorReducerReset())
   }
 }
 

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 
 import * as actions from '../../redux/actions/actions'
 
@@ -96,14 +97,14 @@ export class WorkoutForm extends Component {
             <label htmlFor='date'>Date: </label>
             <input id='date' type='date' value={date} onChange={this.handleDateChange} />
           </div>
-            {stateExercises.map((stateEx, index) => (
-              <div className='workout-form-exercise' key={index}>
-                <div>
-                  {stateEx.name}
-                </div>
-                <button type='button' onClick={() => this.removeExercise(stateEx)}>-</button>
+          {stateExercises.map((stateEx, index) => (
+            <div className='workout-form-exercise' key={index}>
+              <div>
+                {stateEx.name}
               </div>
-            ))}
+              <button type='button' onClick={() => this.removeExercise(stateEx)}>-</button>
+            </div>
+          ))}
           <button type='submit' onClick={this.handleSubmit}>Submit workout</button>
           <div className='workout-form-exerciseform'>
             <p>Add more exercises to workout</p>
@@ -133,6 +134,12 @@ export class WorkoutForm extends Component {
       </div>
     )
   }
+}
+
+WorkoutForm.propTypes = {
+  fetchExercises: PropTypes.func,
+  exercises: PropTypes.array,
+  createWorkout: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({

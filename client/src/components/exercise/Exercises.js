@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 import * as actions from '../../redux/actions/actions'
 
 import Exercise from './Exercise'
+import Message from '../app/Message'
 
 export class Exercises extends Component {
   constructor(props) {
@@ -27,7 +28,7 @@ export class Exercises extends Component {
   }
 
   render() {
-    const {exercises} = this.props
+    const {exercises, errorMessage} = this.props
     const {search} = this.state
 
     return (
@@ -40,6 +41,7 @@ export class Exercises extends Component {
             onChange={this.handleChange}
             placeholder='Search..' />
         </div>
+        {errorMessage && <Message error={errorMessage} />}
         {exercises &&
           <div className='exercise-list'>
             <p className='exercise-list-title'>List of exercises</p>
@@ -54,11 +56,13 @@ export class Exercises extends Component {
 
 Exercises.propTypes = {
   fetchExercises: PropTypes.func,
-  exercises: PropTypes.array
+  exercises: PropTypes.array,
+  errorMessage: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
-  exercises: state.exerciseReducer.exercises
+  exercises: state.exerciseReducer.exercises,
+  errorMessage: state.errorReducer.errorMessage
 })
 
 const mapDispatchToProps = {

@@ -25,9 +25,9 @@ function* requestLogin({payload}) {
   } catch (e) {
     const errorMessage = e.response.data.error
 
-    yield put(actions.loginFailure(errorMessage))
+    yield put(actions.setErrorMessage(errorMessage))
     yield delay(5000)
-    yield put(actions.loginReducerReset())
+    yield put(actions.errorReducerReset())
   }
 }
 

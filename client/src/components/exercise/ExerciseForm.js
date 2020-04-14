@@ -120,8 +120,8 @@ ExerciseForm.propTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.userReducer.user,
-  exerciseError: state.exerciseReducer.exerciseError,
-  exerciseSuccess: state.exerciseReducer.exerciseSuccess
+  exerciseError: state.errorReducer.errorMessage,
+  exerciseSuccess: state.errorReducer.successMessage
 })
 
 const mapDispatchToProps = {

@@ -85,7 +85,7 @@ UserProfile.propTypes = {
 
 const mapStateToProps = (state) => ({
   user: state.userReducer.user,
-  userFetchError: state.userReducer.userFetchError,
+  userFetchError: state.errorReducer.errorMessage,
   updateSuccess: state.userReducer.updateSuccess,
   loggedIn: state.loginReducer.loggedIn
 })

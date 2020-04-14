@@ -34,7 +34,7 @@ export class LoginForm extends Component {
 
   componentDidMount = () => {
     if (this.props.loginError) {
-      this.props.loginErrorReset()
+      this.props.errorReducerReset()
     }
   }
 
@@ -79,7 +79,7 @@ export class LoginForm extends Component {
 LoginForm.propTypes = {
   login: PropTypes.func,
   loginError: PropTypes.string,
-  loginErrorReset: PropTypes.func
+  errorReducerReset: PropTypes.func
 }
 
 const mapDispatchToProps = {
@@ -87,7 +87,7 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  loginError: state.loginReducer.loginError
+  loginError: state.errorReducer.errorMessage
 })
 
 export default connect(

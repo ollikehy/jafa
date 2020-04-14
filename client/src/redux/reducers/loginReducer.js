@@ -3,7 +3,6 @@ import * as actions from '../actions/actions'
 
 const initialState = {
   loggedIn: localStorage.loggedUser ? JSON.parse(localStorage.loggedUser) : null,
-  loginError: null,
   logoutError: null
 }
 
@@ -11,12 +10,7 @@ const reducer = handleActions(
   {
     [actions.loginSuccess]: (state, action) => ({
       ...state,
-      loggedIn: action.payload,
-      loginError: null
-    }),
-    [actions.loginFailure]: (state, action) => ({
-      ...state,
-      loginError: action.payload
+      loggedIn: action.payload
     }),
     [actions.logoutSuccess]: (state) => ({
       ...state,
@@ -29,7 +23,6 @@ const reducer = handleActions(
     }),
     [actions.loginReducerReset]: (state) => ({
       ...state,
-      loginError: null,
       logoutError: null
     }),
   },

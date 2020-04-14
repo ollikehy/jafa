@@ -4,7 +4,8 @@ export const root = '/api/exercise'
 
 export default class exerciseApi {
   static get(payload) {
-    return axios.get(root, {params: {username: payload.username}})
+    const username = payload ? payload.username : null
+    return axios.get(root, {params: {username}})
   }
   static add(payload) {
     let config = null
