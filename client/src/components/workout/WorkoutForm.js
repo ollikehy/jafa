@@ -49,7 +49,10 @@ export class WorkoutForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.submitExercise(stateExercises)
+    this.props.createWorkout(this.state.stateExercises)
+    this.setState({
+      stateExercises: []
+    })
   }
 
   addExerciseToState = (e) => {

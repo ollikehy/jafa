@@ -16,4 +16,27 @@ function* fetchWorkouts() {
   }
 }
 
+function* createWorkout({payload}) {
+  try {
+    const user = yield select(getCurrentUser)
+    const exercises = payload.exercises
+    const response = yield call(workoutApi.add, {exercises, user})
+
+    if (response.status === 200) {
+      yield put(actions.createWorkoutSuccess(
+        'New workout created succesfully'
+      ))
+      yield delay(5000)
+      yield put(actions.workoutReducerReset())
+    }
+  } catch (e) {
+    const errorMessage = e.response.data.error
+
+    yield put(actions.createWorkoutFailure(errorMessage))
+    yield delay(5000)
+    yield put(actions.workoutReducerReset())
+  }
+}
+
+export const watchCreateWorkout = takeLatest(actions.createWorkout().type, createWorkout)
 export const watchFetchWorkouts = takeLatest(actions.fetchWorkouts().type, fetchWorkouts)

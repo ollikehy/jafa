@@ -7,6 +7,12 @@ export default class workoutApi {
     return axios.get(root, {params: {username: payload.username}})
   }
   static add(payload) {
-    return axios.post(root, payload)
+    let config = null
+    if (payload.user.token !== null) {
+      config = {
+        headers: {'Authorization': 'bearer ' + payload.user.token}
+      }
+    }
+    return axios.post(root, payload.exercises, config)
   }
 }

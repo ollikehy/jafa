@@ -44,7 +44,9 @@ function* fetchExercises() {
       yield put(actions.fetchExercisesSuccess(response.data))
     }
   } catch (e) {
-    console.log(e.message)
+    yield put(actions.fetchExercisesFailure(e.message))
+    yield delay(5000)
+    yield put(actions.exerciseReducerReset())
   }
 }
 
