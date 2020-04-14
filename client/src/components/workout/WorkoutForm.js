@@ -62,7 +62,7 @@ export class WorkoutForm extends Component {
       stateExercises: [...this.state.stateExercises].concat(
         {
           name: this.state.currentExercise.name,
-          id: this.state.currentExercise.id,
+          exercise: this.state.currentExercise.id,
           sets: this.state.sets,
           repetitions: this.state.reps,
           weight: this.state.weight,
@@ -70,6 +70,7 @@ export class WorkoutForm extends Component {
           time: this.state.time
         }
       ),
+      currentExercise: 'Choose exercise',
       sets: '',
       reps: '',
       weight: '',

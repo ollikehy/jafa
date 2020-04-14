@@ -20,8 +20,8 @@ function* createWorkout({payload}) {
   try {
     const user = yield select(getCurrentUser)
 
-    const exercises = parseExercises(payload.exercises)
-    const response = yield call(workoutApi.add, {exercises, date: payload.date, user})
+    const {exercises, date} = payload
+    const response = yield call(workoutApi.add, {exercises, date, user})
 
     if (response.status === 200) {
       yield put(actions.createWorkoutSuccess(
@@ -39,19 +39,6 @@ function* createWorkout({payload}) {
   }
 }
 
-const parseExercises = (exercises) => {
-  const parsedExercises = exercises.map(ex => {
-    return {
-      ...ex,
-      weight: ex.weight !== '' ? parseInt(ex.weight) : null,
-      distance: ex.distance !== '' ? parseInt(ex.distance) : null,
-      repetitions: ex.repetitions !== '' ? parseInt(ex.repetitions) : null,
-      sets: ex.sets !== '' ? parseInt(ex.sets) : null,
-      time: ex.time !== '' ? parseInt(ex.time) : null
-    }
-  })
-  return parsedExercises
-}
 
 export const watchCreateWorkout = takeLatest(actions.createWorkout().type, createWorkout)
 export const watchFetchWorkouts = takeLatest(actions.fetchWorkouts().type, fetchWorkouts)

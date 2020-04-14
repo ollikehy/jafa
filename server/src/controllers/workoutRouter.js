@@ -13,10 +13,10 @@ workoutRouter.get('/', async (req, res) => {
 
 workoutRouter.post('/', jwtMiddleware, workoutValidator, async (req, res) => {
   const body = req.body
-  console.log({body})
-  //  const workout = await new Workout(body).save()
 
-  //  res.status(200).send(workout)
+  const workout = await new Workout(body).save()
+
+  res.status(200).send(workout)
 })
 
 module.exports = workoutRouter

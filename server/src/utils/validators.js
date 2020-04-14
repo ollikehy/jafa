@@ -39,12 +39,12 @@ const workoutValidator = celebrate({
     exercises: Joi.array().items(
       Joi.object({
         name: Joi.string().required(),
-        id: Joi.string().required(),
-        weight: Joi.number().allow(null),
-        distance: Joi.number().allow(null),
-        time: Joi.number().allow(null),
-        sets: Joi.number().allow(null),
-        repetitions: Joi.number().allow(null)
+        exercise: Joi.string().required(),
+        weight: Joi.string().allow(''),
+        distance: Joi.string().allow(''),
+        time: Joi.string().allow(''),
+        sets: Joi.string().allow(''),
+        repetitions: Joi.string().allow('')
       })
     )
   })
