@@ -22,6 +22,29 @@
     &-title {
       font-size: 20px;
     }
+
+    &-entry {
+      margin: 5px;
+      padding: 5px;
+      background-color: lightgreen;
+      width: 60%;
+      text-align: center;
+
+      &-details {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  &-exercise {
+
+    &-name {
+      margin: 5px;
+    }
+
+    &-detail {
+      margin: 2px;
+    }
   }
 
   &-form {

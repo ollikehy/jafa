@@ -41,4 +41,5 @@
 |           | 1,5h | Workout-page skeleton and redux/saga functionality for workouts |
 | 9.4.2020  | 4h   | A lot of work on Workout-form page |
 | 14.4.2020 | 4h   | Backend for workouts and redux refactoring |
-| Sum       | 82h  | Cumulative sum of hours |
+| 15.4.2020 | 2h   | Workout listing and workout details |
+| Sum       | 84h  | Cumulative sum of hours |
