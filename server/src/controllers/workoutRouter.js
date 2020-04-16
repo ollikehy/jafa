@@ -15,7 +15,7 @@ workoutRouter.post('/', jwtMiddleware, workoutValidator, async (req, res) => {
   const body = req.body
 
   if (body.exercises.length < 1) {
-    return res.status(400).send('No exercises added to the workout')
+    return res.status(400).send({error: 'No exercises added to the workout'})
   }
 
   const workout = await new Workout(body).save()

@@ -20,4 +20,11 @@ describe('Userprofile functions ', function () {
     cy.contains('User updated succesfully')
     cy.contains('24.69')
   })
+  it('User gets notified if update fails', function() {
+    cy.visit('localhost/profile')
+    cy.contains('Edit your information').click()
+    cy.get('#height').type('test')
+    cy.get('#profileSubmit').click()
+    cy.contains('"weight" must be a number')
+  })
 })

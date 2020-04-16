@@ -42,4 +42,11 @@ describe('Exercises ', function () {
     cy.contains('Planking')
     cy.contains('Squat').should('not.exist')
   })
+  it('User is notified if exercise is incomplete', function () {
+    cy.visit('localhost/exercise')
+    cy.contains('Add a new exercise').click()
+    cy.get('#weight').click()
+    cy.get('#submitExercise').click()
+    cy.contains('"name" is not allowed to be empty')
+  })
 })

@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 
+import Message from '../app/Message'
+
 import * as actions from '../../redux/actions/actions'
 
 export class WorkoutForm extends Component {
@@ -87,10 +89,11 @@ export class WorkoutForm extends Component {
   }
 
   render() {
-    const {exercises} = this.props
+    const {exercises, errorMessage, successMessage} = this.props
     const {date, currentExercise, stateExercises, sets, reps, distance, time, weight} = this.state
     return (
       <div className='workout-form-container'>
+        {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage}/>}
         <form className='workout-form'>
           <p className='workout-form-title'>Add a new workout</p>
           <div className='workout-form-date'>
@@ -105,10 +108,10 @@ export class WorkoutForm extends Component {
               <button type='button' onClick={() => this.removeExercise(stateEx)}>-</button>
             </div>
           ))}
-          <button type='submit' onClick={this.handleSubmit}>Submit workout</button>
+          <button id='submit-workout' type='submit' onClick={this.handleSubmit}>Submit workout</button>
           <div className='workout-form-exerciseform'>
             <p>Add more exercises to workout</p>
-            <select defaultValue='Choose exercise' value={currentExercise.name} onChange={this.handleExerciseChange}>
+            <select id='exerciselist' defaultValue='Choose exercise' value={currentExercise.name} onChange={this.handleExerciseChange}>
               <option defaultValue disabled hidden>Choose exercise</option>
               {exercises && exercises.map((exercise, idx) => (
                 <option key={idx}>{exercise.name}</option>
@@ -128,7 +131,7 @@ export class WorkoutForm extends Component {
               <div>
                 <input id='distance' type='number' name='distance' onChange={this.handleChange} value={distance} placeholder='distance (m)' />
               </div>}
-            <button onClick={this.addExerciseToState}>Add exercise</button>
+            <button id='add-exercise-button' onClick={this.addExerciseToState}>Add exercise</button>
           </div>
         </form>
       </div>
@@ -139,11 +142,15 @@ export class WorkoutForm extends Component {
 WorkoutForm.propTypes = {
   fetchExercises: PropTypes.func,
   exercises: PropTypes.array,
-  createWorkout: PropTypes.func
+  createWorkout: PropTypes.func,
+  errorMessage: PropTypes.string,
+  successMessage: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
-  exercises: state.exerciseReducer.exercises
+  exercises: state.exerciseReducer.exercises,
+  errorMessage: state.errorReducer.errorMessage,
+  successMessage: state.errorReducer.successMessage
 })
 
 const mapDispatchToProps = {

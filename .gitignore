@@ -134,4 +134,8 @@ sketch
 # Ignore package-lock
 package-lock.json
 
+# Ignore local scripts
+
+lint.sh
+
 # End of https://www.gitignore.io/api/node,react,visualstudiocode
