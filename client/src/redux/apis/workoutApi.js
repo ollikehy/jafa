@@ -4,7 +4,11 @@ export const root = '/api/workout'
 
 export default class workoutApi {
   static get(payload) {
-    return axios.get(root, {params: {username: payload.username}})
+    let headers = null
+    if (payload.token !== null) {
+      headers = {'Authorization': 'bearer ' + payload.token}
+    }
+    return axios.get(root, {params: {username: payload.username}, headers})
   }
   static add(payload) {
     let config = null
