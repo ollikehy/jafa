@@ -28,7 +28,7 @@ export class Exercises extends Component {
   }
 
   render() {
-    const {exercises, errorMessage} = this.props
+    const {exercises, errorMessage, user} = this.props
     const {search} = this.state
 
     return (
@@ -46,8 +46,8 @@ export class Exercises extends Component {
           <div className='exercise-list'>
             <p className='exercise-list-title'>List of exercises</p>
             {exercises.map(exercise =>
-              exercise.accepted && exercise.name.toLowerCase().indexOf(search.toLowerCase()) > -1 &&
-              <Exercise key={exercise.id} exercise={exercise} />)}
+              exercise.name.toLowerCase().indexOf(search.toLowerCase()) > -1 &&
+              <Exercise key={exercise.id} user={user} exercise={exercise} />)}
           </div>}
       </div >
     )
@@ -57,10 +57,12 @@ export class Exercises extends Component {
 Exercises.propTypes = {
   fetchExercises: PropTypes.func,
   exercises: PropTypes.array,
-  errorMessage: PropTypes.string
+  errorMessage: PropTypes.string,
+  user: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({
+  user: state.loginReducer.loggedIn,
   exercises: state.exerciseReducer.exercises,
   errorMessage: state.errorReducer.errorMessage
 })

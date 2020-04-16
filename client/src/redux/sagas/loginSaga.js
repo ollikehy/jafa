@@ -37,6 +37,7 @@ function* requestLogout({payload}) {
 
     yield put(actions.logoutSuccess(payload === true))
     yield put(actions.removeUser())
+    yield put(actions.removeWorkouts())
   } catch (e) {
     yield put(actions.logoutFailure('There was an error logging out, try again'))
   }

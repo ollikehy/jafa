@@ -3,16 +3,22 @@ import PropTypes from 'prop-types'
 
 const Exercise = (props) => {
 
-  const {name} = props.exercise
+  const {exercise, user} = props
+
+  const className = exercise.accepted ? 'exercise-accepted' : 'exercise-suggestion'
+
   return (
-    <div>
-      <p>{name}</p>
-    </div>
+    exercise.accepted || user.admin ?
+      <div className={className}>
+        <p>{exercise.name}</p>
+      </div>
+      : null
   )
 }
 
 Exercise.propTypes = {
-  exercise: PropTypes.object
+  exercise: PropTypes.object,
+  user: PropTypes.object
 }
 
 export default Exercise

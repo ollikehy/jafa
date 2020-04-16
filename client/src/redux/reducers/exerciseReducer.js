@@ -10,7 +10,10 @@ const reducer = handleActions(
     [actions.fetchExercisesSuccess]: (state, action) => ({
       ...state,
       exercises: action.payload
-    })
+    }),
+    [actions.removeExercises]: () => ({
+      exercises: []
+    }),
   }, initialState
 )
 

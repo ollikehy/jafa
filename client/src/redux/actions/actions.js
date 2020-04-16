@@ -29,11 +29,15 @@ export const createExercise = createAction('CREATE_EXERCISE', (name, username, w
 export const fetchExercises = createAction('FETCH_EXERCISES')
 export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
 
+export const removeExercises = createAction('REMOVE_EXERCISES')
+
 /* workoutReducer actions */
 export const createWorkout = createAction('CREATE_WORKOUT', (exercises, date) => ({exercises, date}))
 
 export const fetchWorkouts = createAction('FETCH_WORKOUTS')
 export const fetchWorkoutsSuccess = createAction('FETCH_WORKOUTS_SUCCESS')
+
+export const removeWorkouts = createAction('REMOVE_WORKOUTS')
 
 /* errorReducer actions */
 export const setErrorMessage = createAction('SET_ERROR_MESSAGE')

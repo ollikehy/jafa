@@ -1,7 +1,15 @@
 .exercise {
 
+  &-accepted {
+    background-color: lightgreen;
+  }
+
+  &-suggestion {
+    background-color: orange;
+  }
+
   &-header {
-    display:flex;
+    display: flex;
     justify-content: space-between;
   }
 
