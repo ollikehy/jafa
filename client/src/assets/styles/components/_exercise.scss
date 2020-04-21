@@ -1,11 +1,36 @@
 .exercise {
 
+  &-name {
+    position: absolute;
+  }
+
   &-accepted {
     background-color: lightgreen;
+    margin: 5px;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
   }
 
   &-suggestion {
     background-color: orange;
+    margin: 5px;
+    padding: 5px;
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+
+  &-suggestion-toggle {
+    padding: 9px 0px;
+    margin-top: 2px;
+    margin-left: 80%;
+  }
+
+  &-suggestion-toggle-button {
+    margin: 0px 5px;
+    cursor: pointer;
   }
 
   &-header {

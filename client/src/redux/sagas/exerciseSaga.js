@@ -50,5 +50,16 @@ function* fetchExercises() {
   }
 }
 
+function* updateSuggestedExercise({payload}) {
+  try {
+    console.log(payload)
+  } catch (e) {
+    yield put(actions.setErrorMessage(e.message))
+    yield delay(5000)
+    yield put(actions.errorReducerReset())
+  }
+}
+
 export const watchCreateExercise = takeLatest(actions.createExercise().type, createExercise)
 export const watchFetchExercises = takeLatest(actions.fetchExercises().type, fetchExercises)
+export const watchUpdateSuggestedExercise = takeLatest(actions.updateSuggestedExercise().type, updateSuggestedExercise)

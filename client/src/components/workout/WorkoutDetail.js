@@ -20,8 +20,8 @@ export class WorkoutDetail extends Component {
     const {workout} = this.props
     const {visible} = this.state
     return (
-      <div className='workout-list workout-list-entry'>
-        <p onClick={this.handleClick}>{workout.date.substring(0, 10)}</p>
+      <div onClick={this.handleClick} className='workout-list workout-list-entry'>
+        <p>{workout.date.substring(0, 10)}</p>
         {visible &&
           <div>
             {workout.exercises.map((exercise, indx) => {
