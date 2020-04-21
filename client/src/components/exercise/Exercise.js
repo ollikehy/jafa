@@ -9,17 +9,27 @@ import * as actions from '../../redux/actions/actions'
 class Exercise extends Component {
   constructor(props) {
     super(props)
+
+    this.state = {
+      hidden: false
+    }
   }
 
   handleAccept = (accepted, name) => {
+    if (!accepted) {
+      this.setState({
+        hidden: true
+      })
+    }
     this.props.updateSuggestedExercise(name, accepted)
   }
 
   render() {
     const {user, exercise} = this.props
+    const {hidden} = this.state
     const className = exercise.accepted ? 'exercise-accepted' : 'exercise-suggestion'
 
-    if (user && user.admin && !exercise.accepted) {
+    if (user && user.admin && !exercise.accepted && !hidden) {
       return (
         <div className={className}>
           <p className='exercise-name'>{exercise.name}</p>
@@ -29,7 +39,7 @@ class Exercise extends Component {
           </div>
         </div>
       )
-    } else if (exercise.accepted) {
+    } else if (exercise.accepted && !hidden) {
       return (
         <div className={className}>
           <p>{exercise.name}</p>

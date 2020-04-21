@@ -19,7 +19,9 @@ Cypress.Commands.add('admin', ({username}) => {
 const exercises = [
   {name: 'Running', distanceExercise: true, accepted: true},
   {name: 'Squat', weightExercise: true, accepted: true},
-  {name: 'Planking', timedExercise: true, accepted: true}
+  {name: 'Planking', timedExercise: true, accepted: true},
+  {name: 'Pull up', weightExercise: true, accepted: false},
+  {name: 'Dumbell curl', weightExercise: true, accepted: false}
 ]
 
 Cypress.Commands.add('addExercises', () => {

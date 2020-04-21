@@ -28,7 +28,7 @@ export class Exercises extends Component {
   }
 
   render() {
-    const {exercises, errorMessage, user} = this.props
+    const {exercises, errorMessage, successMessage, user} = this.props
     const {search} = this.state
 
     return (
@@ -41,7 +41,7 @@ export class Exercises extends Component {
             onChange={this.handleChange}
             placeholder='Search..' />
         </div>
-        {errorMessage && <Message error={errorMessage} />}
+        {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
         {exercises &&
           <div className='exercise-list'>
             <p className='exercise-list-title'>List of exercises</p>
@@ -58,13 +58,15 @@ Exercises.propTypes = {
   fetchExercises: PropTypes.func,
   exercises: PropTypes.array,
   errorMessage: PropTypes.string,
+  successMessage: PropTypes.string,
   user: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({
   user: state.loginReducer.loggedIn,
   exercises: state.exerciseReducer.exercises,
-  errorMessage: state.errorReducer.errorMessage
+  errorMessage: state.errorReducer.errorMessage,
+  successMessage: state.errorReducer.successMessage
 })
 
 const mapDispatchToProps = {

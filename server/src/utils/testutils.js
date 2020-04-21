@@ -4,19 +4,21 @@ const Exercise = require('../models/Exercise')
 const users = [
   {username: 'johnnydoe', password: 'password123'},
   {username: 'usr', password: 'short'},
-  {username: 'johndoe', password: 'hunter2', admin: true},
+  {username: 'johndoe', password: 'hunter2345', admin: true},
   {username: 'admintest', pass: 'hackerman'}
 ]
 
 const cryptPassword = async (user) => {
   const hashed = await bcrypt.hash(user.password, 10)
-  return {username: user.username, password: hashed}
+  return {username: user.username, password: hashed, admin: user.admin ? true : false}
 }
 
 const initialExercises = [
   {name: 'Dumbell curl', weightExercise: true, accepted: true},
   {name: 'Running', distanceExercise: true, accepted: true},
-  {name: 'Squat', weightExercise: true, accepted: true}
+  {name: 'Squat', weightExercise: true, accepted: true},
+  {name: 'Pull up', weightExercise: true, accepted: false},
+  {name: 'Bench press', weightExercise: true, accepted: false}
 ]
 
 const initializeExercises = async () => {

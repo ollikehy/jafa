@@ -52,7 +52,16 @@ function* fetchExercises() {
 
 function* updateSuggestedExercise({payload}) {
   try {
-    console.log(payload)
+    const user = yield select(getCurrentUser)
+    const {accepted, name} = payload
+    const response = yield call(exerciseApi.modify, {user, accepted, exercise: name})
+
+    if (response.status === 200) {
+      console.log(response)
+      yield put(actions.setSuccessMessage(response.data.message))
+      yield delay(5000)
+      yield put(actions.errorReducerReset())
+    }
   } catch (e) {
     yield put(actions.setErrorMessage(e.message))
     yield delay(5000)

@@ -16,4 +16,14 @@ export default class exerciseApi {
     }
     return axios.post(root, payload.exercise, config)
   }
+  static modify(payload) {
+    let config = null
+    if (payload.user.token !== null) {
+      config = {
+        headers: {'Authorization': 'bearer ' + payload.user.token}
+      }
+    }
+    const {exercise, accepted} = payload
+    return axios.post(root + '/modify', {exercise, accepted}, config)
+  }
 }

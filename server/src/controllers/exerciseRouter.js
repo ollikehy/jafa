@@ -11,7 +11,7 @@ exerciseRouter.get('/', jwtNotRequired, async (req, res) => {
     if (user[0].admin) {
       exercises = await Exercise.find()
     } else {
-      exercises = await Exercise.find()
+      exercises = await Exercise.find({accepted: true})
     }
   } else {
     exercises = await Exercise.find({accepted: true})
@@ -35,6 +35,22 @@ exerciseRouter.post('/', jwtMiddleware, exerciseValidator, async (req, res) => {
 
   const exercise = await new Exercise(body).save()
   res.status(200).send(exercise)
+})
+
+exerciseRouter.post('/modify', jwtMiddleware, async (req, res) => {
+  const body = req.body
+
+  if (body.accepted && body.exercise) {
+    await Exercise.findOneAndUpdate(
+      {name: body.exercise},
+      {accepted: true},
+      {new: true})
+    res.status(200).send({message: 'Exercise accepted'})
+
+  } else if (!body.accepted && body.exercise) {
+    await Exercise.deleteOne({name: body.exercise})
+    res.status(200).send({message: 'Exercise deleted succesfully'})
+  }
 })
 
 module.exports = exerciseRouter
