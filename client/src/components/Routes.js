@@ -9,6 +9,7 @@ import Login from './account/Login'
 import Register from './account/Register'
 import Exercises from './exercise/Exercises'
 import ExerciseForm from './exercise/ExerciseForm'
+import ExercisePage from './exercise/ExercisePage'
 import UserProfile from './user/UserProfile'
 import Workout from './workout/Workout'
 
@@ -43,8 +44,11 @@ export class Routes extends Component {
             <Route exact path='/exercise'>
               <Exercises />
             </Route>
-            <Route path='/exercise/new'>
+            <Route exact path='/exercise/new'>
               {loggedIn ? <ExerciseForm /> : <Redirect to='/login' />}
+            </Route>
+            <Route strict path='/exercise/'>
+              <ExercisePage />
             </Route>
             <Route path='/workout'>
               {loggedIn ? <Workout /> : <Redirect to='/login' />}

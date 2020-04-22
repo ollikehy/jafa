@@ -44,4 +44,4 @@
 | 15.4.2020 | 2h   | Workout listing and workout details |
 | 16.4.2020 | 4h   | Tests for workouts and more + some bugfixes |
 | 21.4.2020 | 4h   | Accepting/rejecting exercise suggestions and tests for that + some refactoring |
-| Sum       | 84h  | Cumulative sum of hours |
+| Sum       | 88h  | Cumulative sum of hours |

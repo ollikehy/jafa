@@ -2,7 +2,8 @@ import {handleActions} from 'redux-actions'
 import * as actions from '../actions/actions'
 
 const initialState = {
-  exercises: []
+  exercises: [],
+  exercise: null
 }
 
 const reducer = handleActions(
@@ -12,8 +13,13 @@ const reducer = handleActions(
       exercises: action.payload
     }),
     [actions.removeExercises]: () => ({
-      exercises: []
+      exercises: [],
+      exercise : null
     }),
+    [actions.setExercise]: (state, action) => ({
+      ...state,
+      exercise: action.payload
+    })
   }, initialState
 )
 

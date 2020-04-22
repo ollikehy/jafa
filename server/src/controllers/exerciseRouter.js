@@ -25,6 +25,16 @@ exerciseRouter.get('/', jwtNotRequired, async (req, res) => {
   res.status(200).send(returnedExercises)
 })
 
+exerciseRouter.get('/one', jwtNotRequired, async (req,res) => {
+  const exercise = await Exercise.find({name: req.query.name})
+
+  if (exercise.length > 0) {
+    return res.status(200).send(exercise[0])
+  } else {
+    return res.status(204).send({error: 'No exercise found'})
+  }
+})
+
 exerciseRouter.post('/', jwtMiddleware, exerciseValidator, async (req, res) => {
   const body = req.body
   const existingExercise = await Exercise.find({name: body.name})

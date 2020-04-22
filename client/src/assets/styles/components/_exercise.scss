@@ -1,5 +1,15 @@
 .exercise {
 
+  &-page {
+
+    &-link {
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      text-decoration: none;
+      color: black;
+    }
+  }
+
   &-name {
     position: absolute;
   }
@@ -10,6 +20,8 @@
     padding: 5px;
     width: 40%;
     text-align: center;
+    display: flex;
+    justify-content: center;
   }
 
   &-suggestion {

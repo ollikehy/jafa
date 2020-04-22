@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
+
 import Approval from '../../assets/images/approval-25.png'
 import Cancel from '../../assets/images/cancel-25.png'
 
@@ -24,14 +26,17 @@ class Exercise extends Component {
     this.props.updateSuggestedExercise(name, accepted)
   }
 
+  setExercise = () => {
+    this.props.setExercise(this.props.exercise)
+  }
+
   render() {
     const {user, exercise} = this.props
     const {hidden} = this.state
-    const className = exercise.accepted ? 'exercise-accepted' : 'exercise-suggestion'
 
     if (user && user.admin && !exercise.accepted && !hidden) {
       return (
-        <div className={className}>
+        <div className='exercise-suggestion'>
           <p className='exercise-name'>{exercise.name}</p>
           <div className='exercise-suggestion-toggle'>
             <img id='accept' className='exercise-suggestion-toggle-button' src={Approval} onClick={() => this.handleAccept(true, exercise.name)} />
@@ -41,8 +46,13 @@ class Exercise extends Component {
       )
     } else if (exercise.accepted && !hidden) {
       return (
-        <div className={className}>
-          <p>{exercise.name}</p>
+        <div onClick={this.handleClick} className='exercise-accepted'>
+          <Link
+            onClick={this.setExercise}
+            className='exercise-page-link'
+            to={`/exercise/${exercise.name}`}>
+            {exercise.name}
+          </Link>
         </div>
       )
     } else {

@@ -50,6 +50,20 @@ function* fetchExercises() {
   }
 }
 
+function* fetchExercise({payload}) {
+  try {
+    const response = yield call(exerciseApi.getOne, payload)
+
+    if (response.status === 200) {
+      yield put(actions.setExercise(response.data))
+    }
+  } catch (e) {
+    yield put(actions.setErrorMessage(e.message))
+    yield delay(5000)
+    yield put(actions.errorReducerReset())
+  }
+}
+
 function* updateSuggestedExercise({payload}) {
   try {
     const user = yield select(getCurrentUser)
@@ -57,7 +71,6 @@ function* updateSuggestedExercise({payload}) {
     const response = yield call(exerciseApi.modify, {user, accepted, exercise: name})
 
     if (response.status === 200) {
-      console.log(response)
       yield put(actions.setSuccessMessage(response.data.message))
       yield delay(5000)
       yield put(actions.errorReducerReset())
@@ -71,4 +84,5 @@ function* updateSuggestedExercise({payload}) {
 
 export const watchCreateExercise = takeLatest(actions.createExercise().type, createExercise)
 export const watchFetchExercises = takeLatest(actions.fetchExercises().type, fetchExercises)
+export const watchFetchExercise = takeLatest(actions.fetchExercise().type, fetchExercise)
 export const watchUpdateSuggestedExercise = takeLatest(actions.updateSuggestedExercise().type, updateSuggestedExercise)

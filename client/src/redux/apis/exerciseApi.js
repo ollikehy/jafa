@@ -7,6 +7,10 @@ export default class exerciseApi {
     const username = payload ? payload.username : null
     return axios.get(root, {params: {username}})
   }
+  static getOne(payload) {
+    return axios.get(root + '/one', {params: {name: payload}})
+  }
+
   static add(payload) {
     let config = null
     if (payload.user.token !== null) {

@@ -29,6 +29,9 @@ export const createExercise = createAction('CREATE_EXERCISE', (name, username, w
 export const fetchExercises = createAction('FETCH_EXERCISES')
 export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
 
+export const fetchExercise = createAction('FETCH_EXERCISE')
+export const setExercise = createAction('SET_EXERCISE')
+
 export const removeExercises = createAction('REMOVE_EXERCISES')
 
 export const updateSuggestedExercise = createAction('UPDATE_SUGGESTED_EXERCISE', (name, accepted) => ({name, accepted}))
