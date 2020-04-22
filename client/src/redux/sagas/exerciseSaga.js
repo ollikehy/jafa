@@ -56,6 +56,8 @@ function* fetchExercise({payload}) {
 
     if (response.status === 200) {
       yield put(actions.setExercise(response.data))
+    } else if (response.status === 204) {
+      throw new Error('Exercise not found')
     }
   } catch (e) {
     yield put(actions.setErrorMessage(e.message))

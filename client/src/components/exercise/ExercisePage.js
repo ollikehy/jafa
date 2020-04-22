@@ -1,5 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
+import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
 
@@ -17,15 +19,21 @@ class ExercisePage extends Component {
 
 
   render() {
-    const {exercise} = this.props
+    const {exercise, error} = this.props
     return (
-      <div>asd</div>
+      <div className='container'>
+        {error && <Message error={error}/>}
+        {exercise ?
+          <p>{exercise.name}</p> :
+          <Link className='linkbutton' to='/exercise'> Back to exercises</Link>}
+      </div>
     )
   }
 }
 
 const mapStateToProps = (state) => ({
-  exercise: state.exerciseReducer.exercise
+  exercise: state.exerciseReducer.exercise,
+  error: state.errorReducer.errorMessage
 })
 
 const mapDispatchToProps = {
