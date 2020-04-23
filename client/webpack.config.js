@@ -1,5 +1,6 @@
 /* eslint-disable */
 
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 const path = require('path')
 
 const config = (env, arg) => {
@@ -39,7 +40,12 @@ const config = (env, arg) => {
           }]
         },
       ]
-    }
+    },
+    plugins: [
+      new HtmlWebpackPlugin({
+        favicon: './public/favicon.png'
+      })
+    ]
   }
 }
 
