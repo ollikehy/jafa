@@ -10,8 +10,21 @@
     display: flex;
   }
 
+  &-icon {
+    width: 40px;
+    height: 40px;
+
+    &-link {
+      display:block;
+      margin-bottom: 0px;
+      text-decoration: none;
+      max-height: 36px;
+    }
+  }
+
   &-title {
     display: flex;
+    max-height: 36px;
 
     &-text {
       font-size: 18px;

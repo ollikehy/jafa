@@ -1,6 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
@@ -29,6 +31,12 @@ class ExercisePage extends Component {
       </div>
     )
   }
+}
+
+ExercisePage.propTypes = {
+  exercise: PropTypes.object,
+  fetchExercise: PropTypes.func,
+  error: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({

@@ -45,4 +45,5 @@
 | 16.4.2020 | 4h   | Tests for workouts and more + some bugfixes |
 | 21.4.2020 | 4h   | Accepting/rejecting exercise suggestions and tests for that + some refactoring |
 | 22.4.2020 | 3h   | Doing some work for single exercise page |
-| Sum       | 91h  | Cumulative sum of hours |
+| 23.4.2020 | 2h   | Creating icons and fixed some tests |
+| Sum       | 93h  | Cumulative sum of hours |

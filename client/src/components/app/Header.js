@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 
+import JafaIcon from '../../assets/images/jafa-icon.png'
+
 import * as actions from '../../redux/actions/actions'
 
 export class Header extends Component {
@@ -13,7 +15,9 @@ export class Header extends Component {
     return (
       <div className='header'>
         <div className='header-title'>
-          <Link className='header-title-text' to='/'>Just Another Fitness App</Link>
+          <Link id='header-icon' className='header-icon-link' to='/'>
+            <img className='header-icon' src={JafaIcon}></img>
+          </Link>
         </div>
         {logoutError && window.alert(logoutError)}
         {!loggedIn && <div className='header-menu'>

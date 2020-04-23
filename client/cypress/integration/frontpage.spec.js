@@ -8,7 +8,7 @@ describe('JAFA ', function () {
   })
   it('frontpage can be reached through header title', function () {
     cy.contains('Register').click()
-    cy.contains('Just Another Fitness App').click()
+    cy.get('#header-icon').click()
     cy.contains('Welcome to JAFA')
   })
 })

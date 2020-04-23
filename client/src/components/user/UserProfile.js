@@ -9,6 +9,7 @@ import Message from '../app/Message'
 import Weight from '../../assets/images/weight-50.png'
 import Height from '../../assets/images/length-50.png'
 import Profile from '../../assets/images/profile-50.png'
+import BMI from '../../assets/images/bmi-50.png'
 import PogTeeth from '../../assets/images/pogteeth.png'
 
 export class UserProfile extends Component {
@@ -61,6 +62,7 @@ export class UserProfile extends Component {
             </div>
             {user.weight && user.height &&
               <div className='userprofile-row'>
+                <img src={BMI}></img>
                 <span className='userprofile-text'>
                   {(user.weight / Math.pow(user.height / 100, 2)).toFixed(2)}
                 </span>

@@ -63,6 +63,7 @@ class Exercise extends Component {
 
 Exercise.propTypes = {
   exercise: PropTypes.object,
+  setExercise: PropTypes.func,
   user: PropTypes.object,
   updateSuggestedExercise: PropTypes.func
 }
