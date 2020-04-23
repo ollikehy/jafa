@@ -91,15 +91,14 @@ test('Exercise suggestions can be accepted and rejected', async (done) => {
 })
 
 test('When no exercises exist server returns 204', async (done) => {
-  await Exercise.deleteMany({})
-
-  await api
-    .get('/exercise')
-    .expect(204)
+  Exercise.deleteMany().then(() => {
+    api
+      .get('/exercise')
+      .expect('204')
+  })
 
   done()
 })
-
 
 afterAll(async () => {
   mongoose.connection.close()
