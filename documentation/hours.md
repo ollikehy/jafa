@@ -46,4 +46,5 @@
 | 21.4.2020 | 4h   | Accepting/rejecting exercise suggestions and tests for that + some refactoring |
 | 22.4.2020 | 3h   | Doing some work for single exercise page |
 | 23.4.2020 | 2h   | Creating icons and fixed some tests |
-| Sum       | 93h  | Cumulative sum of hours |
+|           | 2h   | Adding favicon and fixing a test |
+| Sum       | 95h  | Cumulative sum of hours |
