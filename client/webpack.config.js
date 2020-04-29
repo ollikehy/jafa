@@ -7,7 +7,8 @@ const config = (env, arg) => {
     entry: ['@babel/polyfill', './src/index.js'],
     output: {
       path: path.resolve(__dirname, 'build'),
-      filename: 'main.js'
+      filename: 'main.js',
+      publicPath: '/'
     },
     devServer: {
       contentBase: path.resolve(__dirname, 'public'),
