@@ -52,10 +52,16 @@ function* fetchExercises() {
 
 function* fetchExercise({payload}) {
   try {
-    const response = yield call(exerciseApi.getOne, payload)
+    const user = yield select(getCurrentUser)
+
+    const response = yield call(exerciseApi.getOne, {exercise: payload, user})
 
     if (response.status === 200) {
-      yield put(actions.setExercise(response.data))
+      if (Object.keys(response.data).length > 1) {
+        yield put(actions.setExerciseWithHistory(response.data))
+      } else {
+        yield put(actions.setExercise(response.data))
+      }
     } else if (response.status === 204) {
       throw new Error('Exercise not found')
     }

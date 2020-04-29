@@ -1,6 +1,7 @@
 const exerciseRouter = require('express-promise-router')()
 const Exercise = require('../models/Exercise')
 const User = require('../models/User')
+const Workout = require('../models/Workout')
 const {exerciseValidator} = require('../utils/validators')
 const {jwtMiddleware, jwtNotRequired} = require('../utils/middleware')
 
@@ -25,11 +26,36 @@ exerciseRouter.get('/', jwtNotRequired, async (req, res) => {
   res.status(200).send(returnedExercises)
 })
 
-exerciseRouter.get('/one', jwtNotRequired, async (req,res) => {
+exerciseRouter.get('/one', jwtNotRequired, async (req, res) => {
   const exercise = await Exercise.find({name: req.query.name})
 
   if (exercise[0]) {
     return res.status(200).send(exercise[0])
+  } else {
+    return res.status(204).send()
+  }
+})
+
+exerciseRouter.get('/history', jwtNotRequired, async (req, res) => {
+  const exerciseInfo = await Exercise.find({name: req.query.name})
+  const workouts = await Workout.find({username: req.query.username})
+  let filtered = []
+  workouts.forEach(w => {
+    w.exercises.forEach(ex => {
+      if (ex.exercise.toString() === exerciseInfo[0]._id.toString()) {
+        if (exerciseInfo[0].weightExercise) {
+          filtered.push({date: w.date, sets: ex.sets, repetitions: ex.repetitions, weight: ex.weight})
+        } else {
+          filtered.push({date: w.date, distance: ex.distance, time: ex.time})
+        }
+      }
+    })
+  })
+
+  if (filtered[0]) {
+    return res.status(200).send({exerciseHistory: filtered, exerciseInfo: exerciseInfo[0]})
+  } else if (exerciseInfo[0]) {
+    return res.status(200).send(exerciseInfo[0])
   } else {
     return res.status(204).send()
   }

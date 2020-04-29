@@ -8,7 +8,11 @@ export default class exerciseApi {
     return axios.get(root, {params: {username}})
   }
   static getOne(payload) {
-    return axios.get(root + '/one', {params: {name: payload}})
+    if (payload.user) {
+      return axios.get(root + '/history', {params: {name: payload.exercise, username: payload.user.username}})
+    } else {
+      return axios.get(root + '/one', {params: {name: payload.exercise}})
+    }
   }
 
   static add(payload) {

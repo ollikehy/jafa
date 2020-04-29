@@ -33,6 +33,17 @@ body {
   color: black;
 }
 
+.backbutton {
+  text-align:center;
+  padding: 15px 25px;
+}
+
+.loading {
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .message {
   text-align: center;
   padding: 20px;

@@ -15,16 +15,16 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 - [x] Adding values for the user
 - [x] Adding exercises
 - [x] Testing
+- [x] Adding workouts
 
 #### Up next:
 
-- [ ] Adding workouts
+- [ ] Graphs for progress (BMI, bodyweight, weight training?)
 
 #### In the distant future:
 
 - [ ] AWS
 - [ ] Styles
-- [ ] Graphs for progress (BMI, bodyweight, weight training?)
 
 ### Different types of exercises
 

@@ -24,10 +24,15 @@ class ExercisePage extends Component {
     const {exercise, error} = this.props
     return (
       <div className='container'>
-        {error && <Message error={error}/>}
+        {error && <Message error={error} />}
         {exercise ?
-          <p>{exercise.name}</p> :
-          <Link className='linkbutton' to='/exercise'> Back to exercises</Link>}
+          <div>
+            <p>{exercise.name}</p>
+          </div>
+          :
+          <div className='loading'>
+            <Link className='backbutton linkbutton' to='/exercise'> Back to exercises</Link>
+          </div>}
       </div>
     )
   }

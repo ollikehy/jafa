@@ -31,6 +31,7 @@ export const fetchExercisesSuccess = createAction('FETCH_EXERCISES_SUCCESS')
 
 export const fetchExercise = createAction('FETCH_EXERCISE')
 export const setExercise = createAction('SET_EXERCISE')
+export const setExerciseWithHistory = createAction('SET_EXERCISE_WITH_HISTORY')
 
 export const removeExercises = createAction('REMOVE_EXERCISES')
 

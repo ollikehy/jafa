@@ -20,6 +20,11 @@ const reducer = handleActions(
     [actions.setExercise]: (state, action) => ({
       ...state,
       exercise: action.payload
+    }),
+    [actions.setExerciseWithHistory]: (state, action) => ({
+      ...state,
+      exercise: action.payload.exerciseInfo,
+      exerciseHistory: action.payload.exerciseHistory
     })
   }, initialState
 )
