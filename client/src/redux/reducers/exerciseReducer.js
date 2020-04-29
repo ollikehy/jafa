@@ -3,7 +3,8 @@ import * as actions from '../actions/actions'
 
 const initialState = {
   exercises: [],
-  exercise: null
+  exercise: null,
+  exerciseHistory: null
 }
 
 const reducer = handleActions(

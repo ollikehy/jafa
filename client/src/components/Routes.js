@@ -7,7 +7,7 @@ import App from './App'
 import Header from './app/Header'
 import Login from './account/Login'
 import Register from './account/Register'
-import Exercises from './exercise/Exercises'
+import ExerciseList from './exercise/ExerciseList'
 import ExerciseForm from './exercise/ExerciseForm'
 import ExercisePage from './exercise/ExercisePage'
 import UserProfile from './user/UserProfile'
@@ -42,7 +42,7 @@ export class Routes extends Component {
               {loggedIn ? <UserProfile /> : <Redirect to='/login' />}
             </Route>
             <Route exact path='/exercise'>
-              <Exercises />
+              <ExerciseList />
             </Route>
             <Route exact path='/exercise/new'>
               {loggedIn ? <ExerciseForm /> : <Redirect to='/login' />}

@@ -46,14 +46,12 @@ class Exercise extends Component {
       )
     } else if (exercise.accepted && !hidden) {
       return (
-        <div onClick={this.handleClick} className='exercise-accepted'>
-          <Link
-            onClick={this.setExercise}
-            className='exercise-page-link'
-            to={`/exercise/${exercise.name}`}>
-            {exercise.name}
-          </Link>
-        </div>
+        <Link
+          onClick={this.setExercise}
+          className='exercise-accepted exercise-page-link'
+          to={`/exercise/${exercise.name}`}>
+          {exercise.name}
+        </Link>
       )
     } else {
       return (null)
