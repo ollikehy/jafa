@@ -16,19 +16,27 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 - [x] Adding exercises
 - [x] Testing
 - [x] Adding workouts
+- [x] Graphs for progress (BMI, bodyweight, weight training?)
 
 #### Up next:
 
-- [ ] Graphs for progress (BMI, bodyweight, weight training?)
+- [ ] AWS
 
 #### In the distant future:
 
-- [ ] AWS
-- [ ] Styles
+- [ ] Styles and finishing touches
 
 ### Different types of exercises
 
 My reasoning behind exercises is that there are essentially three different types of exercises: weight exercises (squat), timed exercises (planking), timed + distance exercises (jogging). I decided not to include purely distance based exercises since they're mostly track and field related instead of personal exercising.
+
+#### weightValue
+
+The reason weightValue is used is to try and make sense of charting weighted exercises which consists of three different values: sets, repetitions and weights. Weight is valued more over repetitions and sets are weighted so that they make less of an impact due to them usually being similiar to each other. If an exercise has a large number of sets they usually have less repetitions or are done with less weight. At the end the sum is divided with 10 to normalize the values.
+
+The weightValue is calculated as follows: 
+
+WV = ((0.5 * sets) + (0.7 * repetitions) + (1.6 * weight))/10
 
 ### Database schema
 

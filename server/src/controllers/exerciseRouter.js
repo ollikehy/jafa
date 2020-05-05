@@ -4,6 +4,7 @@ const User = require('../models/User')
 const Workout = require('../models/Workout')
 const {exerciseValidator} = require('../utils/validators')
 const {jwtMiddleware, jwtNotRequired} = require('../utils/middleware')
+const {parseDate, calcWeightValue} = require('../utils/utility')
 
 exerciseRouter.get('/', jwtNotRequired, async (req, res) => {
   let exercises = []
@@ -44,9 +45,19 @@ exerciseRouter.get('/history', jwtNotRequired, async (req, res) => {
     w.exercises.forEach(ex => {
       if (ex.exercise.toString() === exerciseInfo[0]._id.toString()) {
         if (exerciseInfo[0].weightExercise) {
-          filtered.push({date: w.date, sets: ex.sets, repetitions: ex.repetitions, weight: ex.weight})
+          filtered.push({
+            date: parseDate(w.date),
+            sets: ex.sets,
+            repetitions: ex.repetitions,
+            weight: ex.weight,
+            weightValue: calcWeightValue(ex)
+          })
         } else {
-          filtered.push({date: w.date, distance: ex.distance, time: ex.time})
+          filtered.push({
+            date: parseDate(w.date),
+            distance: ex.distance,
+            time: ex.time
+          })
         }
       }
     })

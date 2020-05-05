@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Message from '../app/Message'
+import ExerciseChart from './ExerciseChart'
 
 import * as actions from '../../redux/actions/actions'
 
@@ -19,14 +20,15 @@ class ExercisePage extends Component {
     }
   }
 
-
   render() {
-    const {exercise, error} = this.props
+    const {exercise, exerciseHistory, error} = this.props
     return (
       <div className='container'>
         {error && <Message error={error} />}
         {exercise ?
           <div>
+            {exerciseHistory &&
+              <ExerciseChart exercise={exercise} exerciseHistory={exerciseHistory} />}
             <p>{exercise.name}</p>
           </div>
           :
@@ -40,12 +42,14 @@ class ExercisePage extends Component {
 
 ExercisePage.propTypes = {
   exercise: PropTypes.object,
+  exerciseHistory: PropTypes.array,
   fetchExercise: PropTypes.func,
   error: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
   exercise: state.exerciseReducer.exercise,
+  exerciseHistory: state.exerciseReducer.exerciseHistory,
   error: state.errorReducer.errorMessage
 })
 

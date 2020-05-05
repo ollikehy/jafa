@@ -27,7 +27,7 @@ class Exercise extends Component {
   }
 
   setExercise = () => {
-    this.props.setExercise(this.props.exercise)
+    this.props.fetchExercise(this.props.exercise.name)
   }
 
   render() {
@@ -61,7 +61,7 @@ class Exercise extends Component {
 
 Exercise.propTypes = {
   exercise: PropTypes.object,
-  setExercise: PropTypes.func,
+  fetchExercise: PropTypes.func,
   user: PropTypes.object,
   updateSuggestedExercise: PropTypes.func
 }
