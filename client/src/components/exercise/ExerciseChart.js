@@ -25,7 +25,7 @@ const ExerciseChart = ({exercise, exerciseHistory}) => {
       </LineChart>
       {exercise.weightExercise &&
         <div className='exercise-chart-tooltip'>About weightValue
-          <span className='exercise-chart-tooltip-text'>WeightValue is used to charth weight exercises.
+          <span className='exercise-chart-tooltip-text'>WeightValue is used to chart weight exercises.
           VW = (1.5 x sets + 0.7 x repetitions + 1.6 x weight)/10 </span>
         </div>}
     </div>

@@ -49,4 +49,5 @@
 |           | 2h   | Adding favicon and fixing a test |
 | 29.4.2020 | 4h   | Work on exercise progress and fixed file-loader issue |
 | 5.5.2020  | 5h   | Adding charts for exercise page and misc. work related to that |
+| 6.5.2020  | 5h   | Learning AWS |
 | Sum       | 104h  | Cumulative sum of hours |
