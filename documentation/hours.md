@@ -50,4 +50,5 @@
 | 29.4.2020 | 4h   | Work on exercise progress and fixed file-loader issue |
 | 5.5.2020  | 5h   | Adding charts for exercise page and misc. work related to that |
 | 6.5.2020  | 5h   | Learning AWS |
-| Sum       | 104h  | Cumulative sum of hours |
+| 7.5.2020  | 5h   | More AWS, trying to get nginx to work in AWS, fixed issue with dotenv |
+| Sum       | 114h  | Cumulative sum of hours |

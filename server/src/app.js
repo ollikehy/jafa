@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
@@ -9,8 +10,6 @@ const loginRouter = require('./controllers/loginRouter')
 const userRouter = require('./controllers/userRouter')
 const exerciseRouter = require('./controllers/exerciseRouter')
 const workoutRouter = require('./controllers/workoutRouter')
-
-require('dotenv').config()
 
 const app = express()
 
