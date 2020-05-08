@@ -51,4 +51,5 @@
 | 5.5.2020  | 5h   | Adding charts for exercise page and misc. work related to that |
 | 6.5.2020  | 5h   | Learning AWS |
 | 7.5.2020  | 5h   | More AWS, trying to get nginx to work in AWS, fixed issue with dotenv |
-| Sum       | 114h  | Cumulative sum of hours |
+| 8.5.2020  | 2h   | More AWS debugging, looking into production mode issues of webpack |
+| Sum       | 116h  | Cumulative sum of hours |
