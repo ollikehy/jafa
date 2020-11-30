@@ -52,4 +52,5 @@
 | 6.5.2020  | 5h   | Learning AWS |
 | 7.5.2020  | 5h   | More AWS, trying to get nginx to work in AWS, fixed issue with dotenv |
 | 8.5.2020  | 2h   | More AWS debugging, looking into production mode issues of webpack |
-| Sum       | 116h  | Cumulative sum of hours |
+| 30.11.2020 | 4h  | Re-familiarizing with the project and setting up frontend with AWS Amplify |
+| Sum       | 120h  | Cumulative sum of hours |
