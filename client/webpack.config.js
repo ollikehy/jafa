@@ -35,7 +35,6 @@ const config = (env, arg) => {
         },
         {
           test: /\.(ttf|eot|svg|gif|png)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-          type: 'asset/resource',
           use: [{
             loader: 'file-loader'
           }]
