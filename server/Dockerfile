@@ -1,4 +1,5 @@
-FROM node:latest AS development
+FROM node:latest AS production
+#FROM node:latest AS development
 
 WORKDIR /app
 
@@ -8,4 +9,5 @@ RUN npm install
 
 EXPOSE 8000
 
-CMD ["npm", "run", "watch"]
+CMD ["npm", "start"]
+#CMD ["npm", "run", "watch"]

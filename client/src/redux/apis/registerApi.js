@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './client'
 
 export const root = '/api/register'
 

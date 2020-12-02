@@ -28,6 +28,11 @@ if (process.env.NODE_ENV === 'test') {
   app.use('/testing', testingRouter)
 }
 
+app.get('/', (req, res) => {
+  // eslint-disable-next-line no-undef
+  res.send('API root')
+})
+
 app.use(celebrateMiddleware)
 
 // eslint-disable-next-line no-undef
