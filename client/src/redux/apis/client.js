@@ -1,8 +1,9 @@
 const axios = require('axios')
 
-console.log(process.env)
+const url = process.env.NODE_ENV === 'production' ? 'http://ec2-13-48-133-5.eu-north-1.compute.amazonaws.com:8000/' : ''
+
 const axiosClient = axios.create({
-    baseURL: process.env.REACT_APP_BACKEND_URL ? process.env.REACT_APP_BACKEND_URL : ''
+    baseURL: url
 })
 
 export default axiosClient
