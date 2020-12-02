@@ -1,6 +1,6 @@
 import axios from './client'
 
-export const root = '/api/user'
+export const root = '/user'
 
 export default class userApi {
   static getUser(payload) {

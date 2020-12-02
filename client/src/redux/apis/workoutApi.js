@@ -1,6 +1,6 @@
 import axios from './client'
 
-export const root = '/api/workout'
+export const root = '/workout'
 
 export default class workoutApi {
   static get(payload) {

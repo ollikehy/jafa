@@ -1,6 +1,6 @@
 import axios from './client'
 
-export const root = '/api/login'
+export const root = '/login'
 
 export default class loginApi {
   static get() {

@@ -1,6 +1,6 @@
 import axios from './client'
 
-export const root = '/api/register'
+export const root = '/register'
 
 export default class registerApi {
   static get() {
