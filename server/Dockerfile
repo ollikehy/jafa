@@ -1,5 +1,5 @@
-FROM node:alpine AS production
-#FROM node:latest AS development
+#FROM node:alpine AS production
+FROM node:latest AS development
 
 WORKDIR /app
 
@@ -9,5 +9,5 @@ RUN npm install
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
-#CMD ["npm", "run", "watch"]
+#CMD ["npm", "start"]
+CMD ["npm", "run", "watch"]

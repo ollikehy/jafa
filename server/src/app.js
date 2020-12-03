@@ -2,7 +2,9 @@ require('dotenv').config()
 const express = require('express')
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
+const cors = require('cors')
 const mongoose = require('mongoose')
+
 const {celebrateMiddleware} = require('./utils/middleware')
 
 const registerRouter = require('./controllers/registerRouter')
@@ -13,6 +15,7 @@ const workoutRouter = require('./controllers/workoutRouter')
 
 const app = express()
 
+app.use(cors())
 app.use(morgan('dev'))
 app.use(bodyParser.json())
 

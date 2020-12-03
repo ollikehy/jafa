@@ -56,4 +56,5 @@
 | 2.12.2020 | 4h   | Configuring Amazon ECS for backend purposes |
 |           | 3h   | Trying to set up https to EC2 with no success |
 |           | 1h   | Registering domain and looking into how to set up ssl for backend |
+| 3.12.2020 | 2h   | Set up backend to Heroku for now and added cors |
 | Sum       | 128h | Cumulative sum of hours |
