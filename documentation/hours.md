@@ -57,4 +57,5 @@
 |           | 3h   | Trying to set up https to EC2 with no success |
 |           | 1h   | Registering domain and looking into how to set up ssl for backend |
 | 3.12.2020 | 2h   | Set up backend to Heroku for now and added cors |
-| Sum       | 128h | Cumulative sum of hours |
+|           | 1h   | Finalizing Heroku setup and trying to fix favicon 502 error |
+| Sum       | 131h | Cumulative sum of hours |
