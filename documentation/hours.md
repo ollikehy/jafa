@@ -54,4 +54,6 @@
 | 8.5.2020  | 2h   | More AWS debugging, looking into production mode issues of webpack |
 | 30.11.2020| 4h   | Re-familiarizing with the project and setting up frontend with AWS Amplify |
 | 2.12.2020 | 4h   | Configuring Amazon ECS for backend purposes |
-| Sum       | 120h | Cumulative sum of hours |
+|           | 3h   | Trying to set up https to EC2 with no success |
+|           | 1h   | Registering domain and looking into how to set up ssl for backend |
+| Sum       | 128h | Cumulative sum of hours |
