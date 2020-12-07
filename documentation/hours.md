@@ -59,4 +59,5 @@
 | 3.12.2020 | 2h   | Set up backend to Heroku for now and added cors |
 |           | 1h   | Finalizing Heroku setup and trying to fix favicon 502 error |
 | 7.12.2020 | 2h   | Upgrading node and sass version, also changing image to alpine version |
-| Sum       | 133h | Cumulative sum of hours |
+|           | 2h   | Fixing tests and updating documentation |
+| Sum       | 135h | Cumulative sum of hours |

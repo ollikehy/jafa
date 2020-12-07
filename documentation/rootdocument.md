@@ -17,14 +17,12 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 - [x] Testing
 - [x] Adding workouts
 - [x] Graphs for progress (BMI, bodyweight, weight training?)
+- [x] Hosting in AWS (frontend) and Heroku (backend)
 
 #### Up next:
 
-- [ ] AWS
-
-#### In the distant future:
-
 - [ ] Styles and finishing touches
+
 
 ### Different types of exercises
 
@@ -44,6 +42,8 @@ WV = ((0.5 * sets) + (0.7 * repetitions) + (1.6 * weight))/10
 
 ### Architecture
 
-The architecture for this project is a typical multitier-architecure with presentation- , logic- and data layers.
+The architecture for this project is a typical multitier-architecure with presentation- , logic- and data layers. The first schema below represents the local development environment for the project and the one below represents the production environment.
 
-![Architectural schema](https://github.com/ollikehy/jafa/blob/master/documentation/architecture.png)
+![Development architecture](https://github.com/ollikehy/jafa/blob/master/documentation/development_architecture.png)
+
+![Production architecture](https://github.com/ollikehy/jafa/blob/master/documentation/production_architecture.png)
