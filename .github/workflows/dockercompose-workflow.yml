@@ -16,14 +16,14 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [8.x]
+        node-version: [12.x]
 
     steps:
     - uses: actions/checkout@v2
     - name: Use Node.js
       uses: actions/setup-node@v1
       with:
-        node-version: '8.x'
+        node-version: '12.x'
     - name: build server and client for node_modules
       run: cd server && npm install && cd ../client && npm install && cd ..
     - name: Build the Docker compose stack
