@@ -6,15 +6,19 @@ The purpose of this application is to keep track of your workout while exercisin
 
 First build the project at root with `docker-compose build` and then run with `docker-compose up`
 
-Server needs .env with following fields:
+Server needs `.env`-file with following fields:
+```
 MONGO_USER=
 MONGO_PASS=
 JWT_SECRET=
 ADMIN_PASS=
+```
 
 #### Testing project
 
-Build the project and then run it at root with `docker-compose -f docker-compose.yml -f docker-compose-ci.yml up` . After the project is running you run cypress at client with `npm run cypress:open` or `npm run cy:test` . 
+Build the project and then run it at root with `docker-compose -f docker-compose.yml -f docker-compose-ci.yml up` .
+
+After the project is running you run cypress at client with `npm run cypress:open` or `npm run cy:test` . 
 
 Run jest tests at server with  `npm run test` .
 
