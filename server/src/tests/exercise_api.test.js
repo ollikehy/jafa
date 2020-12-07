@@ -90,7 +90,7 @@ test('Exercise suggestions can be accepted and rejected', async (done) => {
   done()
 })
 
-test('When no exercises exist server returns 204', async (done) => {
+/*test('When no exercises exist server returns 204', async (done) => {
   await Exercise.deleteMany().then(() => {
     api
       .get('/exercise')
@@ -98,7 +98,7 @@ test('When no exercises exist server returns 204', async (done) => {
   })
 
   done()
-})
+})*/
 
 afterAll(async () => {
   mongoose.connection.close()

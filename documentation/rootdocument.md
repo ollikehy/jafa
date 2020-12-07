@@ -42,8 +42,12 @@ WV = ((0.5 * sets) + (0.7 * repetitions) + (1.6 * weight))/10
 
 ### Architecture
 
-The architecture for this project is a typical multitier-architecure with presentation- , logic- and data layers. The first schema below represents the local development environment for the project and the one below represents the production environment.
+The architecture for this project is a typical multitier-architecure with presentation- , logic- and data layers.
+
+#### Development architecture
 
 ![Development architecture](https://github.com/ollikehy/jafa/blob/master/documentation/development_architecture.png)
+
+#### Production architecture
 
 ![Production architecture](https://github.com/ollikehy/jafa/blob/master/documentation/production_architecture.png)
