@@ -91,7 +91,7 @@ test('Exercise suggestions can be accepted and rejected', async (done) => {
 })
 
 test('When no exercises exist server returns 204', async (done) => {
-  Exercise.deleteMany().then(() => {
+  await Exercise.deleteMany().then(() => {
     api
       .get('/exercise')
       .expect('204')
