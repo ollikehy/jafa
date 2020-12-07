@@ -1,4 +1,4 @@
-FROM cypress/base:8.16.0 AS development
+FROM cypress/base:12 AS development
 
 WORKDIR /app
 

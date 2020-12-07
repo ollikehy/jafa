@@ -4,7 +4,7 @@ services:
     build:
       context: ./server/
       target: development
-    command: npm start
+    command: npm run watch
     ports: 
       - "8000:8000"
     volumes:
