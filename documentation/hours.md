@@ -61,4 +61,5 @@
 | 7.12.2020 | 2h   | Upgrading node and sass version, also changing image to alpine version |
 |           | 2h   | Fixing tests and updating documentation |
 | 8.12.2020 | 3h   | Fonts, dropdown menu, loading spinner and some fixes |
+|           | 1,5h | Refactoring header and adding styling |
 | Sum       | 135h | Cumulative sum of hours |

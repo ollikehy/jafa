@@ -11,7 +11,9 @@
     position: absolute;
     white-space: nowrap;
     right: 10px;
-    padding: 0px 10px;
+    border-right: 1px black solid;
+    border-left: 1px black solid;
+    border-bottom: 1px black solid;
   }
 
   &-item {
@@ -20,10 +22,17 @@
     text-decoration: none;
     color: black;
     display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
+    margin-block-start: 10px;
+    margin-block-end: 10px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+  }
+
+  &-linkcontainer {
+    display: flex;
+    padding: 0px 20px;
+    justify-content: center;
+    border-top: 1px black solid;
   }
 
 }

@@ -7,6 +7,7 @@ import DropdownMenu from './DropdownMenu'
 import JafaIcon from '../../assets/images/jafa-icon.png'
 
 import * as actions from '../../redux/actions/actions'
+import HeaderLinks from './HeaderLinks'
 
 export class Header extends Component {
   constructor(props) {
@@ -42,17 +43,12 @@ export class Header extends Component {
         </div>
         {logoutError && window.alert(logoutError)}
         {this.state.isDesktop ?
-          !loggedIn ? <div className='header-menu'>
-            <Link className='header-link' to='/exercise'>Exercises</Link>
-            <Link className='header-link' to='/login'>Login</Link>
-            <Link className='header-link' to='/register'>Register</Link>
-          </div>
-            : <div className='header-menu'>
-              <Link className='header-link' to='/workout'>Workouts</Link>
-              <Link className='header-link' to='/exercise'>Exercises</Link>
-              <Link className='header-link' to='/profile'>Profile</Link>
-              <div className='header-logout' onClick={logout}>Logout</div>
-            </div>
+          <HeaderLinks
+            loggedIn={loggedIn}
+            logout={logout}
+            className={'header-link'}
+            containerClass={'header-menu'} 
+            linkContainerClass={'header-linkcontainer'}/>
           : <DropdownMenu />}
       </div>
     )
