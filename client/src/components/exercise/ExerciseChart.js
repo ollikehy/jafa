@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip} from 'recharts'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts'
 
-const ExerciseChart = ({exercise, exerciseHistory}) => {
+const ExerciseChart = ({ exercise, exerciseHistory }) => {
 
   let type
 
@@ -14,9 +14,13 @@ const ExerciseChart = ({exercise, exerciseHistory}) => {
     type = 'weightValue'
   }
 
+  const sortedHistory = exerciseHistory.sort((a, b) => {
+    return new Date(a.date.split('.').reverse().join('.')) - new Date(b.date.split('.').reverse().join('.'))
+  })
+
   return (
     <div>
-      <LineChart width={600} height={400} data={exerciseHistory}>
+      <LineChart width={600} height={400} data={sortedHistory}>
         <Line type='monotone' dataKey={type} stroke='#694933' />
         <CartesianGrid stroke='#ccc' />
         <XAxis dataKey='date' />

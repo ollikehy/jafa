@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import * as actions from '../../redux/actions/actions'
 import PropTypes from 'prop-types'
 
@@ -11,6 +11,7 @@ import Height from '../../assets/images/length-50.png'
 import Profile from '../../assets/images/profile-50.png'
 import BMI from '../../assets/images/bmi-50.png'
 import PogTeeth from '../../assets/images/pogteeth.png'
+import Spinner from '../app/Spinner'
 
 export class UserProfile extends Component {
   constructor(props) {
@@ -33,14 +34,14 @@ export class UserProfile extends Component {
   }
 
   render() {
-    const {user, userFetchError, updateSuccess} = this.props
-    const {showForm} = this.state
+    const { user, userFetchError, updateSuccess } = this.props
+    const { showForm } = this.state
 
     return (
       <div className='container'>
         {(updateSuccess || userFetchError) && <Message error={userFetchError} message={updateSuccess} />}
         <p className='userprofile-title'>Your profile</p>
-        {user &&
+        {user ?
           <div className='userprofile-profile'>
             <div className='userprofile-row'>
               {user.admin ? <img src={PogTeeth} /> : <img src={Profile} />}
@@ -67,7 +68,9 @@ export class UserProfile extends Component {
                   {(user.weight / Math.pow(user.height / 100, 2)).toFixed(2)}
                 </span>
               </div>}
-          </div>}
+          </div> :
+          <Spinner />
+        }
         <div>
           <button className='userprofile-button' onClick={this.toggleEditForm}>Edit your information</button>
         </div>

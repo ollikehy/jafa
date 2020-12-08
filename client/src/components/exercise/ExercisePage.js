@@ -1,12 +1,13 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Message from '../app/Message'
 import ExerciseChart from './ExerciseChart'
 
 import * as actions from '../../redux/actions/actions'
+import Spinner from '../app/Spinner'
 
 class ExercisePage extends Component {
   constructor(props) {
@@ -21,7 +22,8 @@ class ExercisePage extends Component {
   }
 
   render() {
-    const {exercise, exerciseHistory, error} = this.props
+    const { exercise, exerciseHistory, error } = this.props
+
     return (
       <div className='container'>
         {error && <Message error={error} />}
@@ -33,6 +35,7 @@ class ExercisePage extends Component {
           </div>
           :
           <div className='loading'>
+            <Spinner />
             <Link className='backbutton linkbutton' to='/exercise'> Back to exercises</Link>
           </div>}
       </div>

@@ -32,9 +32,9 @@ export class Workout extends Component {
     return (
       <div className='container' >
         <div className='workout-header'>
-          <button className='workout-header-button' onClick={this.toggleChange}>
+          <div className='linkbutton' onClick={this.toggleChange}>
             {listView ? 'Add a new workout' : 'View your workouts'}
-          </button>
+          </div>
         </div>
         {listView ?
           <WorkoutList workouts={workouts} /> :

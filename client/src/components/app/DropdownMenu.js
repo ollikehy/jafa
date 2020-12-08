@@ -71,5 +71,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
   mapStateToProps,
-  mapDispatchToProps)
-  (enhanceWithClickOutside(DropdownMenu))
+  mapDispatchToProps
+)(enhanceWithClickOutside(DropdownMenu))

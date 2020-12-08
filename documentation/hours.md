@@ -60,4 +60,5 @@
 |           | 1h   | Finalizing Heroku setup and trying to fix favicon 502 error |
 | 7.12.2020 | 2h   | Upgrading node and sass version, also changing image to alpine version |
 |           | 2h   | Fixing tests and updating documentation |
+| 8.12.2020 | 3h   | Fonts, dropdown menu, loading spinner and some fixes |
 | Sum       | 135h | Cumulative sum of hours |

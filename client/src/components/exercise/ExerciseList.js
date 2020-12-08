@@ -1,12 +1,13 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import * as actions from '../../redux/actions/actions'
 
 import Exercise from './Exercise'
 import Message from '../app/Message'
+import Spinner from '../app/Spinner'
 
 export class Exercises extends Component {
   constructor(props) {
@@ -28,8 +29,8 @@ export class Exercises extends Component {
   }
 
   render() {
-    const {exercises, errorMessage, successMessage, user} = this.props
-    const {search} = this.state
+    const { exercises, errorMessage, successMessage, user } = this.props
+    const { search } = this.state
 
     return (
       <div className='container'>
@@ -42,13 +43,15 @@ export class Exercises extends Component {
             placeholder='Search..' />
         </div>
         {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
-        {exercises &&
+        {exercises.length > 0 ?
           <div className='exercise-list'>
             <p className='exercise-list-title'>List of exercises</p>
             {exercises.map(exercise =>
               exercise.name.toLowerCase().indexOf(search.toLowerCase()) > -1 &&
               <Exercise key={exercise.id} user={user} exercise={exercise} />)}
-          </div>}
+          </div> :
+          <Spinner />
+        }
       </div >
     )
   }
