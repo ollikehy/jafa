@@ -3,7 +3,7 @@
   flex-basis: 100%;
   justify-content: space-between;
   background-color: lightgray;
-  padding: 5px;
+  padding: 5px 10px;
 
   &-menu {
     overflow: hidden;
@@ -36,18 +36,18 @@
 
   &-link {
     padding: 11px 10px;
-    text-decoration: none;
     margin: 0px 5px;
     background-color: palegoldenrod;
+    text-decoration: none;
     color: black;
   }
 
   &-logout {
-    padding: 9px 10px;
+    padding: 11px 10px;
     margin: 0px 5px;
     background-color: palegoldenrod;
     border-style: none;
-    font: 16px "Times New Roman";
+    font-family: 'Roboto Condensed', sans-serif;
     cursor: pointer;
   }
 }

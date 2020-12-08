@@ -1,11 +1,7 @@
 .dropdown {
 
-  &-wrapper {
-    background-color: palegoldenrod;
-  }
-
   &-header {
-    padding: 11px 22px;
+    padding: 0px;
     position: relative;
     cursor: pointer;
   }
@@ -13,11 +9,21 @@
   &-content {
     background-color: palegoldenrod;
     position: absolute;
+    white-space: nowrap;
+    right: 10px;
+    padding: 0px 10px;
   }
 
   &-item {
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
   }
 
 }

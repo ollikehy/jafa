@@ -9,6 +9,12 @@ body {
   margin: 0px;
   background-color: lightyellow;
   padding: 0px;
+  font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 .container {
@@ -34,12 +40,12 @@ body {
 }
 
 .backbutton {
-  text-align:center;
+  text-align: center;
   padding: 15px 25px;
 }
 
 .loading {
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
 }
