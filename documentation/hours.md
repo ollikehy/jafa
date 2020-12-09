@@ -62,4 +62,5 @@
 |           | 2h   | Fixing tests and updating documentation |
 | 8.12.2020 | 3h   | Fonts, dropdown menu, loading spinner and some fixes |
 |           | 1,5h | Refactoring header and adding styling |
-| Sum       | 135h | Cumulative sum of hours |
+| 9.12.2020 | 1h   | Trying to hack production build |
+| Sum       | 150,5h | Cumulative sum of hours |
