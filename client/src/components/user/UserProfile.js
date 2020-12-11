@@ -71,8 +71,8 @@ export class UserProfile extends Component {
           </div> :
           <Spinner />
         }
-        <div>
-          <button className='userprofile-button' onClick={this.toggleEditForm}>Edit your information</button>
+        <div className='userprofile-button-container'>
+          <div className='userprofile-button' onClick={this.toggleEditForm}>Edit your information</div>
         </div>
         {showForm &&
           <UserProfileForm />}

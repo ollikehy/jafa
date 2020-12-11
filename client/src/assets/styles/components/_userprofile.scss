@@ -37,10 +37,24 @@
   }
 
   &-button {
-    align-items: flex-end;
+    display: flex;
+    justify-content: center;
     padding: 10px;
     text-decoration: none;
     background-color: palegoldenrod;
     color: black;
+    cursor: pointer;
+    width: 25%;
   }
+
+  &-button-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#profileSubmit {
+  cursor: pointer;
+  background-color: palegoldenrod;
+  padding: 10px;
 }

@@ -41,6 +41,7 @@ export const updateSuggestedExercise = createAction('UPDATE_SUGGESTED_EXERCISE',
 export const createWorkout = createAction('CREATE_WORKOUT', (exercises, date) => ({exercises, date}))
 
 export const fetchWorkouts = createAction('FETCH_WORKOUTS')
+export const workoutLoading = createAction('WORKOUT_LOADING')
 export const fetchWorkoutsSuccess = createAction('FETCH_WORKOUTS_SUCCESS')
 
 export const removeWorkouts = createAction('REMOVE_WORKOUTS')

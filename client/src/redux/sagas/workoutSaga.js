@@ -5,6 +5,7 @@ import {getCurrentUser} from './loginSaga'
 
 function* fetchWorkouts() {
   try {
+    yield put(actions.workoutLoading(true))
     const user = yield select(getCurrentUser)
     const response = yield call(workoutApi.get, user)
 
@@ -15,6 +16,7 @@ function* fetchWorkouts() {
     const errorMessage = e.response.data.error
 
     yield put(actions.setErrorMessage(errorMessage))
+    yield put(actions.workoutLoading(true))
     yield delay(5000)
     yield put(actions.errorReducerReset())
   }

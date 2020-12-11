@@ -8,10 +8,9 @@
 
 body {
   margin: 0px;
-  background-color: lightyellow;
+  background-color: #dcdcdc;
   padding: 0px;
   font-family: 'Roboto Condensed', sans-serif;
-
 }
 
 ::-webkit-scrollbar {
@@ -21,7 +20,8 @@ body {
 .container {
   padding: 20px;
   margin: 5% 10%;
-  background-color: aliceblue;
+  background-color: #f3f9ff;
+  border-radius: 10px;
 }
 
 .button {
@@ -36,8 +36,11 @@ body {
   align-items: flex-end;
   padding: 10px;
   text-decoration: none;
-  background-color: palegoldenrod;
+  background-color: #fff388;
+  border: 2px solid #ffb100;
   color: black;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
 .backbutton {

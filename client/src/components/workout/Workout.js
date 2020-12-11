@@ -26,7 +26,7 @@ export class Workout extends Component {
   }
 
   render() {
-    const {workouts} = this.props
+    const {workouts, isLoading} = this.props
     const {listView} = this.state
 
     return (
@@ -37,7 +37,7 @@ export class Workout extends Component {
           </div>
         </div>
         {listView ?
-          <WorkoutList workouts={workouts} /> :
+          <WorkoutList workouts={workouts} isLoading={isLoading} /> :
           <WorkoutForm />
         }
       </div>
@@ -47,7 +47,8 @@ export class Workout extends Component {
 
 Workout.propTypes = {
   fetchWorkouts: PropTypes.func,
-  workouts: PropTypes.array
+  workouts: PropTypes.array,
+  isLoading: PropTypes.bool
 }
 
 const mapDispatchToProps = {
@@ -55,7 +56,8 @@ const mapDispatchToProps = {
 }
 
 const mapStateToProps = (state) => ({
-  workouts: state.workoutReducer.workouts
+  workouts: state.workoutReducer.workouts,
+  isLoading: state.workoutReducer.isLoading
 })
 
 export default connect(
