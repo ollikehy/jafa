@@ -28,7 +28,8 @@ HeaderLinks.propTypes = {
   loggedIn: PropTypes.object,
   logout: PropTypes.func,
   className: PropTypes.string,
-  containerClass: PropTypes.string
+  containerClass: PropTypes.string,
+  linkContainerClass: PropTypes.string
 }
 
 export default HeaderLinks

@@ -47,8 +47,8 @@ export class Header extends Component {
             loggedIn={loggedIn}
             logout={logout}
             className={'header-link'}
-            containerClass={'header-menu'} 
-            linkContainerClass={'header-linkcontainer'}/>
+            containerClass={'header-menu'}
+            linkContainerClass={'header-linkcontainer'} />
           : <DropdownMenu />}
       </div>
     )

@@ -9,7 +9,7 @@ describe('Exercises ', function () {
   it('Non logged users can visit exercises page', function () {
     cy.contains('Logout').click()
     cy.contains('Exercises').click()
-    cy.contains('List of exercises')
+    cy.contains('Excercises')
   })
   it('Logged users can suggest exercises', function () {
     cy.visit('localhost/exercise')

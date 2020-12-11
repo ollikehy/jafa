@@ -37,7 +37,9 @@
   &-link {
     padding: 11px 10px;
     margin: 0px 5px;
-    background-color: palegoldenrod;
+    background-color: #fff388;
+    border: 2px solid #ffb100;
+    border-radius: 5px;
     text-decoration: none;
     color: black;
   }
@@ -49,7 +51,9 @@
   &-logout {
     padding: 11px 10px;
     margin: 0px 5px;
-    background-color: palegoldenrod;
+    background-color: #fff388;
+    border: 2px solid #ffb100;
+    border-radius: 5px;
     border-style: none;
     font-family: 'Roboto Condensed', sans-serif;
     cursor: pointer;

@@ -7,13 +7,14 @@
   }
 
   &-content {
-    background-color: palegoldenrod;
+    background-color: #fff388;
     position: absolute;
     white-space: nowrap;
     right: 10px;
-    border-right: 1px black solid;
-    border-left: 1px black solid;
-    border-bottom: 1px black solid;
+    border-radius: 5px;
+    border-right: 2px #ffb100 solid;
+    border-left: 2px #ffb100 solid;
+    border-bottom: 2px #ffb100 solid;
   }
 
   &-item {
@@ -32,7 +33,7 @@
     display: flex;
     padding: 0px 20px;
     justify-content: center;
-    border-top: 1px black solid;
+    border-top: 2px #ffb100 solid;
   }
 
 }

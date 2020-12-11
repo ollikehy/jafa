@@ -45,7 +45,7 @@ export class Exercises extends Component {
         {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
         {exercises.length > 0 ?
           <div className='exercise-list'>
-            <p className='exercise-list-title'>List of exercises</p>
+            <p className='exercise-list-title'>EXCERCISES</p>
             {exercises.map(exercise =>
               exercise.name.toLowerCase().indexOf(search.toLowerCase()) > -1 &&
               <Exercise key={exercise.id} user={user} exercise={exercise} />)}

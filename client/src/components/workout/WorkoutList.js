@@ -18,8 +18,8 @@ const WorkoutList = (props) => {
       {!isLoading ? sortedWorkouts.map(workout =>
         <WorkoutDetail key={workout.id} workout={workout} />
       ) : <Spinner />}
-      {!isLoading && sortedWorkouts.length < 1 && 
-      <div>You don't have any workouts just yet...</div>}
+      {!isLoading && sortedWorkouts.length < 1 &&
+        <div>You have no workouts</div>}
     </div >
   )
 }

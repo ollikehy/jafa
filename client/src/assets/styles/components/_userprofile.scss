@@ -23,7 +23,6 @@
   }
 
   &-form {
-    background-color: aquamarine;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -41,7 +40,9 @@
     justify-content: center;
     padding: 10px;
     text-decoration: none;
-    background-color: palegoldenrod;
+    background-color: #fff388;
+    border: 2px solid #ffb100;
+    border-radius: 5px;
     color: black;
     cursor: pointer;
     width: 25%;
@@ -55,6 +56,8 @@
 
 #profileSubmit {
   cursor: pointer;
-  background-color: palegoldenrod;
+  background-color: #fff388;
+  border: 2px solid #ffb100;
+  border-radius: 5px;
   padding: 10px;
 }

@@ -63,4 +63,5 @@
 | 8.12.2020 | 3h   | Fonts, dropdown menu, loading spinner and some fixes |
 |           | 1,5h | Refactoring header and adding styling |
 | 9.12.2020 | 1h   | Trying to hack production build |
-| Sum       | 150,5h | Cumulative sum of hours |
+| 11.12.2020| 2,5h | Styling the application and fixing stuff |
+| Sum       | 153h | Cumulative sum of hours |
