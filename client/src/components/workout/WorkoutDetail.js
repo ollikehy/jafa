@@ -1,5 +1,6 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { format } from 'date-fns'
 
 export class WorkoutDetail extends Component {
   constructor(props) {
@@ -17,11 +18,12 @@ export class WorkoutDetail extends Component {
   }
 
   render() {
-    const {workout} = this.props
-    const {visible} = this.state
+    const { workout } = this.props
+    const { visible } = this.state
+
     return (
       <div onClick={this.handleClick} className='workout-list workout-list-entry'>
-        <p>{workout.date.substring(0, 10)}</p>
+        <p>{format(new Date(workout.date), 'do MMMM yyyy')}</p>
         {visible &&
           <div>
             {workout.exercises.map((exercise, indx) => {

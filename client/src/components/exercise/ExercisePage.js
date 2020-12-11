@@ -29,9 +29,12 @@ class ExercisePage extends Component {
         {error && <Message error={error} />}
         {exercise ?
           <div>
+            <div className='exercise-page-header'>
+              <div className='exercise-page-name'>{exercise.name}</div>
+              <Link className='linkbutton' to='/exercise'> Back to exercises</Link>
+            </div>
             {exerciseHistory &&
               <ExerciseChart exercise={exercise} exerciseHistory={exerciseHistory} />}
-            <p>{exercise.name}</p>
           </div>
           :
           <div className='loading'>

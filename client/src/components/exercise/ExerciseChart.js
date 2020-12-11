@@ -19,7 +19,7 @@ const ExerciseChart = ({ exercise, exerciseHistory }) => {
   })
 
   return (
-    <div>
+    <div className='exercise-chart'>
       <LineChart width={600} height={400} data={sortedHistory}>
         <Line type='monotone' dataKey={type} stroke='#694933' />
         <CartesianGrid stroke='#ccc' />

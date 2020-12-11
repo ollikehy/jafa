@@ -14,7 +14,7 @@ const WorkoutList = (props) => {
 
   return (
     <div className='workout-list'>
-      <p className='workout-list-title'>Previous workouts</p>
+      <p className='workout-list-title'>WORKOUTS</p>
       {!isLoading ? sortedWorkouts.map(workout =>
         <WorkoutDetail key={workout.id} workout={workout} />
       ) : <Spinner />}
