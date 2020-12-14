@@ -33,7 +33,7 @@ describe('Workout ', function () {
   it('Logged in users can view previous workouts', function() {
     cy.addWorkouts()
     cy.visit('localhost/workout')
-    cy.contains('Previous workouts')
+    cy.contains('Workouts')
     cy.contains('2001-09-11').click()
     cy.contains('Squat')
     cy.contains('2000-10-10').click()
