@@ -74,12 +74,13 @@ body {
 .text-input {
   padding: 10px;
   font-size: 15px;
-}
 
-.text-input:focus {
-  outline: none !important;
-  border: 2px solid #5470ff;
-  box-shadow: 0 0 10px #719ECE;
+  &:focus {
+    outline: none !important;
+    border: 2px solid #5470ff;
+    box-shadow: 0 0 10px #719ECE;
+
+  }
 }
 
 .checkbox-input {

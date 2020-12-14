@@ -1,10 +1,11 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
+import WorkoutFormContent from './WorkoutFormContent'
 
 export class WorkoutForm extends Component {
   constructor(props) {
@@ -51,7 +52,7 @@ export class WorkoutForm extends Component {
   }
 
   handleSubmit = (e) => {
-    const {stateExercises, date} = this.state
+    const { stateExercises, date } = this.state
     e.preventDefault()
     this.props.createWorkout(stateExercises, date)
     this.setState({
@@ -89,52 +90,46 @@ export class WorkoutForm extends Component {
   }
 
   render() {
-    const {exercises, errorMessage, successMessage} = this.props
-    const {date, currentExercise, stateExercises, sets, reps, distance, time, weight} = this.state
+    const { exercises, errorMessage, successMessage } = this.props
+    const { date, currentExercise, stateExercises } = this.state
     return (
       <div className='workout-form-container'>
-        {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage}/>}
+        {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
         <form className='workout-form'>
           <p className='workout-form-title'>Add a new workout</p>
           <div className='workout-form-date'>
-            <label htmlFor='date'>Date: </label>
-            <input id='date' type='date' value={date} onChange={this.handleDateChange} />
+            <div className='workout-form-date-label'>Date</div>
+            <input id='date' type='date' className='workout-form-date-selector' value={date} onChange={this.handleDateChange} />
           </div>
-          {stateExercises.map((stateEx, index) => (
-            <div className='workout-form-exercise' key={index}>
-              <div>
-                {stateEx.name}
+          <div className='workout-form-exercise-container'>
+            <div className='workout-form-heading'>Exercises </div>
+            <WorkoutFormContent
+              currentExercise={currentExercise}
+              exercises={exercises}
+              state={this.state}
+              handleChange={this.handleChange}
+              handleExerciseChange={this.handleExerciseChange}
+              addExerciseToState={this.addExerciseToState}
+            />
+          </div>
+          <div className='workout-state'>
+            {stateExercises.map((stateEx, index) => (
+              <div className='workout-form-exercise' key={index}>
+                <div>
+                  {stateEx.name}
+                </div>
+                <button type='button' className='workout-state-button' onClick={() => this.removeExercise(stateEx)}>X</button>
               </div>
-              <button type='button' onClick={() => this.removeExercise(stateEx)}>-</button>
-            </div>
-          ))}
-          <button id='submit-workout' type='submit' onClick={this.handleSubmit}>Submit workout</button>
-          <div className='workout-form-exerciseform'>
-            <p>Add more exercises to workout</p>
-            <select id='exerciselist' defaultValue='Choose exercise' value={currentExercise.name} onChange={this.handleExerciseChange}>
-              <option defaultValue disabled hidden>Choose exercise</option>
-              {exercises && exercises.map((exercise, idx) => (
-                <option key={idx}>{exercise.name}</option>
-              ))}
-            </select>
-            {currentExercise.weightExercise &&
-              <div className='workout-form-weightform'>
-                <input id='sets' type='number' name='sets' onChange={this.handleChange} value={sets} placeholder='sets' />
-                <input id='reps' type='number' name='reps' onChange={this.handleChange} value={reps} placeholder='reps' />
-                <input id='weight' type='number' name='weight' onChange={this.handleChange} value={weight} placeholder='weight (kg)' />
-              </div>}
-            {currentExercise.timedExercise &&
-              <div>
-                <input id='time' type='number' name='time' onChange={this.handleChange} value={time} placeholder='time (min)' />
-              </div>}
-            {currentExercise.distanceExercise &&
-              <div>
-                <input id='distance' type='number' name='distance' onChange={this.handleChange} value={distance} placeholder='distance (m)' />
-              </div>}
-            <button id='add-exercise-button' onClick={this.addExerciseToState}>Add exercise</button>
+            ))}
           </div>
+          <button id='submit-workout'
+            type='submit'
+            onClick={this.handleSubmit}
+            className='submit-button'>
+            Submit workout
+          </button>
         </form>
-      </div>
+      </div >
     )
   }
 }

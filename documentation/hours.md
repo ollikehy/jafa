@@ -66,4 +66,5 @@
 | 11.12.2020| 2,5h | Styling the application and fixing stuff |
 |           | 1h   | Trying to configure frontend container to alpine with no success and more styles |
 | 14.12.2020| 3h   | Adding some more styling and doing some fixes for spinners etc. |
-| Sum       | 157h | Cumulative sum of hours |
+|           | 1,5h | Styling and refactoring for workout form |
+| Sum       | 158,5h | Cumulative sum of hours |

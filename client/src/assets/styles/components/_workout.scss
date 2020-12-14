@@ -31,6 +31,9 @@
   }
 
   &-exercise {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
     &-name {
       margin: 5px;
@@ -39,11 +42,23 @@
     &-detail {
       margin: 2px;
     }
+
+    &-input {
+      margin-top: 10px;
+      padding: 3px;
+      border-radius: 5px;
+      border: 1px solid #737373;
+
+      &:focus {
+        outline: none !important;
+        border: 2px solid #5470ff;
+        box-shadow: 0 0 10px #719ECE;
+      }
+    }
   }
 
   &-form {
     display: flex;
-    align-items: center;
     flex-direction: column;
 
     &-container {
@@ -52,17 +67,62 @@
       align-items: center;
     }
 
-    &-title {
-      font-size: 20px;
-    }
-
     &-exercise {
       display: flex;
-      flex-direction: row;
       justify-content: space-between;
+      margin-top: 10px;
+      width: 140px;
     }
 
-    &-exerciseform {
+    &-exercise-container {
+      display: flex;
+      margin-top: 14px;
+    }
+
+    &-title {
+      font-size: 20px;
+      align-self: center;
+    }
+
+    &-date {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &-selector {
+        padding: 8px;
+        border-radius: 5px;
+
+        &:focus {
+          outline: none !important;
+          border: 2px solid #5470ff;
+          box-shadow: 0 0 10px #719ECE;
+        }
+      }
+
+      &-label {
+        margin-right: 10px;
+      }
+    }
+
+    &-heading {
+      font-size: 16px;
+      margin-right: 10px;
+    }
+
+    &-select {
+      padding: 10px;
+      width: 180px;
+      border-radius: 5px;
+
+      &:focus {
+        outline: none !important;
+        border: 2px solid #5470ff;
+        box-shadow: 0 0 10px #719ECE;
+      }
+    }
+
+    &-exercise-form {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -73,4 +133,25 @@
       flex-direction: column;
     }
   }
+
+  &-state {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-button {
+      background: #dcdcdc;
+      border-radius: 4px;
+      border: 1px solid #737373;
+    }
+  }
+}
+
+#add-exercise-button {
+  margin-top: 10px;
+  padding: 5px 20px;
+  background: #dcdcdc;
+  border-radius: 4px;
+  border: 1px solid #737373;
 }
