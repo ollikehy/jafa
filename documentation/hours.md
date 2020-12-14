@@ -65,4 +65,5 @@
 | 9.12.2020 | 1h   | Trying to hack production build |
 | 11.12.2020| 2,5h | Styling the application and fixing stuff |
 |           | 1h   | Trying to configure frontend container to alpine with no success and more styles |
-| Sum       | 154h | Cumulative sum of hours |
+| 14.12.2020| 3h   | Adding some more styling and doing some fixes for spinners etc. |
+| Sum       | 157h | Cumulative sum of hours |

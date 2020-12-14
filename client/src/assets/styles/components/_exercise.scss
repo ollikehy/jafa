@@ -11,14 +11,14 @@
 
     &-header {
       display: flex;
-      justify-content: space-between;
-      padding: 0px 10%;
+      flex-direction: column;
     }
 
     &-name {
       display: flex;
       align-items: center;
       font-size: 18px;
+      align-self: center;
     }
   }
 
@@ -112,6 +112,7 @@
       position: relative;
       display: inline-block;
       border-bottom: 1px dotted black;
+      align-self: flex-start;
 
       &:hover &-text {
         visibility: visible;

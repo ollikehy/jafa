@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import Message from '../app/Message'
@@ -25,8 +25,8 @@ export class UserProfileForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const {height, weight} = this.state
-    const {username} = this.props.user
+    const { height, weight } = this.state
+    const { username } = this.props.user
     this.props.updateUser(username, height, weight)
 
     this.setState({
@@ -36,8 +36,8 @@ export class UserProfileForm extends Component {
   }
 
   render() {
-    const {updateFailure} = this.props
-    const {height, weight} = this.state
+    const { updateFailure } = this.props
+    const { height, weight } = this.state
 
     return (
       <div className="userprofile-form" >
@@ -65,10 +65,7 @@ export class UserProfileForm extends Component {
               placeholder="Weight (kg)">
             </input>
           </div>
-
-          <div className='submit-button'>
-            <div id='profileSubmit' onClick={this.handleSubmit} className='button'>Update information</div>
-          </div>
+          <div id='profileSubmit' onClick={this.handleSubmit} className='button'>Update information</div>
         </form>
       </div>
     )

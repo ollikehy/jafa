@@ -22,7 +22,7 @@ class ExercisePage extends Component {
   }
 
   render() {
-    const { exercise, exerciseHistory, error } = this.props
+    const { exercise, exerciseHistory, error, isLoading } = this.props
 
     return (
       <div className='container'>
@@ -30,16 +30,16 @@ class ExercisePage extends Component {
         {exercise ?
           <div>
             <div className='exercise-page-header'>
-              <div className='exercise-page-name'>{exercise.name}</div>
               <Link className='linkbutton' to='/exercise'> Back to exercises</Link>
+              <div className='exercise-page-name'>{exercise.name}</div>
             </div>
             {exerciseHistory &&
               <ExerciseChart exercise={exercise} exerciseHistory={exerciseHistory} />}
           </div>
           :
           <div className='loading'>
-            <Spinner />
             <Link className='backbutton linkbutton' to='/exercise'> Back to exercises</Link>
+            {isLoading ? <Spinner /> : <div>No history with this exercise yet</div>}
           </div>}
       </div>
     )
@@ -50,13 +50,15 @@ ExercisePage.propTypes = {
   exercise: PropTypes.object,
   exerciseHistory: PropTypes.array,
   fetchExercise: PropTypes.func,
-  error: PropTypes.string
+  error: PropTypes.string,
+  isLoading: PropTypes.bool
 }
 
 const mapStateToProps = (state) => ({
   exercise: state.exerciseReducer.exercise,
   exerciseHistory: state.exerciseReducer.exerciseHistory,
-  error: state.errorReducer.errorMessage
+  error: state.errorReducer.errorMessage,
+  isLoading: state.exerciseReducer.isLoading
 })
 
 const mapDispatchToProps = {

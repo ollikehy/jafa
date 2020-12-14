@@ -52,8 +52,8 @@ function* fetchExercises() {
 
 function* fetchExercise({payload}) {
   try {
+    yield put(actions.exerciseLoading(true))
     const user = yield select(getCurrentUser)
-
     const response = yield call(exerciseApi.getOne, {exercise: payload, user})
 
     if (response.status === 200) {
@@ -67,6 +67,7 @@ function* fetchExercise({payload}) {
     }
   } catch (e) {
     yield put(actions.setErrorMessage(e.message))
+    yield put(actions.exerciseLoading(false))
     yield delay(5000)
     yield put(actions.errorReducerReset())
   }

@@ -16,7 +16,7 @@ function* fetchWorkouts() {
     const errorMessage = e.response.data.error
 
     yield put(actions.setErrorMessage(errorMessage))
-    yield put(actions.workoutLoading(true))
+    yield put(actions.workoutLoading(false))
     yield delay(5000)
     yield put(actions.errorReducerReset())
   }

@@ -40,7 +40,9 @@ export class Exercises extends Component {
             type='text'
             value={search}
             onChange={this.handleChange}
-            placeholder='Search..' />
+            placeholder='Search..'
+            className='search-bar'
+          />
         </div>
         {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
         {exercises.length > 0 ?

@@ -4,14 +4,16 @@ import * as actions from '../actions/actions'
 const initialState = {
   exercises: [],
   exercise: null,
-  exerciseHistory: null
+  exerciseHistory: null,
+  isLoading: false
 }
 
 const reducer = handleActions(
   {
     [actions.fetchExercisesSuccess]: (state, action) => ({
       ...state,
-      exercises: action.payload
+      exercises: action.payload,
+      isLoading: false
     }),
     [actions.removeExercises]: () => ({
       exercises: [],
@@ -24,7 +26,12 @@ const reducer = handleActions(
     [actions.setExerciseWithHistory]: (state, action) => ({
       ...state,
       exercise: action.payload.exerciseInfo,
-      exerciseHistory: action.payload.exerciseHistory
+      exerciseHistory: action.payload.exerciseHistory,
+      isLoading: false
+    }),
+    [actions.exerciseLoading]: (state, action) => ({
+      ...state,
+      isLoading: action.payload
     })
   }, initialState
 )

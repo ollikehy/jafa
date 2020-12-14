@@ -10,7 +10,6 @@ import Weight from '../../assets/images/weight-50.png'
 import Height from '../../assets/images/length-50.png'
 import Profile from '../../assets/images/profile-50.png'
 import BMI from '../../assets/images/bmi-50.png'
-import PogTeeth from '../../assets/images/pogteeth.png'
 import Spinner from '../app/Spinner'
 
 export class UserProfile extends Component {
@@ -44,7 +43,7 @@ export class UserProfile extends Component {
         {user ?
           <div className='userprofile-profile'>
             <div className='userprofile-row'>
-              {user.admin ? <img src={PogTeeth} /> : <img src={Profile} />}
+              <img src={Profile} />
               <span className='userprofile-text'>
                 {user.username}
               </span>
@@ -52,13 +51,13 @@ export class UserProfile extends Component {
             <div className='userprofile-row'>
               <img src={Height}></img>
               <span className='userprofile-text'>
-                {user.height ? user.height : 'not defined'}
+                {user.height ? user.height + ' cm' : 'not defined'}
               </span>
             </div>
             <div className='userprofile-row'>
               <img src={Weight}></img>
               <span className='userprofile-text'>
-                {user.weight ? user.weight : 'not defined'}
+                {user.weight ? user.weight + ' kg' : 'not defined'}
               </span>
             </div>
             {user.weight && user.height &&
