@@ -1,6 +1,7 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
 import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
@@ -39,8 +40,8 @@ export class ExerciseForm extends Component {
   handleSubmit = (e) => {
     e.preventDefault()
 
-    const {name, weight, distance, timed} = this.state
-    const {username} = this.props.user
+    const { name, weight, distance, timed } = this.state
+    const { username } = this.props.user
     this.props.createExercise(name, username, weight, distance, timed)
 
     this.setState({
@@ -52,60 +53,66 @@ export class ExerciseForm extends Component {
   }
 
   render() {
-    const {user, exerciseError, exerciseSuccess} = this.props
-    const {name, weight, distance, timed} = this.state
+    const { user, exerciseError, exerciseSuccess } = this.props
+    const { name, weight, distance, timed } = this.state
 
     return (
       <div className='container'>
         {(exerciseError || exerciseSuccess) && <Message error={exerciseError} message={exerciseSuccess} />}
-        <p className='exercise-form-title'>
-          {user && user.admin ? 'Add ' : 'Suggest '}
-          a new exercise type
-        </p>
-        <div className='exercise-form'>
-          <form>
-            <div>
+        <div className='exercise-form-header'>
+          <Link className='linkbutton' to='/exercise'>Back to exercise list</Link>
+          <div className='exercise-form-title'>
+            {user && user.admin ? 'Add ' : 'Suggest '} a new exercise type
+          </div>
+        </div>
+        <div className='exercise-form-container'>
+          <form className='exercise-form'>
+            <div className='input-container'>
               <input
                 id='name'
                 required
                 value={name}
                 placeholder='Name of the exercise'
-                onChange={this.handleChange}>
+                onChange={this.handleChange}
+                className='text-input'>
               </input>
             </div>
-            <div>
+            <div className='input-container'>
               <input
                 id='weight'
                 checked={weight}
                 onChange={this.handleToggle}
-                type='checkbox'>
+                type='checkbox'
+                className='checkbox-input'>
               </input>
               <label htmlFor='weight'>Weight exercise</label>
             </div>
-            <div>
+            <div className='input-container'>
               <input
                 id='distance'
                 checked={distance}
                 onChange={this.handleToggle}
-                type='checkbox'>
+                type='checkbox'
+                className='checkbox-input'>
               </input>
               <label htmlFor='distance'>Distance exercise</label>
             </div>
-            <div>
+            <div className='input-container'>
               <input
                 id='timed'
                 checked={timed}
                 onChange={this.handleToggle}
-                type='checkbox'>
+                type='checkbox'
+                className='checkbox-input'>
               </input>
               <label htmlFor='timed'>Timed exercise</label>
             </div>
-            <button id='submitExercise' onClick={this.handleSubmit}>
+            <button id='submitExercise' onClick={this.handleSubmit} className='submit-button'>
               {user && user.admin ? 'Add ' : 'Suggest '} exercise
             </button>
           </form>
         </div>
-      </div>
+      </div >
     )
   }
 }
