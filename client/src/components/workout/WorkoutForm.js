@@ -74,7 +74,7 @@ export class WorkoutForm extends Component {
           time: this.state.time
         }
       ),
-      currentExercise: 'Choose exercise',
+      currentExercise: '',
       sets: '',
       reps: '',
       weight: '',

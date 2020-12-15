@@ -3,9 +3,11 @@ import PropTypes from 'prop-types'
 
 const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, handleExerciseChange, addExerciseToState }) => {
 
+  const selectValue = currentExercise ? currentExercise.name : 'Choose exercise'
+
   return (
     <div className='workout-form-exercise-form'>
-      <select id='exerciselist' defaultValue='Choose exercise' className='workout-form-select' value={currentExercise.name} onChange={handleExerciseChange}>
+      <select id='exerciselist' defaultValue='Choose exercise' className='workout-form-select' value={selectValue} onChange={handleExerciseChange}>
         <option defaultValue disabled hidden>Choose exercise</option>
         {exercises && exercises.map((exercise, idx) => (
           <option key={idx}>{exercise.name}</option>
@@ -66,7 +68,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
 }
 
 WorkoutFormContent.propTypes = {
-  currentExercise: PropTypes.string,
+  currentExercise: PropTypes.object,
   exercises: PropTypes.array,
   state: PropTypes.object,
   handleChange: PropTypes.func,

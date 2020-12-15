@@ -74,11 +74,12 @@ body {
 .text-input {
   padding: 10px;
   font-size: 15px;
+  border-radius: 4px;
 
   &:focus {
     outline: none !important;
-    border: 2px solid #5470ff;
-    box-shadow: 0 0 10px #719ECE;
+    border: 2px solid #b4c0ff;
+    box-shadow: 0 0 10px #b4c0ff;
 
   }
 }

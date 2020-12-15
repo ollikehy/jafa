@@ -45,14 +45,14 @@
 
     &-input {
       margin-top: 10px;
-      padding: 3px;
+      padding: 5px 3px;
       border-radius: 5px;
-      border: 1px solid #737373;
+      border: 2px solid #d6d6d6;
 
       &:focus {
         outline: none !important;
-        border: 2px solid #5470ff;
-        box-shadow: 0 0 10px #719ECE;
+        border: 2px solid #b4c0ff;
+        box-shadow: 0 0 10px #b4c0ff;
       }
     }
   }
@@ -95,8 +95,8 @@
 
         &:focus {
           outline: none !important;
-          border: 2px solid #5470ff;
-          box-shadow: 0 0 10px #719ECE;
+          border: 2px solid #b4c0ff;
+          box-shadow: 0 0 10px #b4c0ff;
         }
       }
 
@@ -114,11 +114,12 @@
       padding: 10px;
       width: 180px;
       border-radius: 5px;
+      border: 2px solid rgb(118, 118, 118);
 
       &:focus {
         outline: none !important;
-        border: 2px solid #5470ff;
-        box-shadow: 0 0 10px #719ECE;
+        border: 2px solid #b4c0ff;
+        box-shadow: 0 0 10px #b4c0ff;
       }
     }
 
@@ -150,7 +151,7 @@
 
 #add-exercise-button {
   margin-top: 10px;
-  padding: 5px 20px;
+  padding: 5px 15px;
   background: #dcdcdc;
   border-radius: 4px;
   border: 1px solid #737373;
