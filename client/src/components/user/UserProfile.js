@@ -4,7 +4,6 @@ import * as actions from '../../redux/actions/actions'
 import PropTypes from 'prop-types'
 
 import UserProfileForm from './UserProfileForm'
-import Message from '../app/Message'
 
 import Weight from '../../assets/images/weight-50.png'
 import Height from '../../assets/images/length-50.png'
@@ -33,12 +32,11 @@ export class UserProfile extends Component {
   }
 
   render() {
-    const { user, userFetchError, updateSuccess } = this.props
+    const { user } = this.props
     const { showForm } = this.state
 
     return (
       <div className='container'>
-        {(updateSuccess || userFetchError) && <Message error={userFetchError} message={updateSuccess} />}
         <p className='userprofile-title'>Your profile</p>
         {user ?
           <div className='userprofile-profile'>
@@ -83,14 +81,11 @@ export class UserProfile extends Component {
 UserProfile.propTypes = {
   user: PropTypes.object,
   fetchUser: PropTypes.func,
-  userFetchError: PropTypes.string,
   updateSuccess: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
   user: state.userReducer.user,
-  userFetchError: state.errorReducer.errorMessage,
-  updateSuccess: state.userReducer.updateSuccess,
   loggedIn: state.loginReducer.loggedIn
 })
 

@@ -2,7 +2,6 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
 
-import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 export class RegisterForm extends Component {
@@ -44,11 +43,9 @@ export class RegisterForm extends Component {
 
   render() {
     const {username, password, confirmPass} = this.state
-    const {registerError} = this.props
 
     return (
       <div className="accountform" >
-        {registerError && <Message error={registerError} />}
         <form>
           <div>
             <input
@@ -98,15 +95,11 @@ RegisterForm.propTypes = {
   registerError: PropTypes.string
 }
 
-const mapStateToProps = (state) => ({
-  registerError: state.errorReducer.errorMessage
-})
-
 const mapDispatchToProps = {
   ...actions
 }
 
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(RegisterForm)

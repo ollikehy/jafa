@@ -3,8 +3,7 @@ import * as actions from '../actions/actions'
 
 const initialState = {
   users: null,
-  user: null,
-  updateSuccess: null,
+  user: null
 }
 
 const reducer = handleActions(
@@ -19,8 +18,7 @@ const reducer = handleActions(
     }),
     [actions.updateUserSuccess]: (state, action) => ({
       ...state,
-      user: action.payload.user,
-      updateSuccess: action.payload.message
+      user: action.payload.user
     }),
     [actions.userReducerReset]: (state) => ({
       ...state,

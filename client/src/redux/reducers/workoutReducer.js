@@ -3,8 +3,6 @@ import * as actions from '../actions/actions'
 
 const initialState = {
   workouts: [],
-  workoutError: null,
-  workoutSuccess: null,
   isLoading: false
 }
 

@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 export class ExerciseForm extends Component {
@@ -53,12 +52,11 @@ export class ExerciseForm extends Component {
   }
 
   render() {
-    const { user, exerciseError, exerciseSuccess } = this.props
+    const { user } = this.props
     const { name, weight, distance, timed } = this.state
 
     return (
       <div className='container'>
-        {(exerciseError || exerciseSuccess) && <Message error={exerciseError} message={exerciseSuccess} />}
         <div className='exercise-form-header'>
           <Link className='linkbutton' to='/exercise'>Back to exercise list</Link>
           <div className='exercise-form-title'>
@@ -126,9 +124,7 @@ ExerciseForm.propTypes = {
 }
 
 const mapStateToProps = (state) => ({
-  user: state.userReducer.user,
-  exerciseError: state.errorReducer.errorMessage,
-  exerciseSuccess: state.errorReducer.successMessage
+  user: state.userReducer.user
 })
 
 const mapDispatchToProps = {

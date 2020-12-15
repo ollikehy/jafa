@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import Message from '../app/Message'
 
 import * as actions from '../../redux/actions/actions'
 import WorkoutFormContent from './WorkoutFormContent'
@@ -90,11 +89,10 @@ export class WorkoutForm extends Component {
   }
 
   render() {
-    const { exercises, errorMessage, successMessage } = this.props
+    const { exercises } = this.props
     const { date, currentExercise, stateExercises } = this.state
     return (
       <div className='workout-form-container'>
-        {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
         <form className='workout-form'>
           <p className='workout-form-title'>Add a new workout</p>
           <div className='workout-form-date'>
@@ -137,15 +135,11 @@ export class WorkoutForm extends Component {
 WorkoutForm.propTypes = {
   fetchExercises: PropTypes.func,
   exercises: PropTypes.array,
-  createWorkout: PropTypes.func,
-  errorMessage: PropTypes.string,
-  successMessage: PropTypes.string
+  createWorkout: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
-  exercises: state.exerciseReducer.exercises,
-  errorMessage: state.errorReducer.errorMessage,
-  successMessage: state.errorReducer.successMessage
+  exercises: state.exerciseReducer.exercises
 })
 
 const mapDispatchToProps = {

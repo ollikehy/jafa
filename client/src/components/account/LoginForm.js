@@ -1,8 +1,7 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 export class LoginForm extends Component {
@@ -23,7 +22,7 @@ export class LoginForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    const {username, password} = this.state
+    const { username, password } = this.state
     this.props.login(username, password)
 
     this.setState({
@@ -32,19 +31,11 @@ export class LoginForm extends Component {
     })
   }
 
-  componentDidMount = () => {
-    if (this.props.loginError) {
-      this.props.errorReducerReset()
-    }
-  }
-
   render() {
-    const {username, password} = this.state
-    const {loginError} = this.props
+    const { username, password } = this.state
 
     return (
       <div className="accountform">
-        {loginError && <Message error={loginError} />}
         <form>
           <div>
             <input
@@ -78,19 +69,13 @@ export class LoginForm extends Component {
 
 LoginForm.propTypes = {
   login: PropTypes.func,
-  loginError: PropTypes.string,
-  errorReducerReset: PropTypes.func
 }
 
 const mapDispatchToProps = {
   ...actions
 }
 
-const mapStateToProps = (state) => ({
-  loginError: state.errorReducer.errorMessage
-})
-
 export default connect(
-  mapStateToProps,
+  null,
   mapDispatchToProps
 )(LoginForm)

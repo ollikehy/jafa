@@ -1,15 +1,10 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import Message from '../app/Message'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 
 class FrontPage extends Component {
 
   render() {
-    const {registerSuccess} = this.props
     return (
       <div>
-        {registerSuccess && <Message message={registerSuccess} />}
         <div>
           <p className='frontpage-title'>Welcome to JAFA</p>
         </div>
@@ -18,15 +13,4 @@ class FrontPage extends Component {
   }
 }
 
-FrontPage.propTypes = {
-  registerSuccess: PropTypes.string
-}
-
-const mapStateToProps = (state) => ({
-  registerSuccess: state.errorReducer.successMessage
-})
-
-export default connect(
-  mapStateToProps,
-  null
-)(FrontPage)
+export default FrontPage

@@ -47,24 +47,90 @@ body {
   align-items: center;
 }
 
-.message {
+#message-container {
+  visibility: hidden;
+  min-width: 250px;
+  margin-left: -125px;
+  color: #fff;
   text-align: center;
-  padding: 20px;
-  margin: 0;
+  border-radius: 2px;
+  padding: 25px;
+  position: fixed;
+  z-index: 1;
+  right: 10px;
+  top: 30px;
+  font-size: 17px;
 
-  &-success {
-    background-color: lightgreen;
-  }
+  &-visible {
+    @extend #message-container;
+    visibility: visible;
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
 
-  &-error {
-    background-color: lightcoral;
+    &-error {
+      @extend #message-container-visible;
+      background-color: lightcoral;
+      border: 1px solid #a02020;
+      border-radius: 4px;
+    }
+
+    &-success {
+      @extend #message-container-visible;
+      background-color: lightgreen;
+      border: 1px solid #078607;
+      border-radius: 4px;
+    }
   }
 }
 
-.message-container {
-  display: flex;
-  justify-content: center;
+@-webkit-keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+
+  to {
+    top: 30px;
+    opacity: 1;
+  }
 }
+
+@keyframes fadein {
+  from {
+    top: 0;
+    opacity: 0;
+  }
+
+  to {
+    top: 30px;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeout {
+  from {
+    top: 30px;
+    opacity: 1;
+  }
+
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
 
 .frontpage-title {
   text-align: center;

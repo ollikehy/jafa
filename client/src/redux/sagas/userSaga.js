@@ -1,7 +1,7 @@
-import {call, put, takeLatest, delay, select} from 'redux-saga/effects'
+import { call, put, takeLatest, delay, select } from 'redux-saga/effects'
 import * as actions from '../actions/actions'
 import userApi from '../apis/userApi'
-import {getCurrentUser} from './loginSaga'
+import { getCurrentUser } from './loginSaga'
 
 function* fetchUser() {
   try {
@@ -21,7 +21,7 @@ function* fetchUser() {
   }
 }
 
-function* updateUser({payload}) {
+function* updateUser({ payload }) {
   try {
     const loggedUser = yield select(getCurrentUser)
 
@@ -31,15 +31,16 @@ function* updateUser({payload}) {
       weight: payload.weight
     }
 
-    const response = yield call(userApi.add, {user, loggedUser})
+    const response = yield call(userApi.add, { user, loggedUser })
 
     if (response.status === 200) {
       yield put(actions.updateUserSuccess({
         user: response.data.user,
-        message: response.data.message
       }))
+      yield put(actions.setSuccessMessage('User updated succesfully'))
       yield delay(5000)
       yield put(actions.userReducerReset())
+      yield put(actions.errorReducerReset())
     }
 
   } catch (e) {

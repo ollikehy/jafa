@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
 import App from './App'
@@ -12,6 +12,7 @@ import ExerciseForm from './exercise/ExerciseForm'
 import ExercisePage from './exercise/ExercisePage'
 import UserProfile from './user/UserProfile'
 import Workout from './workout/Workout'
+import Message from './app/Message'
 
 export class Routes extends Component {
   constructor(props) {
@@ -23,11 +24,12 @@ export class Routes extends Component {
   }
 
   render() {
-    const {loggedIn} = this.props
+    const { loggedIn, messageVisible, errorMessage, successMessage } = this.props
 
     return (
       <Router>
         <div>
+          <Message messageVisible={messageVisible} error={errorMessage} message={successMessage} />
           <Header />
           <Switch>
             <Route exact path='/' render={() =>
@@ -61,11 +63,17 @@ export class Routes extends Component {
 }
 
 Routes.propTypes = {
-  loggedIn: PropTypes.object
+  loggedIn: PropTypes.object,
+  messageVisible: PropTypes.bool,
+  successMessage: PropTypes.string,
+  errorMessage: PropTypes.string
 }
 
 const mapStateToProps = (state) => ({
-  loggedIn: state.loginReducer.loggedIn
+  loggedIn: state.loginReducer.loggedIn,
+  messageVisible: state.errorReducer.messageVisible,
+  successMessage: state.errorReducer.successMessage,
+  errorMessage: state.errorReducer.errorMessage
 })
 
 export default connect(

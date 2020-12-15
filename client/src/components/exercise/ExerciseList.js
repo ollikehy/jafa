@@ -6,7 +6,6 @@ import PropTypes from 'prop-types'
 import * as actions from '../../redux/actions/actions'
 
 import Exercise from './Exercise'
-import Message from '../app/Message'
 import Spinner from '../app/Spinner'
 
 export class Exercises extends Component {
@@ -29,7 +28,7 @@ export class Exercises extends Component {
   }
 
   render() {
-    const { exercises, errorMessage, successMessage, user } = this.props
+    const { exercises, user } = this.props
     const { search } = this.state
 
     return (
@@ -44,7 +43,6 @@ export class Exercises extends Component {
             className='search-bar'
           />
         </div>
-        {(errorMessage || successMessage) && <Message error={errorMessage} message={successMessage} />}
         {exercises.length > 0 ?
           <div className='exercise-list'>
             <div className='exercise-list-title'>Exercises</div>
@@ -62,16 +60,12 @@ export class Exercises extends Component {
 Exercises.propTypes = {
   fetchExercises: PropTypes.func,
   exercises: PropTypes.array,
-  errorMessage: PropTypes.string,
-  successMessage: PropTypes.string,
   user: PropTypes.object
 }
 
 const mapStateToProps = (state) => ({
   user: state.loginReducer.loggedIn,
   exercises: state.exerciseReducer.exercises,
-  errorMessage: state.errorReducer.errorMessage,
-  successMessage: state.errorReducer.successMessage
 })
 
 const mapDispatchToProps = {

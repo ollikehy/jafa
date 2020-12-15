@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-import Message from '../app/Message'
 import * as actions from '../../redux/actions/actions'
 
 
@@ -36,12 +35,10 @@ export class UserProfileForm extends Component {
   }
 
   render() {
-    const { updateFailure } = this.props
     const { height, weight } = this.state
 
     return (
       <div className="userprofile-form" >
-        {updateFailure && <Message error={updateFailure} />}
         <form>
           <div>
             <input
@@ -74,13 +71,11 @@ export class UserProfileForm extends Component {
 
 UserProfileForm.propTypes = {
   user: PropTypes.object,
-  updateUser: PropTypes.func,
-  updateFailure: PropTypes.string
+  updateUser: PropTypes.func
 }
 
 const mapStateToProps = (state) => ({
-  user: state.userReducer.user,
-  updateFailure: state.errorReducer.errorMessage
+  user: state.userReducer.user
 })
 
 const mapDispatchToProps = {
