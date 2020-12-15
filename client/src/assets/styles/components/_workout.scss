@@ -26,6 +26,9 @@
 
       &-details {
         margin-bottom: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   }
@@ -36,11 +39,22 @@
     justify-content: space-between;
 
     &-name {
-      margin: 5px;
+      font-weight: bold;
+      padding: 4px 0px;
     }
 
     &-detail {
-      margin: 2px;
+      padding-bottom: 2px;
+    }
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      width: 75%;
+    }
+
+    &-date {
+      padding: 5px;
     }
 
     &-input {

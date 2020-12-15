@@ -23,23 +23,33 @@ export class WorkoutDetail extends Component {
 
     return (
       <div onClick={this.handleClick} className='workout-list workout-list-entry'>
-        <p>{format(new Date(workout.date), 'do MMMM yyyy')}</p>
+        <div className='workout-exercise-date'>{format(new Date(workout.date), 'do MMMM yyyy')}</div>
         {visible &&
-          <div>
+          <div className='workout-exercise-container'>
             {workout.exercises.map((exercise, indx) => {
               return (
                 <div className='workout-list-entry-details' key={indx}>
-                  <p className='workout-exercise-name'>{exercise.exercise.name}</p>
-                  {exercise.exercise.weightExercise && <p className='workout-exercise-detail'>
-                    Weight: {exercise.weight} kg</p>}
-                  {exercise.repetitions && <p className='workout-exercise-detail'>
-                    Reps: {exercise.repetitions}</p>}
-                  {exercise.sets && <p className='workout-exercise-detail'>
-                    Sets: {exercise.sets}</p>}
-                  {exercise.distance && <p className='workout-exercise-detail'>
-                    Distance: {exercise.distance}m</p>}
-                  {exercise.time && <p className='workout-exercise-detail'>
-                    Time: {exercise.time} mins</p>}
+                  <div className='workout-exercise-name'>{exercise.exercise.name}</div>
+                  {exercise.exercise.weightExercise &&
+                    <div className='workout-exercise-detail'>
+                      Weight: {exercise.weight} kg
+                    </div>}
+                  {exercise.repetitions &&
+                    <div className='workout-exercise-detail'>
+                      Reps: {exercise.repetitions}
+                    </div>}
+                  {exercise.sets &&
+                    <div className='workout-exercise-detail'>
+                      Sets: {exercise.sets}
+                    </div>}
+                  {exercise.distance &&
+                    <div className='workout-exercise-detail'>
+                      Distance: {exercise.distance}m
+                    </div>}
+                  {exercise.time &&
+                    <div className='workout-exercise-detail'>
+                      Time: {exercise.time} mins
+                    </div>}
                 </div>
               )
             })}
