@@ -38,7 +38,7 @@ function* updateUser({ payload }) {
         user: response.data.user,
       }))
       yield put(actions.setSuccessMessage('User updated succesfully'))
-      yield delay(5000)
+      yield delay(4500)
       yield put(actions.userReducerReset())
       yield put(actions.errorReducerReset())
     }
