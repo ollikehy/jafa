@@ -37,7 +37,7 @@ class Exercise extends Component {
     if (user && user.admin && !exercise.accepted && !hidden) {
       return (
         <div className='exercise-suggestion'>
-          <p className='exercise-name'>{exercise.name}</p>
+          <div className='exercise-name'>{exercise.name}</div>
           <div className='exercise-suggestion-toggle'>
             <img id='accept' className='exercise-suggestion-toggle-button' src={Approval} onClick={() => this.handleAccept(true, exercise.name)} />
             <img id='reject' className='exercise-suggestion-toggle-button' src={Cancel} onClick={() => this.handleAccept(false, exercise.name)} />

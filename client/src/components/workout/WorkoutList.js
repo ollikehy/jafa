@@ -19,7 +19,7 @@ const WorkoutList = (props) => {
         <WorkoutDetail key={workout.id} workout={workout} />
       ) : <Spinner />}
       {!isLoading && sortedWorkouts.length < 1 &&
-        <div>You have no workouts</div>}
+        <div className='workout-list-empty'>You have no workouts</div>}
     </div >
   )
 }

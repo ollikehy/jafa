@@ -19,15 +19,12 @@
       align-items: center;
       font-size: 18px;
       align-self: center;
-    }
-  }
 
-  &-chart {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        margin-top: 20px;
+        font-size: 45px;
+      }
+    }
   }
 
   &-name {
@@ -44,16 +41,28 @@
     text-align: center;
     display: flex;
     justify-content: center;
+
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
   }
 
   &-suggestion {
-    background-color: orange;
+    background-color: #ffe19d;
+    border: 2px solid #ffb100;
+    border-radius: 5px;
     margin: 5px;
-    padding: 5px;
+    padding: 0px 10px;
     width: 40%;
     text-align: center;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      font-size: 35px;
+    }
   }
 
   &-suggestion-toggle {
@@ -80,6 +89,11 @@
     &-title {
       font-size: 25px;
       margin-bottom: 15px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 50px;
+        margin-top: 30px;
+      }
     }
   }
 
@@ -98,6 +112,12 @@
     &-title {
       font-size: 20px;
       text-align: center;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 50px;
+        margin-top: 30px;
+      }
+
     }
 
     &-header {
@@ -107,12 +127,26 @@
   }
 
   &-chart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      font-size: 25px;
+      padding: 15px;
+    }
 
     &-tooltip {
       position: relative;
       display: inline-block;
       border-bottom: 1px dotted black;
       align-self: flex-start;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 35px;
+      }
 
       &:hover &-text {
         visibility: visible;
@@ -128,7 +162,35 @@
         padding: 5px 0;
         position: absolute;
         z-index: 1;
+
+        @media screen and (min-width: 200px) and (max-width: 1000px) {
+          width: 400px
+        }
       }
     }
+  }
+
+  &-empty {
+    font-size: 35px;
+    margin: 30px
+  }
+}
+
+
+#accept {
+  background-color: #79ff61;
+  border-radius: 20px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    width: 30px
+  }
+}
+
+#reject {
+  background-color: #ff6262;
+  border-radius: 20px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    width: 30px
   }
 }

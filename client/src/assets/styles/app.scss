@@ -34,6 +34,10 @@ body {
   color: black;
   cursor: pointer;
   border-radius: 4px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 40px;
+  }
 }
 
 .backbutton {
@@ -61,6 +65,14 @@ body {
   top: 30px;
   font-size: 17px;
 
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    padding: 40px;
+    min-width: 400px;
+    font-size: 40px;
+    align-items: flex-start;
+  }
+
+
   &-visible {
     @extend #message-container;
     visibility: visible;
@@ -76,7 +88,7 @@ body {
 
     &-success {
       @extend #message-container-visible;
-      background-color: lightgreen;
+      background-color: #45bf45;
       border: 1px solid #078607;
       border-radius: 4px;
     }
@@ -135,12 +147,20 @@ body {
 .frontpage-title {
   text-align: center;
   font-size: 25px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 45px;
+  }
 }
 
 .text-input {
   padding: 10px;
   font-size: 15px;
   border-radius: 4px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 30px;
+  }
 
   &:focus {
     outline: none !important;
@@ -154,12 +174,24 @@ body {
   margin-right: 10px;
   width: 20px;
   height: 20px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    height: 40px;
+    width: 40px;
+  }
+
 }
 
 .input-container {
   display: flex;
   align-items: center;
   padding: 5px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 35px;
+    margin: 10px 0px;
+  }
+
 }
 
 .submit-button {
@@ -173,10 +205,19 @@ body {
   margin-top: 10px;
   align-self: center;
   font-size: 16px;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 35px;
+  }
 }
 
 .search-bar {
   padding: 10px;
   border-radius: 4px;
   border: 1px solid black;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    max-width: 300px;
+    font-size: 30px;
+  }
 }

@@ -6,6 +6,16 @@
     cursor: pointer;
   }
 
+  &-icon {
+    width: 40px;
+    height: 40px;
+
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+
   &-content {
     background-color: #fff388;
     position: absolute;
@@ -27,6 +37,11 @@
     margin-block-end: 10px;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      font-size: 45px;
+      padding: 15px;
+    }
   }
 
   &-linkcontainer {

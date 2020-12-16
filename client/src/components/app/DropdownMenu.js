@@ -36,7 +36,7 @@ export class DropdownMenu extends Component {
     return (
       <div>
         <div className='dropdown-header' onClick={this.toggleList}>
-          <img style={{ width: 40, height: 40 }} src={Hamburger}></img>
+          <img className='dropdown-icon' src={Hamburger}></img>
         </div>
         {listOpen &&
           <HeaderLinks

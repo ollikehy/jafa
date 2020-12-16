@@ -9,9 +9,21 @@
     flex-direction: column;
     align-items: center;
 
+    &-empty {
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        padding: 30px;
+        font-size: 35px
+      }
+    }
+
     &-title {
       font-size: 25px;
       margin-bottom: 15px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 50px;
+        margin: 20px;
+      }
     }
 
     &-entry {
@@ -23,6 +35,11 @@
       width: 40%;
       text-align: center;
       cursor: pointer;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        width: 55%;
+        margin: 10px;
+      }
 
       &-details {
         margin-bottom: 10px;
@@ -41,10 +58,18 @@
     &-name {
       font-weight: bold;
       padding: 4px 0px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 32px;
+      }
     }
 
     &-detail {
       padding-bottom: 2px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 30px;
+      }
     }
 
     &-container {
@@ -55,18 +80,10 @@
 
     &-date {
       padding: 5px;
-    }
 
-    &-input {
-      margin-top: 10px;
-      padding: 5px 3px;
-      border-radius: 5px;
-      border: 2px solid #d6d6d6;
-
-      &:focus {
-        outline: none !important;
-        border: 2px solid #b4c0ff;
-        box-shadow: 0 0 10px #b4c0ff;
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 35px;
+        padding: 10px;
       }
     }
   }
@@ -86,16 +103,50 @@
       justify-content: space-between;
       margin-top: 10px;
       width: 140px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 30px;
+        width: 260px;
+      }
     }
 
     &-exercise-container {
       display: flex;
       margin-top: 14px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        margin-top: 20px;
+      }
     }
+
+    &-exercise-input {
+      margin-top: 10px;
+      padding: 5px 3px;
+      border-radius: 5px;
+      border: 2px solid #d6d6d6;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        max-width: 260px;
+        font-size: 35px;
+        padding: 10px 5px;
+      }
+
+      &:focus {
+        outline: none !important;
+        border: 2px solid #b4c0ff;
+        box-shadow: 0 0 10px #b4c0ff;
+      }
+    }
+
 
     &-title {
       font-size: 20px;
       align-self: center;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 50px;
+        margin-top: 30px;
+      }
     }
 
     &-date {
@@ -107,6 +158,11 @@
         padding: 8px;
         border-radius: 5px;
 
+        @media screen and (min-width: 200px) and (max-width: 1000px) {
+          font-size: 30px;
+          margin-top: 20px;
+        }
+
         &:focus {
           outline: none !important;
           border: 2px solid #b4c0ff;
@@ -116,12 +172,21 @@
 
       &-label {
         margin-right: 10px;
+
+        @media screen and (min-width: 200px) and (max-width: 1000px) {
+          font-size: 40px;
+        }
       }
     }
 
     &-heading {
       font-size: 16px;
       margin-right: 10px;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 40px;
+      }
+
     }
 
     &-select {
@@ -129,6 +194,11 @@
       width: 180px;
       border-radius: 5px;
       border: 2px solid rgb(118, 118, 118);
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        width: 270px;
+        font-size: 30px;
+      }
 
       &:focus {
         outline: none !important;
@@ -159,6 +229,10 @@
       background: #dcdcdc;
       border-radius: 4px;
       border: 1px solid #737373;
+
+      @media screen and (min-width: 200px) and (max-width: 1000px) {
+        font-size: 30px;
+      }
     }
   }
 }
@@ -169,4 +243,8 @@
   background: #dcdcdc;
   border-radius: 4px;
   border: 1px solid #737373;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 35px;
+  }
 }

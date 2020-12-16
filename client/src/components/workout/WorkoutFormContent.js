@@ -9,7 +9,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
     <div className='workout-form-exercise-form'>
       <select id='exerciselist' defaultValue='Choose exercise' className='workout-form-select' value={selectValue} onChange={handleExerciseChange}>
         <option defaultValue disabled hidden>Choose exercise</option>
-        {exercises && exercises.map((exercise, idx) => (
+        {exercises && exercises.sort((a, b) => a.name.localeCompare(b.name)).map((exercise, idx) => (
           <option key={idx}>{exercise.name}</option>
         ))}
       </select>
@@ -21,7 +21,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
             onChange={handleChange}
             value={state.sets}
             placeholder='Sets'
-            className='workout-exercise-input'
+            className='workout-form-exercise-input'
           />
           <input id='reps'
             type='number'
@@ -29,7 +29,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
             onChange={handleChange}
             value={state.reps}
             placeholder='Repetitions'
-            className='workout-exercise-input'
+            className='workout-form-exercise-input'
           />
           <input id='weight'
             type='number'
@@ -37,7 +37,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
             onChange={handleChange}
             value={state.weight}
             placeholder='Weight (kg)'
-            className='workout-exercise-input'
+            className='workout-form-exercise-input'
           />
         </div>}
       {currentExercise.timedExercise &&
@@ -48,7 +48,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
             onChange={handleChange}
             value={state.time}
             placeholder='time (min)'
-            className='workout-exercise-input'
+            className='workout-form-exercise-input'
           />
         </div>}
       {currentExercise.distanceExercise &&
@@ -59,7 +59,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
             onChange={handleChange}
             value={state.distance}
             placeholder='distance (m)'
-            className='workout-exercise-input'
+            className='workout-form-exercise-input'
           />
         </div>}
       {currentExercise !== '' && <button id='add-exercise-button' onClick={addExerciseToState}>Add</button>}

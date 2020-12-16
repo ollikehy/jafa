@@ -41,26 +41,26 @@ export class UserProfile extends Component {
         {user ?
           <div className='userprofile-profile'>
             <div className='userprofile-row'>
-              <img src={Profile} />
+              <img className='userprofile-icon' src={Profile} />
               <span className='userprofile-text'>
                 {user.username}
               </span>
             </div>
             <div className='userprofile-row'>
-              <img src={Height}></img>
+              <img className='userprofile-icon' src={Height}></img>
               <span className='userprofile-text'>
                 {user.height ? user.height + ' cm' : 'not defined'}
               </span>
             </div>
             <div className='userprofile-row'>
-              <img src={Weight}></img>
+              <img className='userprofile-icon' src={Weight}></img>
               <span className='userprofile-text'>
                 {user.weight ? user.weight + ' kg' : 'not defined'}
               </span>
             </div>
             {user.weight && user.height &&
               <div className='userprofile-row'>
-                <img src={BMI}></img>
+                <img className='userprofile-icon' src={BMI}></img>
                 <span className='userprofile-text'>
                   {(user.weight / Math.pow(user.height / 100, 2)).toFixed(2)}
                 </span>

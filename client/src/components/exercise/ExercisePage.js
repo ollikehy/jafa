@@ -37,7 +37,9 @@ class ExercisePage extends Component {
           :
           <div className='loading'>
             <Link className='backbutton linkbutton' to='/exercise'> Back to exercises</Link>
-            {isLoading ? <Spinner /> : <div>No history with this exercise yet</div>}
+            {isLoading ?
+              <Spinner /> :
+              <div className='exercise-empty'>No history with this exercise yet</div>}
           </div>}
       </div>
     )

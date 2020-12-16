@@ -94,7 +94,7 @@ export class WorkoutForm extends Component {
     return (
       <div className='workout-form-container'>
         <form className='workout-form'>
-          <p className='workout-form-title'>Add a new workout</p>
+          <div className='workout-form-title'>Add a new workout</div>
           <div className='workout-form-date'>
             <div className='workout-form-date-label'>Date</div>
             <input id='date' type='date' className='workout-form-date-selector' value={date} onChange={this.handleDateChange} />

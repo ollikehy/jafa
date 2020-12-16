@@ -14,13 +14,15 @@ const ExerciseChart = ({ exercise, exerciseHistory }) => {
     type = 'weightValue'
   }
 
+  const isDesktop = window.innerWidth > 1000
+
   const sortedHistory = exerciseHistory.sort((a, b) => {
     return new Date(a.date.split('.').reverse().join('.')) - new Date(b.date.split('.').reverse().join('.'))
   })
 
   return (
     <div className='exercise-chart'>
-      <LineChart width={600} height={400} data={sortedHistory}>
+      <LineChart width={isDesktop ? 600 : 750} height={window.innerWidth > 1000 ? 400 : 500} data={sortedHistory}>
         <Line type='monotone' dataKey={type} stroke='#694933' />
         <CartesianGrid stroke='#ccc' />
         <XAxis dataKey='date' />
