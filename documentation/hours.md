@@ -68,4 +68,5 @@
 | 14.12.2020| 3h   | Adding some more styling and doing some fixes for spinners etc. |
 |           | 1,5h | Styling and refactoring for workout form |
 | 15.12.2020| 3,5h | Trying to finalize initial styling, refactored error/success messages to a toast notification |
-| Sum       | 162h | Cumulative sum of hours |
+| 16.12.2020| 4h   | Adding mobile friendly styles for application |
+| Sum       | 166h | Cumulative sum of hours |
