@@ -22,14 +22,14 @@ function* createExercise({payload}) {
       yield put(actions.setSuccessMessage(
         `Exercise ${response.data.name} ${msg} succesfully`
       ))
-      yield delay(5000)
+      yield delay(4500)
       yield put(actions.errorReducerReset())
     }
   } catch (e) {
     const errorMessage = e.response.data.error
 
     yield put(actions.setErrorMessage(errorMessage))
-    yield delay(5000)
+    yield delay(4500)
     yield put(actions.errorReducerReset())
 
   }
@@ -45,7 +45,7 @@ function* fetchExercises() {
     }
   } catch (e) {
     yield put(actions.setErrorMessage(e.message))
-    yield delay(5000)
+    yield delay(4500)
     yield put(actions.errorReducerReset())
   }
 }
@@ -68,7 +68,7 @@ function* fetchExercise({payload}) {
   } catch (e) {
     yield put(actions.setErrorMessage(e.message))
     yield put(actions.exerciseLoading(false))
-    yield delay(5000)
+    yield delay(4500)
     yield put(actions.errorReducerReset())
   }
 }
@@ -81,12 +81,12 @@ function* updateSuggestedExercise({payload}) {
 
     if (response.status === 200) {
       yield put(actions.setSuccessMessage(response.data.message))
-      yield delay(5000)
+      yield delay(4500)
       yield put(actions.errorReducerReset())
     }
   } catch (e) {
     yield put(actions.setErrorMessage(e.message))
-    yield delay(5000)
+    yield delay(4500)
     yield put(actions.errorReducerReset())
   }
 }

@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import * as actions from '../../redux/actions/actions'
 
 const Message = (props) => {
-
   const visible = props.messageVisible ? '-visible' : ''
   const type = props.error ? '-error' : '-success'
   const content = props.message ? props.message : props.error

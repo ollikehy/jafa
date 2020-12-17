@@ -1,4 +1,4 @@
-import {all} from 'redux-saga/effects'
+import { all } from 'redux-saga/effects'
 import * as registerSaga from './registerSaga'
 import * as loginSaga from './loginSaga'
 import * as userSaga from './userSaga'
@@ -17,6 +17,7 @@ export default function* rootSaga() {
     exerciseSaga.watchFetchExercise,
     exerciseSaga.watchUpdateSuggestedExercise,
     workoutSaga.watchFetchWorkouts,
-    workoutSaga.watchCreateWorkout
+    workoutSaga.watchCreateWorkout,
+    workoutSaga.watchDeleteWorkout
   ])
 }

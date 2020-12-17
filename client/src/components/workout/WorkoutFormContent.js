@@ -68,7 +68,7 @@ const WorkoutFormContent = ({ currentExercise, exercises, state, handleChange, h
 }
 
 WorkoutFormContent.propTypes = {
-  currentExercise: PropTypes.object,
+  currentExercise: PropTypes.string,
   exercises: PropTypes.array,
   state: PropTypes.object,
   handleChange: PropTypes.func,
