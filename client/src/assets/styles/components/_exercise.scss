@@ -177,7 +177,7 @@
 }
 
 
-#accept {
+img[id*="accept-"] {
   background-color: #79ff61;
   border-radius: 20px;
 
@@ -186,7 +186,7 @@
   }
 }
 
-#reject {
+img[id*="reject-"] {
   background-color: #ff6262;
   border-radius: 20px;
 

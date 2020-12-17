@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Link} from 'react-router-dom'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 
 import Approval from '../../assets/images/approval-25.png'
@@ -31,16 +31,16 @@ class Exercise extends Component {
   }
 
   render() {
-    const {user, exercise} = this.props
-    const {hidden} = this.state
+    const { user, exercise } = this.props
+    const { hidden } = this.state
 
     if (user && user.admin && !exercise.accepted && !hidden) {
       return (
         <div className='exercise-suggestion'>
           <div className='exercise-name'>{exercise.name}</div>
           <div className='exercise-suggestion-toggle'>
-            <img id='accept' className='exercise-suggestion-toggle-button' src={Approval} onClick={() => this.handleAccept(true, exercise.name)} />
-            <img id='reject' className='exercise-suggestion-toggle-button' src={Cancel} onClick={() => this.handleAccept(false, exercise.name)} />
+            <img id={`accept-${exercise.name.replace(/ /g, '')}`} className='exercise-suggestion-toggle-button' src={Approval} onClick={() => this.handleAccept(true, exercise.name)} />
+            <img id={`reject-${exercise.name.replace(/ /g, '')}`} className='exercise-suggestion-toggle-button' src={Cancel} onClick={() => this.handleAccept(false, exercise.name)} />
           </div>
         </div>
       )
