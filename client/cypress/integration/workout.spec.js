@@ -1,14 +1,14 @@
 describe('Workout ', function () {
   beforeEach(function () {
     cy.request('POST', 'localhost/api/testing/reset')
-    cy.request('POST', 'localhost/api/register', {username: 'testuser', password: 'testpassword'})
+    cy.request('POST', 'localhost/api/register', { username: 'testuser', password: 'testpassword' })
     cy.clearLocalStorage()
-    cy.login({username: 'testuser', password: 'testpassword'})
+    cy.login({ username: 'testuser', password: 'testpassword' })
     cy.visit('localhost')
 
     cy.addExercises()
   })
-  it('Logged in users can add new workouts', function() {
+  it('Logged in users can add new workouts', function () {
     cy.contains('Workouts').click()
     cy.contains('Add a new workout').click()
     cy.get('#date').type('2020-04-20')
@@ -23,14 +23,14 @@ describe('Workout ', function () {
     cy.get('#submit-workout').click()
     cy.contains('New workout created succesfully')
   })
-  it('User is notified if adding a workout fails', function() {
+  it('User is notified if adding a workout fails', function () {
     cy.visit('localhost/workout')
     cy.contains('Add a new workout').click()
     cy.get('#date').type('2020-04-20')
     cy.get('#submit-workout').click()
     cy.contains('No exercises added to the workout')
   })
-  it('Logged in users can view previous workouts', function() {
+  it('Logged in users can view previous workouts', function () {
     cy.addWorkouts()
     cy.visit('localhost/workout')
     cy.contains('Workouts')
@@ -38,5 +38,14 @@ describe('Workout ', function () {
     cy.contains('Squat')
     cy.contains('10th October 2000').click()
     cy.contains('Running')
+  })
+  it('Logged in users can delete their workouts', function () {
+    cy.addWorkouts()
+    cy.visit('localhost/workout')
+    cy.contains('11th September 2001').click()
+    cy.contains('Delete workout').click()
+    cy.contains('Workout deleted succesfully').click()
+    cy.visit('localhost/workout')
+    cy.contains('11th September 2001').should('not.exist')
   })
 })
