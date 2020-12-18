@@ -1,9 +1,9 @@
-import {call, put, takeLatest, delay, select} from 'redux-saga/effects'
+import { call, put, takeLatest, delay, select } from 'redux-saga/effects'
 import * as actions from '../actions/actions'
 import exerciseApi from '../apis/exerciseApi'
-import {getCurrentUser} from './loginSaga'
+import { getCurrentUser } from './loginSaga'
 
-function* createExercise({payload}) {
+function* createExercise({ payload }) {
   try {
     const user = yield select(getCurrentUser)
 
@@ -15,7 +15,7 @@ function* createExercise({payload}) {
       accepted: user.admin ? true : false
     }
 
-    const response = yield call(exerciseApi.add, {exercise, user})
+    const response = yield call(exerciseApi.add, { exercise, user })
 
     if (response.status === 200) {
       const msg = user.admin ? 'added' : 'suggested'
@@ -50,11 +50,11 @@ function* fetchExercises() {
   }
 }
 
-function* fetchExercise({payload}) {
+function* fetchExercise({ payload }) {
   try {
     yield put(actions.exerciseLoading(true))
     const user = yield select(getCurrentUser)
-    const response = yield call(exerciseApi.getOne, {exercise: payload, user})
+    const response = yield call(exerciseApi.getOne, { exercise: payload, user })
 
     if (response.status === 200) {
       if (Object.keys(response.data).length > 1) {
@@ -73,14 +73,15 @@ function* fetchExercise({payload}) {
   }
 }
 
-function* updateSuggestedExercise({payload}) {
+function* updateSuggestedExercise({ payload }) {
   try {
     const user = yield select(getCurrentUser)
-    const {accepted, name} = payload
-    const response = yield call(exerciseApi.modify, {user, accepted, exercise: name})
+    const { accepted, name } = payload
+    const response = yield call(exerciseApi.modify, { user, accepted, exercise: name })
 
     if (response.status === 200) {
       yield put(actions.setSuccessMessage(response.data.message))
+      yield call(fetchExercises)
       yield delay(4500)
       yield put(actions.errorReducerReset())
     }
