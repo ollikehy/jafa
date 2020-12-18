@@ -5,6 +5,7 @@
 This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use. Navigation should be easy so that the application can be used efficiently without having to do any more additional navigation than is necessary.
 
 [User stories](https://github.com/ollikehy/jafa/blob/master/documentation/userstories.md)
+
 [Testing document](https://github.com/ollikehy/jafa/blob/master/documentation/testingdocument.md)
 
 ### To do:
