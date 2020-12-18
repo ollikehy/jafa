@@ -1,0 +1,92 @@
+#message-container {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 25px;
+    position: fixed;
+    z-index: 1;
+    right: 10px;
+    top: 30px;
+    font-size: 17px;
+  
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      padding: 40px;
+      min-width: 400px;
+      font-size: 40px;
+      align-items: flex-start;
+    }
+  
+  
+    &-visible {
+      @extend #message-container;
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 4.2s;
+      animation: fadein 0.5s, fadeout 0.5s 4.2s;
+  
+      &-error {
+        @extend #message-container-visible;
+        background-color: lightcoral;
+        border: 1px solid #a02020;
+        border-radius: 4px;
+      }
+  
+      &-success {
+        @extend #message-container-visible;
+        background-color: #45bf45;
+        border: 1px solid #078607;
+        border-radius: 4px;
+      }
+    }
+  }
+  
+  @-webkit-keyframes fadein {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+  
+    to {
+      top: 30px;
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadein {
+    from {
+      top: 0;
+      opacity: 0;
+    }
+  
+    to {
+      top: 30px;
+      opacity: 1;
+    }
+  }
+  
+  @-webkit-keyframes fadeout {
+    from {
+      top: 30px;
+      opacity: 1;
+    }
+  
+    to {
+      top: 0;
+      opacity: 0;
+    }
+  }
+  
+  @keyframes fadeout {
+    from {
+      top: 30px;
+      opacity: 1;
+    }
+  
+    to {
+      top: 0;
+      opacity: 0;
+    }
+  }
+  

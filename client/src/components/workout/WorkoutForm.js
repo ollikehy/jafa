@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
+import { format } from 'date-fns'
 
 import * as actions from '../../redux/actions/actions'
 import WorkoutFormContent from './WorkoutFormContent'
@@ -9,11 +10,11 @@ export class WorkoutForm extends Component {
   constructor(props) {
     super(props)
 
-    const dateString = new Date().toISOString().substring(0, 10)
+    const dateString = format(new Date(), 'yyyy-LL-d')
 
     this.state = {
       date: dateString,
-      currentExercise: '',
+      currentExercise: { name: 'Choose exercise' },
       sets: '',
       reps: '',
       weight: '',
@@ -21,6 +22,8 @@ export class WorkoutForm extends Component {
       distance: '',
       stateExercises: []
     }
+
+    this.handleExerciseChange = this.handleExerciseChange.bind(this)
   }
 
   componentDidMount = () => {
@@ -99,7 +102,7 @@ export class WorkoutForm extends Component {
             <input id='date' type='date' className='workout-form-date-selector' value={date} onChange={this.handleDateChange} />
           </div>
           <div className='workout-form-exercise-container'>
-            <div className='workout-form-heading'>Exercises </div>
+            <div className='workout-form-exercise-label'>Exercises </div>
             <WorkoutFormContent
               currentExercise={currentExercise}
               exercises={exercises}
@@ -109,13 +112,13 @@ export class WorkoutForm extends Component {
               addExerciseToState={this.addExerciseToState}
             />
           </div>
-          <div className='workout-state'>
+          <div className='workout-form-state'>
             {stateExercises.map((stateEx, index) => (
               <div className='workout-form-exercise' key={index}>
                 <div>
                   {stateEx.name}
                 </div>
-                <button type='button' className='workout-state-button' onClick={() => this.removeExercise(stateEx)}>X</button>
+                <button type='button' className='workout-form-state-button' onClick={() => this.removeExercise(stateEx)}>X</button>
               </div>
             ))}
           </div>

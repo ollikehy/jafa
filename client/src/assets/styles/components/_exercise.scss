@@ -171,8 +171,11 @@
   }
 
   &-empty {
-    font-size: 35px;
-    margin: 30px
+    margin: 30px;
+
+    @media screen and (min-width: 200px) and (max-width: 1000px) {
+      font-size: 35px;
+    }
   }
 }
 

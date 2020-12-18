@@ -31,11 +31,11 @@ export class WorkoutDetail extends Component {
 
     return (
       <div className='workout-list workout-list-entry'>
-        <div onClick={this.handleClick} className='workout-exercise-date'>
+        <div onClick={this.handleClick} className='workout-date'>
           {format(new Date(workout.date), 'do MMMM yyyy')}
         </div>
         {visible &&
-          <div className='workout-exercise-container'>
+          <div className='workout-list-entry-container'>
             {workout.exercises.map((exercise, indx) => {
               return (
                 <div className='workout-list-entry-details' key={indx}>
@@ -63,7 +63,7 @@ export class WorkoutDetail extends Component {
                 </div>
               )
             })}
-            <div className='workout-exercise-footer'>
+            <div className='workout-list-entry-footer'>
               <div id={`delete-workout-${workout.id}`} onClick={() => this.handleDelete(workout.id)}>Delete workout</div>
               <img className='workout-uparrow' src={UpArrow} onClick={this.handleClick}></img>
             </div>
