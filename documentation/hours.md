@@ -70,4 +70,5 @@
 | 15.12.2020| 3,5h | Trying to finalize initial styling, refactored error/success messages to a toast notification |
 | 16.12.2020| 4h   | Adding mobile friendly styles for application |
 | 17.12.2020| 4h   | Added some e2e tests and the option for deleting a workout |
-| Sum       | 170h | Cumulative sum of hours |
+| 18.12.2020| 2h   | Trying to configure custom domain for application |
+| Sum       | 172h | Cumulative sum of hours |
