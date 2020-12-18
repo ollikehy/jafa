@@ -72,4 +72,5 @@
 | 17.12.2020| 4h   | Added some e2e tests and the option for deleting a workout |
 | 18.12.2020| 2h   | Trying to configure custom domain for application |
 |           | 0,5h | Managed to configure domain for application |
-| Sum       | 172h | Cumulative sum of hours |
+|           | 1,5h | Finishing touches with some refactoring and documentation |
+| Sum       | 176h | Cumulative sum of hours |

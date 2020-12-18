@@ -29,6 +29,12 @@ export class DropdownMenu extends Component {
     })
   }
 
+  closeList = () => {
+    this.setState({
+      listOpen: false
+    })
+  }
+
   render() {
     const { listOpen } = this.state
     const { loggedIn, logout } = this.props
@@ -45,6 +51,7 @@ export class DropdownMenu extends Component {
             className={'dropdown-item'}
             containerClass={'dropdown-content'}
             linkContainerClass={'dropdown-linkcontainer'}
+            closeList={this.closeList}
           />
         }
       </div>

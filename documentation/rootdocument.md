@@ -2,9 +2,10 @@
 
 ### Requirements
 
-This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use. Navigation should be easy so that the application can be used efficiently without having to do any additional navigation than is necessary.
+This application is done mobile first since you're unlikely to carry a laptop/PC with you to a gym. It should be lightweight and fast while being easy to use. Navigation should be easy so that the application can be used efficiently without having to do any more additional navigation than is necessary.
 
 [User stories](https://github.com/ollikehy/jafa/blob/master/documentation/userstories.md)
+[Testing document](https://github.com/ollikehy/jafa/blob/master/documentation/testingdocument.md)
 
 ### To do:
 
@@ -18,11 +19,11 @@ This application is done mobile first since you're unlikely to carry a laptop/PC
 - [x] Adding workouts
 - [x] Graphs for progress (BMI, bodyweight, weight training?)
 - [x] Hosting in AWS (frontend) and Heroku (backend)
+- [x] Styles and finishing touches
 
 #### Up next:
 
-- [ ] Styles and finishing touches
-
+- [ ] Upkeep and more CRUD functionality perhaps
 
 ### Different types of exercises
 

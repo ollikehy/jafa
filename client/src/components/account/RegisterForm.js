@@ -81,6 +81,7 @@ export class RegisterForm extends Component {
           </div>
           <div className='submit-button'>
             <div id='registerButton' onClick={this.handleSubmit} className='button'>Register</div>
+            <div style={{ display: 'none' }} onClick={this.handleSubmit}></div>
           </div>
         </form>
       </div>

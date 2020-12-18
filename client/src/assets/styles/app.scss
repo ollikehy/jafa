@@ -124,3 +124,24 @@ body {
     font-size: 30px;
   }
 }
+
+.about {
+  font-size: 14px;
+  color: lightslategray;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 25px;
+  }
+
+}
+
+.source {
+  text-decoration: none;
+  font-size: 14px;
+  color: lightslategray;
+
+  @media screen and (min-width: 200px) and (max-width: 1000px) {
+    font-size: 25px;
+  }
+
+}
